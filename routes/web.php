@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/dossier', function () {
-    echo "dossier";
+    echo "dossier ";
 });
