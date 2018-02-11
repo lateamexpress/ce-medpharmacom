@@ -7,12 +7,18 @@
     background-color: #26a69a;
 }
 body {
-    background-color: #F7F8FA;
+    background-color: #FFFFFF;
+}
+/* sidenav */
+#title-side-nav {
+    color: #000000;
+    font-weight: bold;
 }
 /* END GENERAL */
+
 /* BEGINNING MENU */
 /* Center menu and remove native color Material */
-#menu {
+#menu:not(.button-collapse-side) {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -20,6 +26,10 @@ body {
     background-color: transparent;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+.button-collapse-side {
+    position: absolute;
+    left: 1250px;
 }
 /* Style anchor */
 .li-menu a {
@@ -30,7 +40,7 @@ body {
     color: #80cbc4 !important;
 }
 /* Style border hover effect */
-li:after {
+.li-menu:after {
     content: '';
     display: block;
     height: 3px;
@@ -40,7 +50,7 @@ li:after {
     position: relative;
     bottom: 15px;
 }
-li:hover:after {
+.li-menu:hover:after {
     width: 100%;
     background: #26a69a;
 }
@@ -91,4 +101,18 @@ li:hover:after {
     margin-top: 40px;
     color: #26a69a;
 }
+.logo-sante {
+    width: 130px;
+    height: 130px;
+}
+.row-logo {
+    text-align: center;
+}
 /* END CONTENT AFTER CAROUSEL */
+
+/* BEGINNING FOOTER */
+.container-footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+/* END FOOTER */
