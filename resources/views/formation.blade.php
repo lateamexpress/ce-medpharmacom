@@ -1,9 +1,13 @@
 @extends('layout')
 
 @section('titre')
-    Les articles
+    Formation
 @endsection
 
 @section('contenu')
-    <!-- Content -->
+
+@endsection
+
+@section('contenu-container')
+
 @endsection

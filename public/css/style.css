@@ -1,0 +1,94 @@
+/* GENERAL */
+.divider-custom {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 1px;
+    background-color: #26a69a;
+}
+body {
+    background-color: #F7F8FA;
+}
+/* END GENERAL */
+/* BEGINNING MENU */
+/* Center menu and remove native color Material */
+#menu {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    box-shadow: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+/* Style anchor */
+.li-menu a {
+    color: #26a69a;
+}
+.li-menu a:hover {
+    background: transparent;
+    color: #80cbc4 !important;
+}
+/* Style border hover effect */
+li:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    position: relative;
+    bottom: 15px;
+}
+li:hover:after {
+    width: 100%;
+    background: #26a69a;
+}
+/* END MENU */
+
+/* BEGINNING CAROUSEL */
+.carousel {
+    height: 700px;
+}
+/* Indicator color */
+.carousel .indicators .indicator-item {
+  background-color: #80cbc4;
+    padding:0.3%;
+}
+/* Active indicator color */
+.carousel .indicators .indicator-item.active {
+    background-color: #26a69a;
+}
+/* END CAROUSEL */
+
+/* BEGINNING CONTENT AFTER CAROUSEL */
+.head-home {
+    text-align: center;
+}
+.head-home .card {
+    border: 1px solid #EEEEEE;
+    box-shadow: none;
+    border-bottom: 3px solid #26a69a;
+    height: 290px;
+}
+.head-home .card .card-title {
+    color: #26a69a;
+}
+.head-home .card .card-content p {
+    color: #727272;
+    font-size: 18px;
+}
+.head-home h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #26a69a;
+}
+.head-home p {
+    font-size: 18px;
+}
+.head-home .material-icons {
+    font-size: 50px !important;
+    margin-top: 40px;
+    color: #26a69a;
+}
+/* END CONTENT AFTER CAROUSEL */
