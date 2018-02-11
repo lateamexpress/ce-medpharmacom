@@ -22,7 +22,6 @@
 @endsection
 
 @section('contenu-container')
-    <div class="container" id="container-home">
         <div class="head-home">
             <h1>Services</h1>
             <p><strong>Medpharmacom</strong></p>
@@ -64,7 +63,6 @@
                 </div>
             </div>
         </div>
-    </div>
     {{-- TO DO RESPONSIVE LOGO
     <div class="row">
         <div class="col s12 row-logo">
