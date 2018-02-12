@@ -7,6 +7,18 @@
     height: 1px;
     background-color: #26a69a;
 }
+.mt10 {
+    margin-top: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
 body {
     background-color: #FFFFFF;
     position: relative;
@@ -183,4 +195,34 @@ h1 {
 #contact {
     margin-top: 20px;
 }
-/****** CONTACT FORM ******/
+/****** END CONTACT FORM ******/
+
+/****** LOGIN ******/
+#login {
+    background-image: url('https://fthmb.tqn.com/s6QHp977r8KcWcVLNqCMUwVbFhI=/5121x3414/filters:fill(auto,1)/nurses-discussing-over-documents-in-hospital-493216353-595690893df78c4eb647536e.jpg');
+    background-position: center top;
+    background-size: 100% auto;
+}
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+#form-login {
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2%;
+    text-align: center;
+    color: #FFFFFF;
+}
+/****** END LOGIN ******/

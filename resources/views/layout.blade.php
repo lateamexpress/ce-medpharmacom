@@ -24,12 +24,12 @@
         <nav id="menu">
             <div class="nav-wrapper">
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li class="li-menu"><a href="/">Accueil</a></li>
-                    <li class="li-menu"><a href="/formation">Formation</a></li>
-                    <li class="li-menu"><a href="/news">Actualités</a></li>
-                    <li class="li-menu"><a href="/equivalence-generique">Equivalence générique</a></li>
-                    <li class="li-menu"><a href="/laboratoire">Laboratoire</a></li>
-                    <li class="li-menu"><a href="/contact">Contact</a></li>
+                    <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
+                    <li class="li-menu"><a href="{{ url('formation') }}">Formation</a></li>
+                    <li class="li-menu"><a href="{{ url('news') }}">Actualités</a></li>
+                    <li class="li-menu"><a href="{{ url('equivalence-generique') }}">Equivalence générique</a></li>
+                    <li class="li-menu"><a href="{{ url('laboratoire') }}">Laboratoire</a></li>
+                    <li class="li-menu"><a href="{{ url('contact') }}">Contact</a></li>
                     <li class="li-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
                 </ul>
             </div>
@@ -45,7 +45,7 @@
                     <span id="title-side-nav">Admin Panel</span>
                 </div>
             </li>
-            <li><a href="#">Login <i class="material-icons">developer_mode</i></a></li>
+            <li><a href="{{ url('login') }}">Espace réservé <i class="material-icons">people</i></a></li>
         </ul>
         <!-- END SIDE NAV -->
         @yield('contenu')
