@@ -25,37 +25,37 @@
         <div id="logo-admin" class="pdb20 pdt20">
             <!-- INSERT LOGO COMPANY -->
             <a href="{{ url('admin') }}">
-                <img src="" alt="logo-entreprise" title="logo-entreprise"/>
+                <img src="{{ asset('img/logo-medpharma.png') }}" alt="logo-entreprise" title="logo-entreprise"/>
             </a>
             <!-- INSERT LOGO COMPANY -->
         </div>
         <ul class="collapsible" data-collapsible="accordion" id="vertical-menu">
-            <li>
-                <div class="collapsible-header"><a href=""><i class="material-icons">school</i>Gestion des centres de formation</a></div>
+            <li class="vertical-menu-item">
+               <a href=""><i class="material-icons">school</i> Gestion des centres de formation</a>
             </li>
-            <li>
-                <div class="collapsible-header"><a href=""><i class="material-icons">shopping_cart</i>Gestion des commandes</a></div>
+            <li class="vertical-menu-item">
+               <a href=""><i class="material-icons">shopping_cart</i> Gestion des commandes</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">library_add</i>Gestion des encarts publicitaires</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">library_add</i> Gestion des encarts publicitaires</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">healing</i>Gestion des équivalences génériques</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">healing</i> Gestion des équivalences génériques</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">donut_small</i>Gestion des laboratoires</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">donut_small</i> Gestion des laboratoires</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">people</i>Gestion du nombre de visiteurs</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">people</i> Gestion du nombre de visiteurs</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">group_add</i>Gestion des partenaires</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">group_add</i> Gestion des partenaires</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">add_shopping_cart</i>Gestion des produits</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">add_shopping_cart</i> Gestion des produits</a>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">person_pin</i>Gestion des utilisateurs</div>
+            <li class="vertical-menu-item">
+                <a href=""><i class="material-icons">person_pin</i> Gestion des utilisateurs</a>
             </li>
         </ul>
     </div>
@@ -72,7 +72,7 @@
                 </ul>
             </div>
         </nav>
-       <div id="specific-admin-container">
+       <div id="specific-admin-container" class="mt5">
            @yield('specific-content-dashboard')
        </div>
         <!-- Dropdown Structure -->

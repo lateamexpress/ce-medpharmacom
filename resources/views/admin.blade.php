@@ -10,7 +10,6 @@
 
 @section('specific-content-dashboard')
     <!-- TO DO CONTENT DASHBOARD HOME -->
-    <h1>Bienvenue @User, vous trouverez ci-dessus les informations concernant le tracking de vos produits</h1>
     <div class="col s3 block-home block-graph">
         <h1>Récapitulatif des produits</h1>
         <div class="divider-custom mb20"></div>
@@ -102,7 +101,7 @@
             <span class="strong">50</span> commandes
         </p>
     </div>
-    <div class="col s3 block-md mt10">
+    <div class="col s3 block-md mt5">
         <p class="stats">
           Graphisme
         </p>
