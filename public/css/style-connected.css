@@ -1,0 +1,161 @@
+/* VERTICAL MENU */
+html, body{
+    height:100%;
+    width: 100%;
+    background: #EEEEEE;
+    overflow-x: hidden;
+}
+.number {
+    font-size: 50px;
+}
+#vertical-menu {
+    margin:0;
+    background: #333333;
+    color: #FFFFFF;
+    min-height: 100vh;
+}
+#vertical-menu a {
+    color: #FFFFFF;
+}
+#vertical-menu .collapsible-header {
+    background: #333333;
+    border: none;
+}
+#vertical-menu .collapsible-body {
+    border: none;
+}
+#vertical-menu {
+    border: none;
+}
+#horizontal-menu-dashboard {
+    box-shadow: none;
+    background: #444444;
+}
+#vertical-menu .collapsible-header:hover {
+    background: #000000 !important;
+}
+/* VERTICAL MENU END */
+
+/* GENERIC */
+#loader {
+    position: absolute;
+    top: 50%; left: 50%;
+}
+#logo-admin {
+    background: #333333;
+    text-align: center;
+}
+#logo-admin img {
+    width: 30%;
+    height: auto;
+}
+#avatar-admin {
+    width: 35px;
+    height: auto;
+    margin: 15px;
+}
+.dropdown-button {
+    height: 64px;
+}
+.no-pdl {
+    padding-left: 0 !important;
+}
+.no-pdr {
+    padding-right: 0 !important;
+}
+.no-mb {
+    margin-bottom: 0 !important;
+}
+.divider-custom {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 1px;
+    background-color: #26a69a;
+}
+.pdb20 {
+    padding-bottom: 20px;
+}
+.pdt20 {
+    padding-top: 20px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.ml20 {
+    margin-left: 20px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.block-home {
+    background: #FFFFFF;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
+    height: 200px;
+    width: 380px !important;
+}
+.block-home-pharma {
+    background: #26a69a;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: center;
+    height: 200px;
+    width: 380px !important;
+}
+#block-table {
+    width: 770px;
+    background: #FFFFFF;
+    height: 350px;
+    position: relative;
+}
+#block-table .pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.block-lg {
+    height: 350px;
+    width: 380px !important;
+    background: #FFFFFF;
+    margin-left: 10px !important;
+    text-align: center;
+}
+.block-md {
+    height: 170px !important;
+    width: 380px !important;
+    background: #FFFFFF;
+    margin-left: 10px !important;
+    text-align: center;
+    position: relative;
+}
+.stats {
+    font-size: 30px;
+    position: absolute;
+    top:20%;
+    left: 25%;
+}
+.block-graph {
+    height: 300px;
+}
+h1 {
+    font-size: 18px;
+}
+.strong {
+    font-weight: bold;
+}
+#specific-admin-container {
+    margin-left: 20px;
+    margin-right: 0px;
+    width: 100%;
+}
