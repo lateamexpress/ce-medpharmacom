@@ -11,9 +11,10 @@
 |
 */
 
+Route::auth();
 
 Route::get('/', function () {
-    return view('vitrine/home');
+    return view('vitrine.home');
 });
 
 Route::get('/dossier', function () {
@@ -22,35 +23,38 @@ Route::get('/dossier', function () {
 
 Route::get('/formation', function()
 {
-    return view('vitrine/formation');
+    return view('vitrine.formation');
 });
 
 Route::get('/news', function()
 {
-    return view('vitrine/news');
+    return view('vitrine.news');
 });
 
 Route::get('/equivalence-generique', function()
 {
-    return view('vitrine/equivalence-generique');
+    return view('vitrine.equivalence-generique');
 });
 
 Route::get('/laboratoire', function()
 {
-    return view('vitrine/laboratoire');
+    return view('vitrine.laboratoire');
 });
 
 Route::get('/contact', function()
 {
-    return view('vitrine/contact');
+    return view('vitrine.contact');
 });
 
-Route::get('/login', function()
+Route::get('/login2', function()
 {
-    return view('vitrine/login');
+    return view('vitrine.login');
 });
 
 Route::get('/admin', function()
 {
-    return view('admin/admin');
+    return view('admin.admin');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
