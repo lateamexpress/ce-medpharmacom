@@ -13,9 +13,8 @@
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('vitrine/home');
 });
-
 
 Route::get('/dossier', function () {
     echo "dossier ";
@@ -23,35 +22,35 @@ Route::get('/dossier', function () {
 
 Route::get('/formation', function()
 {
-    return view('formation');
+    return view('vitrine/formation');
 });
 
 Route::get('/news', function()
 {
-    return view('news');
+    return view('vitrine/news');
 });
 
 Route::get('/equivalence-generique', function()
 {
-    return view('equivalence-generique');
+    return view('vitrine/equivalence-generique');
 });
 
 Route::get('/laboratoire', function()
 {
-    return view('laboratoire');
+    return view('vitrine/laboratoire');
 });
 
 Route::get('/contact', function()
 {
-    return view('contact');
+    return view('vitrine/contact');
 });
 
 Route::get('/login', function()
 {
-    return view('login');
+    return view('vitrine/login');
 });
 
 Route::get('/admin', function()
 {
-    return view('admin');
+    return view('admin/admin');
 });
