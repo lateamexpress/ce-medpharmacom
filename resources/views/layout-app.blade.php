@@ -66,7 +66,7 @@
                     <li>
                         <a class="dropdown-button" href="#!" data-activates="dropdown1">
                             <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/d6/d6bb00249634bb8d1cffafd78b308740e2bf736f_full.jpg" id="avatar-admin" alt="avatar-admin" title="avatar-admin" class="circle">
-                            <i class="material-icons right">arrow_drop_down</i>
+                            <i class="material-icons right" style="color: #A5A5A5">arrow_drop_down</i>
                         </a>
                     </li>
                 </ul>

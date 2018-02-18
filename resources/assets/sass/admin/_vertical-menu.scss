@@ -1,0 +1,25 @@
+#vertical-menu {
+  margin:0;
+  background: $dark-blue;
+  border: none;
+  min-height: 100vh;
+  .material-icons {
+    margin-right: 10px;
+    a {
+      color: $white;
+    }
+  }
+  a {
+    color: $white;
+  }
+  li:hover {
+    background: $blue-lighten;
+  }
+}
+.vertical-menu-item {
+  padding: 12px;
+}
+#horizontal-menu-dashboard {
+  background: $white;
+  box-shadow: 0 3px 2px -2px #A5A5A5;
+}

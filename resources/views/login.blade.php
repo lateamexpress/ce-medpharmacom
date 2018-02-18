@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('titre')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/vitrine/login.css') }}" rel="stylesheet" type="text/css" >
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @yield('specific-css')
 </head>

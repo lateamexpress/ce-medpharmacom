@@ -5,6 +5,7 @@
 @endsection
 
 @section('specific-css')
+    <link href="{{ asset('css/vitrine/home.css') }}" rel="stylesheet" type="text/css" >
 @endsection
 
 @section('contenu')

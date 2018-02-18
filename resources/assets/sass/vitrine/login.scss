@@ -1,0 +1,33 @@
+@import "_general.scss";
+@import "_menu.scss";
+#login {
+  background: {
+    image: url('https://fthmb.tqn.com/s6QHp977r8KcWcVLNqCMUwVbFhI=/5121x3414/filters:fill(auto,1)/nurses-discussing-over-documents-in-hospital-493216353-595690893df78c4eb647536e.jpg');
+    position: center top;
+    size: 100% auto;
+  }
+}
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#form-login {
+  margin: {
+    top: 20%;
+    left: auto;
+    right: auto;
+  }
+  width: 400px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2%;
+  text-align: center;
+  color: $white;
+}

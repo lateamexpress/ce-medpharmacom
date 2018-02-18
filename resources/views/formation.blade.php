@@ -4,6 +4,10 @@
     Formation
 @endsection
 
+@section('specific-css')
+    <link href="{{ asset('css/vitrine/formation.css') }}" rel="stylesheet" type="text/css" >
+@endsection
+
 @section('contenu')
 
 @endsection
