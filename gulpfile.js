@@ -18,4 +18,7 @@ elixir((mix) => {
     mix.sass([
         'admin/admin.scss'
     ], 'public/css/admin/admin.css');
+    mix.sass([
+        'admin/gestion-encarts-publicitaires.scss'
+    ], 'public/css/admin/gestion-encarts-publicitaires.css');
 });
