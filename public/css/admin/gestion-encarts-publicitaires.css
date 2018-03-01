@@ -140,4 +140,20 @@ h1 {
   box-shadow: 0 3px 2px -2px #A5A5A5;
 }
 
+.large-block {
+  height: 100vh;
+}
+
+#contentlist {
+  height: 100px;
+}
+
+#block-encarts {
+  text-align: center;
+}
+
+#block-encarts button {
+  background: #2e3c54;
+}
+
 /*# sourceMappingURL=gestion-encarts-publicitaires.css.map */

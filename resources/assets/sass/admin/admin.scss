@@ -2,8 +2,10 @@
 @import "_vertical-menu.scss";
 .block-home {
   background: #FFFFFF;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  margin: {
+    bottom: 5px;
+    right: 5px;
+  }
   text-align: center;
   height: 200px;
   width: 390px !important;
@@ -33,7 +35,6 @@ $height-lg-block: 350px;
 .block-md {
   @extend .block-lg;
   height: blockResize($height-lg-block) !important;
-  height: 172.5px !important;
   position: relative;
 }
 .stats {
