@@ -103,3 +103,4 @@ Route::get('/gestion-utilisateurs', function()
     return view('admin/gestion-utilisateurs');
 });
 
+Route::get('/catalogue', 'CatalogueController@index');
