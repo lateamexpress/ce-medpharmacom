@@ -1,4 +1,4 @@
-let elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir');
 
 elixir((mix) => {
     // Vitrine
@@ -21,4 +21,8 @@ elixir((mix) => {
     mix.sass([
         'admin/gestion-encarts-publicitaires.scss'
     ], 'public/css/admin/gestion-encarts-publicitaires.css');
+    // Client
+    mix.sass([
+        'client/catalogue.scss'
+    ], 'public/css/client/catalogue.css');
 });

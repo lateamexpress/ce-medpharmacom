@@ -36,5 +36,5 @@
 @endsection
 
 @section('specific-js')
-    <script src="{{ asset('js/gestion-encarts-publicitaires.js') }}"></script>
+    <script src="{{ asset('js/admin/gestion-encarts-publicitaires.js') }}"></script>
 @endsection

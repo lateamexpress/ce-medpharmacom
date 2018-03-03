@@ -1,0 +1,39 @@
+// Center menu and remove native color Material
+#menu:not(.button-collapse-side) {
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 10px;
+    top: 10px;
+  }
+  width: 40%;
+  box-shadow: none;
+  background-color: transparent;
+}
+.button-collapse-side {
+  position: absolute;
+  left: 1000px;
+}
+// style anchor
+.li-menu a {
+  color: $turquoise;
+  &:hover {
+    background: transparent;
+    color: #80cbc4 !important;
+  }
+  // border hover effect
+  &:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    position: relative;
+    bottom: 15px;
+  }
+  &:hover:after {
+    width: 100%;
+    background: $turquoise;
+  }
+}

@@ -85,5 +85,5 @@
 @endsection
 
 @section('specific-js')
-
+    <script src="{{ asset('js/vitrine/home.js') }}"></script>
 @endsection
