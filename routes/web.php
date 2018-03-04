@@ -11,52 +11,18 @@
 |
 */
 
-/* VITRINE */
 
-Route::get('/', function () {
-    return view('vitrine/home');
-});
 
-Route::get('/dossier', function () {
-    echo "dossier ";
-});
-
-Route::get('/formation', function()
-{
-    return view('vitrine/formation');
-});
-
-Route::get('/news', function()
-{
-    return view('vitrine/news');
-});
-
-Route::get('/equivalence-generique', function()
-{
-    return view('vitrine/equivalence-generique');
-});
-
-Route::get('/laboratoire', function()
-{
-    return view('vitrine/laboratoire');
-});
-
-Route::get('/contact', function()
-{
-    return view('vitrine/contact');
-});
-
-Route::get('/login', function()
-{
-    return view('vitrine/login');
-});
+Route::auth();
 
 /* ADMIN */
-
-Route::get('/admin', function()
-{
-    return view('admin/admin');
+Route::group(['middleware' => ["auth","admin"],"prefix" => "admin"],function(){
+    Route::get('/', function()
+    {
+        return view('admin/admin');
+    });
 });
+
 
 Route::get('/gestion-centres', function()
 {
