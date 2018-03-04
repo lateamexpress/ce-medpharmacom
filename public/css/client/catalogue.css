@@ -104,4 +104,31 @@ h1 {
   background: #26A69A;
 }
 
+.block-produits {
+  border: 1px solid #EEEEEE;
+  height: 400px;
+  margin: 8px;
+  width: 24% !important;
+}
+
+.btn-quantity {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-quantity i {
+  line-height: 30px;
+  font-size: 1.3rem;
+}
+
+.btn-quantity .minus {
+  position: relative;
+  top: -7px;
+  font-size: 1.6rem;
+}
+
+.quantity-text {
+  float: left;
+}
+
 /*# sourceMappingURL=catalogue.css.map */

@@ -1,2 +1,25 @@
 @import "_general.scss";
 @import "_menu.scss";
+
+.block-produits {
+  border: 1px solid #EEEEEE;
+  height: 400px;
+  margin: 8px;
+  width: 24% !important;
+}
+.btn-quantity {
+  width: 30px;
+  height: 30px;
+  i {
+    line-height: 30px;
+    font-size: 1.3rem;
+  }
+  .minus {
+    position:relative;
+    top: -7px;
+    font-size: 1.6rem;
+  }
+}
+.quantity-text {
+  float: left;
+}
