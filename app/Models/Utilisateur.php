@@ -31,7 +31,7 @@ class Utilisateur extends Authenticatable
 {
 	protected $table = 'utilisateur';
 	protected $primaryKey = 'id_utilisateur';
-	public $timestamps = false;
+	public $timestamps = true;
 
 	protected $casts = [
 		'nbr_point' => 'int'
@@ -44,6 +44,8 @@ class Utilisateur extends Authenticatable
 		'prenom',
 		'tel',
 		'adresse',
+		'code_postal',
+		"ville",
 		'nbr_point',
 		'role'
 	];

@@ -13,7 +13,7 @@ class UsersSeeder extends Seeder
     {
         $admin = \App\Models\Utilisateur::create( [
         'email' => "admin",
-        'mdp' => bcrypt("12345"),
+        'password' => bcrypt("12345"),
         'nom' => "Moché",
         'prenom' => "Matagrin",
         'tel' => "0606060606",
@@ -24,7 +24,7 @@ class UsersSeeder extends Seeder
 
         $admin = \App\Models\Utilisateur::create( [
             'email' => "users",
-            'mdp' => bcrypt("12345"),
+            'password' => bcrypt("12345"),
             'nom' => "Moché",
             'prenom' => "Matagrin",
             'tel' => "0606060606",

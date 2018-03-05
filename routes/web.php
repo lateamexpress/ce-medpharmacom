@@ -16,6 +16,8 @@
 Route::auth();
 
 Route::group(["middleware" => "auth"],function(){
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    
     Route::get('/check-role','Controller@index');
     
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){

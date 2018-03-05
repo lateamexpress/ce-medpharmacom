@@ -77,7 +77,7 @@
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="#!">Paramètres</a></li>
-            <li><a href="#!">Deconnexion</a></li>
+            <li><a href="{{ route('logout') }}">Deconnexion</a></li>
         </ul>
     </div>
 </div>
