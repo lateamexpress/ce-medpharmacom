@@ -8,6 +8,7 @@
 namespace App\Models;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Utilisateur
@@ -26,7 +27,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Utilisateur extends Eloquent
+class Utilisateur extends Authenticatable
 {
 	protected $table = 'utilisateur';
 	protected $primaryKey = 'id_utilisateur';
@@ -37,7 +38,7 @@ class Utilisateur extends Eloquent
 	];
 
 	protected $fillable = [
-		'courriel',
+		'email',
 		'mdp',
 		'nom',
 		'prenom',
