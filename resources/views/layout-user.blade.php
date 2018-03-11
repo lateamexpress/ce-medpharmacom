@@ -23,7 +23,10 @@
     <nav id="menu">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li class="li-menu"><a href="{{ url('/catalogue') }}">Accueil</a></li>
+                <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
+                <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
+                <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
+                <li class="li-menu"><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
                 <li class="li-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
         </div>

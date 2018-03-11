@@ -25,4 +25,10 @@ elixir((mix) => {
     mix.sass([
         'client/catalogue.scss'
     ], 'public/css/client/catalogue.css');
+    mix.sass([
+        'client/mon-compte.scss'
+    ], 'public/css/client/mon-compte.css');
+    mix.sass([
+        'client/mes-commandes.scss'
+    ], 'public/css/client/mes-commandes.css');
 });

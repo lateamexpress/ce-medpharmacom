@@ -108,96 +108,19 @@ h1 {
   background: #26A69A;
 }
 
-.block-produits {
-  height: 400px;
-  margin: 0 8px 8px 0;
-  width: 24% !important;
+#form-info {
+  width: 50%;
+  margin-left: 25%;
   border: 1px solid #dddddd;
-}
-
-.block-produits p {
-  margin: 0;
-}
-
-.btn-quantity {
-  width: 30px;
-  height: 30px;
-}
-
-.btn-quantity i {
-  line-height: 30px;
-  font-size: 1.3rem;
-}
-
-.btn-quantity .minus {
   position: relative;
-  top: -7px;
-  font-size: 1.6rem;
 }
 
-.h2-catalog {
-  font-size: 18px;
-  font-weight: 700;
+#update-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-.block-filter-products {
-  border: 1px solid #dddddd;
-  height: 400px;
-  position: fixed;
-  top: 20%;
-  left: 1.5%;
-  width: 14%;
-}
-
-.nb-point {
-  width: 15% !important;
-  box-shadow: none !important;
-}
-
-.nb-point {
-  border-bottom: 0px !important;
-}
-
-.nb-point:focus {
-  border-bottom: 0px !important;
-}
-
-.nb-point::-webkit-inner-spin-button, .nb-point::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-.quantity {
-  width: 10% !important;
-}
-
-.quantity {
-  border-bottom: 0px !important;
-}
-
-.quantity:focus {
-  border-bottom: 0px !important;
-}
-
-.quantity::-webkit-inner-spin-button, .quantity::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-.pagination .active {
-  background-color: #26a69a !important;
-}
-
-.block-filter-products-inputs {
-  margin-left: 20%;
-}
-
-.block-filter-products-inputs input[type=search] {
-  width: 70%;
-}
-
-/*# sourceMappingURL=catalogue.css.map */
+/*# sourceMappingURL=mon-compte.css.map */

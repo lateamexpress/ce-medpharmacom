@@ -9,4 +9,7 @@ class UsersController extends Controller
     public function insertUsers(Request $request)
     {
     }
+    public function index() {
+        return view('client/mon-compte');
+    }
 }

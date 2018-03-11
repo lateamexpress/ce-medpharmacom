@@ -2,10 +2,13 @@
 @import "_menu.scss";
 
 .block-produits {
-  border: 1px solid #EEEEEE;
   height: 400px;
-  margin: 8px;
+  margin: 0 8px 8px 0;
   width: 24% !important;
+  border: 1px solid #dddddd;
+  p {
+    margin: 0;
+  }
 }
 .btn-quantity {
   width: 30px;
@@ -20,6 +23,51 @@
     font-size: 1.6rem;
   }
 }
-.quantity-text {
-  float: left;
+.h2-catalog {
+  font-size: 18px;
+  font-weight: 700;
+}
+.block-filter-products {
+  border: 1px solid #dddddd;
+  height: 400px;
+  position: fixed;
+  top: 20%;
+  left: 1.5%;
+  width: 14%;
+}
+@mixin disableStyleInputNumber() {
+  & {
+    border-bottom: 0px !important;
+  }
+  &:focus {
+    border-bottom: 0px !important;
+  }
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+.nb-point {
+  width: 15% !important;
+  box-shadow: none !important;
+  @include disableStyleInputNumber();
+}
+.quantity {
+  width: 10% !important;
+  @include disableStyleInputNumber();
+}
+.pagination {
+  .active {
+    background-color: #26a69a !important;
+  }
+}
+.block-filter-products-inputs {
+  margin-left: 20%;
+
+  input[type=search] {
+    width: 70%;
+  }
+
 }
