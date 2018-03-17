@@ -82,6 +82,15 @@
         </div>
     </div>
     --}}
+
+        {{--
+    @foreach($datas as $new) {
+
+        {{ $new }}
+    }
+    @endforeach
+
+    --}}
 @endsection
 
 @section('specific-js')

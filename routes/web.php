@@ -19,6 +19,11 @@ Route::group(["middleware" => "auth"],function(){
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
     
     Route::get('/check-role','Controller@index');
+
+    /* rss testing
+    Route::get('/', 'HomeController@index');
+    */
+    Route::get('/', 'HomeController@returnView');
     
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){
         /* ADMIN (toutes les routes admin ici)*/
