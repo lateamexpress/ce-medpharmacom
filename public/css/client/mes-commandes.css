@@ -26,6 +26,10 @@
   margin-bottom: 0px;
 }
 
+blockquote {
+  border-left: 5px solid #26A69A;
+}
+
 body {
   background-color: #FFFFFF;
   position: relative;
@@ -106,6 +110,10 @@ h1 {
 .li-menu a:hover:after {
   width: 100%;
   background: #26A69A;
+}
+
+#mes-commandes-block {
+  height: 60vh;
 }
 
 /*# sourceMappingURL=mes-commandes.css.map */

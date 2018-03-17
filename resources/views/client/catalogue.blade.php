@@ -44,6 +44,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <a class="waves-effect waves-light btn command teal darken-1" href="{{ url('') }}"><i class="material-icons">shopping_cart</i></a>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -57,6 +58,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -70,6 +72,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -83,6 +86,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
         </div>
@@ -100,6 +104,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -113,6 +118,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -126,6 +132,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -139,6 +146,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
         </div>
@@ -169,6 +177,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -182,6 +191,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
             <div class="col s3 block-produits">
@@ -195,6 +205,7 @@
                     <span class="quantity-text">Quantité : <input type="number" value="1" class="quantity"></span>
                     <button class="btn-floating waves-effect waves-light btn-quantity add"><i class="material-icons">add</i></button>
                     <button class="btn-floating waves-effect waves-light btn-quantity remove"><i class="material-icons minus">-</i></button>
+                    <button class="waves-effect waves-light btn command teal darken-1"><i class="material-icons">shopping_cart</i></button>
                 </p>
             </div>
         </div>

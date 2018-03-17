@@ -65,9 +65,12 @@
 }
 .block-filter-products-inputs {
   margin-left: 20%;
-
   input[type=search] {
     width: 70%;
   }
-
+}
+.command {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.8rem;
 }

@@ -112,19 +112,14 @@ h1 {
   background: #26A69A;
 }
 
-#form-info {
-  width: 50%;
-  margin-left: 25%;
-  border: 1px solid #dddddd;
+#commande-recap {
+  height: 60vh;
   position: relative;
 }
 
-#update-info {
+#infos-cmd {
   position: absolute;
   bottom: 0;
-  right: 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
 
-/*# sourceMappingURL=mon-compte.css.map */
+/*# sourceMappingURL=commande.css.map */

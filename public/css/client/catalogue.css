@@ -26,6 +26,10 @@
   margin-bottom: 0px;
 }
 
+blockquote {
+  border-left: 5px solid #26A69A;
+}
+
 body {
   background-color: #FFFFFF;
   position: relative;
@@ -198,6 +202,12 @@ h1 {
 
 .block-filter-products-inputs input[type=search] {
   width: 70%;
+}
+
+.command {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.8rem;
 }
 
 /*# sourceMappingURL=catalogue.css.map */

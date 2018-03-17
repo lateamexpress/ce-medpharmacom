@@ -31,4 +31,7 @@ elixir((mix) => {
     mix.sass([
         'client/mes-commandes.scss'
     ], 'public/css/client/mes-commandes.css');
+    mix.sass([
+        'client/commande.scss'
+    ], 'public/css/client/commande.css');
 });

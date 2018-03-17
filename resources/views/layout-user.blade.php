@@ -60,9 +60,14 @@
         </div>
         <div class="footer-copyright grey darken-4">
             <div class="container">
-                © 2018 Copyright Medpharmacom.fr - Created by <a target="_blank" href="https://www.linkedin.com/in/k%C3%A9vin-dintanavong-539049115/">Kévin Dintanavong</a>
+                © 2018 Copyright Medpharmacom.fr
             </div>
         </div>
+        <!-- Authors :
+        Moché Matagrin
+        Nicolas-Killian Duchassin
+        https://www.linkedin.com/in/k%C3%A9vin-dintanavong-539049115/ Kévin Dintanavong
+        -->
     </footer>
 </div>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

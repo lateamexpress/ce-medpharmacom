@@ -1,0 +1,11 @@
+@import "_general.scss";
+@import "_menu.scss";
+
+#commande-recap {
+  height: 60vh;
+  position: relative;
+}
+#infos-cmd {
+  position: absolute;
+  bottom: 0;
+}

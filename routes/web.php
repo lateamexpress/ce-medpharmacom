@@ -83,6 +83,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/catalogue', 'CatalogueController@index');
         Route::get('/mon-compte', 'UsersController@index');
         Route::get('/mes-commandes', 'MesCommandesController@index');
+        Route::get('/commande', 'CommandeController@index');
     });
     
 });
