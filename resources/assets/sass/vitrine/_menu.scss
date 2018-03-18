@@ -1,14 +1,17 @@
 // Center menu and remove native color Material
 #menu:not(.button-collapse-side) {
-  margin: {
-    left: auto;
-    right: auto;
-    bottom: 10px;
-    top: 10px;
-  }
-  width: 40%;
+  width: 100%;
   box-shadow: none;
-  background-color: transparent;
+  background-color: $white;
+  position: fixed;
+  top:0;
+  z-index: 2;
+  box-shadow: 0 3px 2px -2px #A5A5A5;
+}
+#nav-mobile {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .button-collapse-side {
   position: absolute;

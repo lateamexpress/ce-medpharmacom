@@ -5,6 +5,7 @@
         <title>@yield('titre')</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         @yield('specific-css')
     </head>
 <body>
@@ -20,6 +21,7 @@
         </div>
     </div>
     <div id="container-all">
+        <a href="#" id="back-to-top" title="Back to top"><i class="material-icons">arrow_drop_up</i></a>
         <nav id="menu">
             <div class="nav-wrapper">
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -48,9 +50,7 @@
         </ul>
         <!-- END SIDE NAV -->
         @yield('contenu')
-        <div class="container">
-            @yield('contenu-container')
-        </div>
+        @yield('contenu-container')
         <footer class="page-footer grey darken-3">
             <div class="container container-footer">
                 <div class="row">
@@ -58,11 +58,25 @@
                         <h5 class="white-text">Footer Content</h5>
                         <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam mauris, lobortis at dictum vitae, vestibulum a purus. In ac ornare ante.</p>
                     </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Coordonnées</h5>
+                        <ul>
+                            <li> MedPharmacom.fr</li>
+                            <li>53 Rue de Vauban 69006 Lyon</li>
+                            <li>Tel : 01 83 80 46 03 / 06 51 40 43 38</li>
+                            <li>Siret : 812 261 535 Rcs Lyon</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-copyright grey darken-4">
                 <div class="container">
-                    © 2018 Copyright Medpharmacom.fr - Created by <a target="_blank" href="https://www.linkedin.com/in/k%C3%A9vin-dintanavong-539049115/">Kévin Dintanavong</a>
+                    © 2018 Medpharmacom.fr
+                    <!-- Authors :
+                    Moché Matagrin
+                    Nicolas-Killian Duchassin
+                    href="https://www.linkedin.com/in/k%C3%A9vin-dintanavong-539049115/     Kévin Dintanavong
+                    -->
                 </div>
             </div>
         </footer>

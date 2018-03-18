@@ -13,6 +13,16 @@
 .carousel .indicators .indicator-item.active {
   background-color: $turquoise;
 }
+#slider-home {
+  margin-top: 64px;
+}
+// carousel logos
+.owl-carousel img {
+  max-width:220px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
 // end carousel
 // begin content after carousel
 .head-home {
@@ -50,5 +60,25 @@
 }
 .row-logo {
   text-align: center;
+}
+.overlay:not(.centered) {
+  background-color: rgba(0,0,0,0.3);
+  z-index: 2;
+}
+.alternate-div {
+  margin-bottom: 0;
+  text-align: left;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 30px;
+  color: $white;
+  text-shadow: #000 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
 }
 // end content after carousel
