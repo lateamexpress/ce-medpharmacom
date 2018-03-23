@@ -10,8 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/formation',function(){
+    return view("vitrine.formation");
+});
 
+Route::get('/news',function(){
+    return view("vitrine.news");
+});
 
+Route::get('/equivalence-generique',function(){
+    return view("vitrine.equivalence-generique");
+});
+
+Route::get('/laboratoire',function(){
+    return view("vitrine.laboratoire");
+});
+
+Route::get('/contact',function(){
+    return view("vitrine.contact");
+});
 
 Route::auth();
 
