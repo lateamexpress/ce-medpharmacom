@@ -27,6 +27,7 @@
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
                 <li class="li-menu"><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
+                <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
                 <li class="li-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
         </div>
@@ -42,7 +43,11 @@
                 <span id="title-side-nav">Admin Panel</span>
             </div>
         </li>
-        <li><a href="{{ url('login') }}">Espace réservé <i class="material-icons">people</i></a></li>
+        <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
+        <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
+        <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
+        <li class="li-menu"><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
+        <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
     </ul>
     <!-- END SIDE NAV -->
     @yield('contenu')

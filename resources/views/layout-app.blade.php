@@ -56,6 +56,9 @@
             <li class="vertical-menu-item">
                 <a href="{{ url('gestion-utilisateurs')}}"><i class="material-icons">person_pin</i> Gestion des utilisateurs</a>
             </li>
+            <li class="vertical-menu-item">
+                <a href="{{ url('logout')}}"><i class="material-icons">sync_disabled</i> Se déconnecter</a>
+            </li>
         </ul>
     </div>
     <div class="col s10 no-pdl no-pdr">
