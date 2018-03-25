@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @yield('specific-css')
     </head>
 <body>
@@ -24,14 +25,17 @@
         <a href="#" id="back-to-top" title="Back to top"><i class="material-icons">arrow_drop_up</i></a>
         <nav id="menu">
             <div class="nav-wrapper">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
+                </a>
+                <ul id="nav-mobile" class="left">
                     <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="li-menu"><a href="{{ url('formation') }}">Formation</a></li>
                     <li class="li-menu"><a href="{{ url('news') }}">Actualités</a></li>
                     <li class="li-menu"><a href="{{ url('equivalence-generique') }}">Equivalence générique</a></li>
                     <li class="li-menu"><a href="{{ url('laboratoire') }}">Laboratoire</a></li>
                     <li class="li-menu"><a href="{{ url('contact') }}">Contact</a></li>
-                    <li class="li-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
+                    <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
                 </ul>
             </div>
         </nav>
@@ -43,10 +47,15 @@
                         <img src="https://www.sciencedaily.com/images/2016/05/160504085309_1_900x600.jpg">
                     </div>
                     <img class="circle" alt="avatar-login" title="avatar-login" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8c/8cd2d593555cf702a6cf8231bc105d1897987ebf_medium.jpg">
-                    <span id="title-side-nav">Admin Panel</span>
+                    <span style="color: rgba(0,0,0,0.87); font-weight: bold;">Liens de navigation</span>
                 </div>
             </li>
-            <li><a href="{{ url('login') }}">Espace réservé <i class="material-icons">people</i></a></li>
+            <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="li-menu"><a href="{{ url('formation') }}">Formation</a></li>
+            <li class="li-menu"><a href="{{ url('news') }}">Actualités</a></li>
+            <li class="li-menu"><a href="{{ url('equivalence-generique') }}">Equivalence générique</a></li>
+            <li class="li-menu"><a href="{{ url('laboratoire') }}">Laboratoire</a></li>
+            <li class="li-menu"><a href="{{ url('contact') }}">Contact</a></li>
         </ul>
         <!-- END SIDE NAV -->
         @yield('contenu')

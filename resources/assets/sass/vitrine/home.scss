@@ -50,7 +50,7 @@
   }
   .material-icons {
     font-size: 50px !important;
-    margin-top: 40px;
+    margin-top: 20px;
     color: $turquoise;
   }
 }
@@ -82,3 +82,26 @@
   font-weight: 700;
 }
 // end content after carousel
+// responsive
+@media screen and (max-width: 800px) {
+  .head-home {
+    p {
+      font-size: 15px;
+    }
+    .card {
+      height: 250px;
+      .card-title {
+        font-size: 18px;
+      }
+      .card-content p {
+        font-size: 15px;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 600px) {
+  #slider-home {
+    margin-top: 57px;
+  }
+}

@@ -14,8 +14,7 @@
   transform: translate(-50%, 0);
 }
 .button-collapse-side {
-  position: absolute;
-  left: 1000px;
+  display: none;
 }
 // style anchor
 .li-menu a {
@@ -38,5 +37,60 @@
   &:hover:after {
     width: 100%;
     background: $turquoise;
+  }
+}
+#logo-medpharmacom-menu {
+  display: none;
+}
+// responsive
+@media screen and (max-width: 1420px) {
+  #nav-mobile {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 901px) {
+  #nav-mobile {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 788px) {
+  #nav-mobile {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 660px) {
+  #logo-medpharmacom-menu {
+    display: block;
+    width: 30%;
+  }
+  .button-collapse-side {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+  #nav-mobile .li-menu:not(#burger-menu) {
+    display: none;
+  }
+  .button-collapse-side {
+    top: -40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #logo-medpharmacom-menu {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .button-collapse-side {
+    top: -48px;
+  }
+}
+// responsive mobile generic
+@media screen and (max-width: 380px) {
+  #logo-medpharmacom-menu {
+    width: 55%;
+  }
+  .button-collapse-side {
+    top: -50px;
   }
 }

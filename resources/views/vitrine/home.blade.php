@@ -29,7 +29,7 @@
                 <div class="divider-custom"></div>
                 <p>Le répertoire du pharmacien</p>
                 <div class="row">
-                    <div class="col s12 m4">
+                    <div class="col s12 m12 l4 xl4">
                         <div class="card">
                             <div class="card-image">
                                 <i class="material-icons">location_on</i>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="col s12 m12 l4 xl4">
                         <div class="card">
                             <div class="card-image">
                                 <i class="material-icons">search</i>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="col s12 m12 l4 xl4">
                         <div class="card">
                             <div class="card-image">
                                 <i class="material-icons">add</i>
