@@ -105,6 +105,7 @@ Route::group(["middleware" => "auth"],function(){
     
 });
 
+Route::get('/image/{id}', 'ImageController@display');
 
 
 
