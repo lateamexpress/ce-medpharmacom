@@ -215,4 +215,10 @@ h1 {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 655px) {
+  iframe {
+    width: 80%;
+  }
+}
+
 /*# sourceMappingURL=formation.css.map */

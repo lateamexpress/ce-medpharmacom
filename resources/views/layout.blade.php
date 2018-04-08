@@ -50,12 +50,12 @@
                     <span style="color: rgba(0,0,0,0.87); font-weight: bold;">Liens de navigation</span>
                 </div>
             </li>
-            <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
-            <li class="li-menu"><a href="{{ url('formation') }}">Formation</a></li>
-            <li class="li-menu"><a href="{{ url('news') }}">Actualités</a></li>
-            <li class="li-menu"><a href="{{ url('equivalence-generique') }}">Equivalence générique</a></li>
-            <li class="li-menu"><a href="{{ url('laboratoire') }}">Laboratoire</a></li>
-            <li class="li-menu"><a href="{{ url('contact') }}">Contact</a></li>
+            <li><a href="{{ url('/') }}">Accueil</a></li>
+            <li><a href="{{ url('formation') }}">Formation</a></li>
+            <li><a href="{{ url('news') }}">Actualités</a></li>
+            <li><a href="{{ url('equivalence-generique') }}">Equivalence générique</a></li>
+            <li><a href="{{ url('laboratoire') }}">Laboratoire</a></li>
+            <li><a href="{{ url('contact') }}">Contact</a></li>
         </ul>
         <!-- END SIDE NAV -->
         @yield('contenu')

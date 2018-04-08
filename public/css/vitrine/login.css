@@ -207,10 +207,15 @@ h1 {
   }
 }
 
+html {
+  height: 100%;
+}
+
 #login {
   background-image: url("https://fthmb.tqn.com/s6QHp977r8KcWcVLNqCMUwVbFhI=/5121x3414/filters:fill(auto,1)/nurses-discussing-over-documents-in-hospital-493216353-595690893df78c4eb647536e.jpg");
-  background-position: center top;
-  background-size: 100% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #overlay {
@@ -235,6 +240,20 @@ h1 {
   padding: 2%;
   text-align: center;
   color: #FFFFFF;
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  #forgotten-password {
+    float: none;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #form-login {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=login.css.map */

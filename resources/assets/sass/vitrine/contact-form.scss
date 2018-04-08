@@ -2,10 +2,30 @@
 @import "_menu.scss";
 #contact-form {
   text-align: center;
-  border: 1px solid #aaaaaa;
-  box-shadow: 8px 8px 0px #aaaaaa;
+  border: 0.5px solid #aaaaaa;
   padding-bottom: 10px;
+  box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.2);
 }
 #contact {
   margin-top: 20px;
+}
+// responsive
+@media screen and (min-width: 1700px) {
+  #contact-form {
+    margin-top: 4%;
+  }
+}
+@media screen and (max-width: 1699px) {
+  #contact-form {
+    margin-top: 7%;
+  }
+}
+@media screen and (max-width: 992px){
+  #contact-form {
+    box-shadow: none;
+    border: none;
+  }
+  #info-contact {
+    margin-top: 25%;
+  }
 }

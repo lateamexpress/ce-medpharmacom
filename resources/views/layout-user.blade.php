@@ -5,6 +5,7 @@
     <title>@yield('titre')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('specific-css')
 </head>
 <body>
@@ -22,13 +23,16 @@
 <div id="container-all">
     <nav id="menu">
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <a href="{{ url('/') }}">
+                <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
+            </a>
+            <ul id="nav-mobile" class="left">
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
                 <li class="li-menu"><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
-                <li class="li-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
+                <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
         </div>
     </nav>
@@ -43,11 +47,11 @@
                 <span id="title-side-nav">Admin Panel</span>
             </div>
         </li>
-        <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
-        <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
-        <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
-        <li class="li-menu"><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
-        <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
+        <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
+        <li><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
+        <li><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
+        <li><a href="{{ url('/') }}">Retourner sur medpharmacom</a></li>
+        <li><a href="{{ url('logout') }}">Se déconnecter</a></li>
     </ul>
     <!-- END SIDE NAV -->
     @yield('contenu')

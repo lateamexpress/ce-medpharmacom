@@ -1,3 +1,8 @@
+@charset "UTF-8";
+.relative {
+  position: relative;
+}
+
 .divider-custom {
   margin-left: auto;
   margin-right: auto;
@@ -73,18 +78,23 @@ h1 {
 }
 
 #menu:not(.button-collapse-side) {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  width: 40%;
+  width: 100%;
   box-shadow: none;
-  background-color: transparent;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 3px 2px -2px #A5A5A5;
+}
+
+#nav-mobile {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .button-collapse-side {
-  position: absolute;
-  left: 1000px;
+  display: none;
 }
 
 .li-menu a {
@@ -112,15 +122,91 @@ h1 {
   background: #26A69A;
 }
 
+#logo-medpharmacom-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1420px) {
+  #nav-mobile {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #nav-mobile {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 921px) {
+  #nav-mobile {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #nav-mobile {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  #logo-medpharmacom-menu {
+    display: block;
+    width: 30%;
+  }
+  .button-collapse-side {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+  #nav-mobile .li-menu:not(#burger-menu) {
+    display: none;
+  }
+  .button-collapse-side {
+    top: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #logo-medpharmacom-menu {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .button-collapse-side {
+    top: -48px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #logo-medpharmacom-menu {
+    width: 55%;
+  }
+  .button-collapse-side {
+    top: -50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .button-collapse-side {
+    top: -40px;
+  }
+}
+
 .block-produits {
   height: 400px;
-  margin: 0 8px 8px 0;
-  width: 24% !important;
-  border: 1px solid #dddddd;
+  margin: 0;
+  border: 0.5px solid #dddddd;
 }
 
 .block-produits p {
   margin: 0;
+}
+
+.block-produits:hover {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-quantity {
@@ -150,7 +236,11 @@ h1 {
   position: fixed;
   top: 20%;
   left: 1.5%;
-  width: 14%;
+  width: 13%;
+}
+
+.quantity-text::before {
+  content: 'Quantité : ';
 }
 
 .nb-point {
@@ -208,6 +298,68 @@ h1 {
   height: 30px;
   line-height: 30px;
   padding: 0 0.8rem;
+}
+
+#checkout {
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+@media screen and (max-width: 992px) {
+  .block-filter-products {
+    display: none;
+  }
+  .block-filter-products-mobile {
+    display: block;
+  }
+  .quantity-text::before {
+    content: 'Qte : ';
+  }
+  #checkout {
+    position: fixed;
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 662px) {
+  .btn-quantity {
+    width: 25px;
+    height: 25px;
+  }
+  .btn-quantity .minus {
+    position: relative;
+    top: -7px;
+    font-size: 1.6rem;
+  }
+  .block-produits {
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .block-produits {
+    height: 470px;
+  }
+  .btn-quantity {
+    width: 30px;
+    height: 30px;
+  }
+  .btn-quantity i {
+    line-height: 30px;
+    font-size: 1.3rem;
+  }
+  .btn-quantity .minus {
+    position: relative;
+    top: -7px;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .block-produits {
+    height: 400px;
+  }
 }
 
 /*# sourceMappingURL=catalogue.css.map */

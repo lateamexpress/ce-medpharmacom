@@ -1,10 +1,14 @@
 @import "_general.scss";
 @import "_menu.scss";
+html {
+  height: 100%;
+}
 #login {
   background: {
     image: url('https://fthmb.tqn.com/s6QHp977r8KcWcVLNqCMUwVbFhI=/5121x3414/filters:fill(auto,1)/nurses-discussing-over-documents-in-hospital-493216353-595690893df78c4eb647536e.jpg');
-    position: center top;
-    size: 100% auto;
+    position: left top;
+    repeat: no-repeat;
+    size: cover;
   }
 }
 #overlay {
@@ -30,4 +34,17 @@
   padding: 2%;
   text-align: center;
   color: $white;
+  position: relative;
+}
+@media screen and (max-width: 640px) {
+  #forgotten-password {
+    float: none;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 430px) {
+  #form-login {
+    width: 100%;
+  }
+
 }

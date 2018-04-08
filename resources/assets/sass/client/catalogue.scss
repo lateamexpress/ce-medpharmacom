@@ -3,12 +3,14 @@
 
 .block-produits {
   height: 400px;
-  margin: 0 8px 8px 0;
-  width: 24% !important;
-  border: 1px solid #dddddd;
+  margin: 0;
+  border: 0.5px solid #dddddd;
   p {
     margin: 0;
   }
+}
+.block-produits:hover {
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 .btn-quantity {
   width: 30px;
@@ -33,7 +35,10 @@
   position: fixed;
   top: 20%;
   left: 1.5%;
-  width: 14%;
+  width: 13%;
+}
+.quantity-text::before {
+  content: 'Quantité : ';
 }
 @mixin disableStyleInputNumber() {
   & {
@@ -73,4 +78,63 @@
   height: 30px;
   line-height: 30px;
   padding: 0 0.8rem;
+}
+
+#checkout {
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+// responsive mobile
+@media screen and (max-width: 992px) {
+  .block-filter-products {
+    display: none;
+  }
+  .block-filter-products-mobile {
+    display: block;
+  }
+  .quantity-text::before {
+    content: 'Qte : ';
+  }
+  #checkout {
+    position: fixed;
+    top:10%;
+  }
+}
+@media screen and (max-width: 662px) {
+  .btn-quantity {
+    width: 25px;
+    height: 25px;
+    .minus {
+      position:relative;
+      top: -7px;
+      font-size: 1.6rem;
+    }
+  }
+  .block-produits {
+    height: 330px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .block-produits {
+    height: 470px;
+  }
+  .btn-quantity {
+    width: 30px;
+    height: 30px;
+    i {
+      line-height: 30px;
+      font-size: 1.3rem;
+    }
+    .minus {
+      position:relative;
+      top: -7px;
+      font-size: 1.6rem;
+    }
+  }
+}
+@media screen and (max-width: 440px) {
+  .block-produits {
+    height: 400px;
+  }
 }
