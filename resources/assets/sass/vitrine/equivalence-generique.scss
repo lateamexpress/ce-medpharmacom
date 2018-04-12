@@ -1,0 +1,12 @@
+@import "_general.scss";
+@import "_menu.scss";
+
+.card-search {
+  height: 150px;
+  position: relative;
+  .btn-equivalence-generique {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}

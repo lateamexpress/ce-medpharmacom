@@ -37,9 +37,9 @@ Route::group(["middleware" => "auth"],function(){
     
     Route::get('/check-role','Controller@index');
 
-    /* rss testing
-    Route::get('/', 'HomeController@index');
-    */
+    // rss testing
+    Route::get('/news', 'HomeController@index');
+
     Route::get('/', 'HomeController@returnView');
     
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){

@@ -22,6 +22,7 @@ class HomeController extends Controller
 
         foreach($rss as $tab){
             $date =  date("d/m/y",strtotime($tab[3]));
+            echo '<div class="container" style="margin-top: 100px; text-align: center;">';
             echo '<div class="col s12 m3">';
             if(substr($tab[2],4,3) == 'img'){
                 if(($cpt % 4) == 0)
@@ -73,11 +74,11 @@ class HomeController extends Controller
                     'texte' => $article
                 ];
             }
-            echo '</div>';
+            echo '</div></div>';
         }
         echo '</div>';
 
-      //  return view('vitrine/home')->with('datas', $datas);
+        return view('vitrine/news')->with('datas', $datas);
     }
     public function lit_rss($fichier,$objets) {
         // on lit tout le fichier

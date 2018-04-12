@@ -26,7 +26,7 @@
         <nav id="menu">
             <div class="nav-wrapper">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
+                    <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu"/>
                 </a>
                 <ul id="nav-mobile" class="left">
                     <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
