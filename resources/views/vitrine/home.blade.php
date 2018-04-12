@@ -34,7 +34,7 @@
                             <div class="card-image">
                                 <i class="material-icons">location_on</i>
                             </div>
-                            <span class="card-title">Recherchez intelligemment</span>
+                            <a href="{{ url('laboratoire') }}"><span class="card-title">Recherchez intelligemment</span></a>
                             <div class="card-content">
                                 <p>Trouver le laboratoire le plus adapté</p>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="card-image">
                                 <i class="material-icons">search</i>
                             </div>
-                            <span class="card-title">Trouvez vos médicaments</span>
+                            <a href="{{ url('equivalence-generique') }}"><span class="card-title">Trouvez vos médicaments</span></a>
                             <div class="card-content">
                                 <p>Notre fonction de recherche analyse votre requête de façon optimisée.</p>
                             </div>
@@ -56,9 +56,9 @@
                             <div class="card-image">
                                 <i class="material-icons">add</i>
                             </div>
-                            <span class="card-title">Un espace intuitif</span>
+                            <a href="{{ url('news') }}"><span class="card-title">Un espace intuitif</span></a>
                             <div class="card-content">
-                                <p>Notre site a été réalisé pour vous offrir la meilleure expérience utilisateur possible pour rendre votre navigation la plus simple possible.</p>
+                                <p>Notre site a été réalisé pour vous offrir la meilleure expérience utilisateur pour rendre votre navigation la plus simple possible.</p>
                             </div>
                         </div>
                     </div>
@@ -120,8 +120,46 @@
                             <div>
                                 <img src="{{ asset('img/biocodex.jpg') }}" alt="biocodex-logo" title="biocodex-logo"/>
                             </div>
+                            <div>
+                                <img src="{{ asset('img/assurance-maladie.jpg') }}" alt="assurance-maladie-logo" title="assurance-maladie-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/ansm.png') }}" alt="ansm-logo" title="ansm-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/has.jpg') }}" alt="has-logo" title="has-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/ministere.png') }}" alt="ministere-logo" title="ministere-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/eurekasante.jpg') }}" alt="eurekasante-logo" title="eurekasante-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/vidal.jpg') }}" alt="vidal-logo" title="vidal-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/doctissimo.png') }}" alt="doctissimo-logo" title="doctissimo-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/cyclamed.jpg') }}" alt="cyclamed-logo" title="cyclamed-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/lequotidiendumedecin.jpg') }}" alt="lequotidiendumedecin-logo" title="lequotidiendumedecin-logo"/>
+                            </div>
+                            <div>
+                                <img src="{{ asset('img/lequotidiendupharmacien.jpg') }}" alt="lequotidiendupharmacien-logo" title="lequotidiendupharmacien-logo"/>
+                            </div>
                         </div>
                     </div>
+                    <!-- Découpage à faire -->
+                    <div class="col s6 mt50">
+                        <img src="{{ asset('img/12.PNG') }}"/>
+                    </div>
+                    <div class="col s6">
+                        <img src="{{ asset('img/14.PNG') }}"/>
+                    </div>
+                    <!-- Découpage à faire -->
                 </div>
             </div>
             <div class="row no-mb">
