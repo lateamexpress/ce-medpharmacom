@@ -23,7 +23,7 @@ class ContactMessageController extends Controller
             'msg' => $request->message
         ], function($mail) use($request) {
             $mail->from($request->email, $request->name);
-            $mail->to('kevin.dintanavong@gmail.com')->subject('Message depuis le formulaire de contact');
+            $mail->to('contact@medpharmacom.fr')->subject('Message depuis le formulaire de contact');
         });
 
         return redirect()->back()->with('flash_message', 'Merci pour votre message.');
