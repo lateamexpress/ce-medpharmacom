@@ -26,9 +26,20 @@ Route::get('/laboratoire',function(){
     return view("vitrine.laboratoire");
 });
 
+/*
 Route::get('/contact',function(){
     return view("vitrine.contact");
 });
+*/
+
+Route::get('/contact', [
+    'uses' => 'ContactMessageController@create'
+]);
+
+Route::post('/contact', [
+    'uses' => 'ContactMessageController@store',
+    'as' => 'contact.store'
+]);
 
 Route::auth();
 
