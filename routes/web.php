@@ -109,9 +109,11 @@ Route::group(["middleware" => "auth"],function(){
     Route::group(["middleware" =>"users"],function(){
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
         Route::get('/catalogue', 'CatalogueController@index');
+        Route::get('/catalogue/{id}', 'CatalogueController@produitAll');
         Route::get('/mon-compte', 'UsersController@index');
         Route::get('/mes-commandes', 'MesCommandesController@index');
         Route::get('/commande', 'CommandeController@index');
+        Route::get('/commande/{id}', 'CommandeController@commandeParId');
     });
     
 });
