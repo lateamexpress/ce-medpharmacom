@@ -31,6 +31,7 @@
             <form class="col s12" id="contact" method="post" action="{{ route('contact.store') }}">
                 {{ csrf_field() }}
                 <div class="row">
+
                     <div class="input-field col l6 m6 s12">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="icon_prefix" name="name" type="text" class="validate">

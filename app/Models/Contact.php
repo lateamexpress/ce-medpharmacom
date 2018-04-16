@@ -29,12 +29,11 @@ class Contact extends Eloquent
 	public $timestamps = false;
 
 	protected $fillable = [
-		'adresse',
-        'cp',
-        'ville',
+	    'name',
+		'address',
         'tel',
-        'fax',
-        'email'
+        'email',
+        'message'
 	];
 
 }

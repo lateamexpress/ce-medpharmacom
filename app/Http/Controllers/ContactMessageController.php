@@ -6,6 +6,7 @@ use Mail;
 use Illuminate\Http\Request;
 use App\Models\Commande;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Input;
 
 class ContactMessageController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactMessageController extends Controller
 
     public function store(Request $request) {
 
-        $ontact = Contact::create(Input::all());
+        $contact = Contact::create(Input::all());
 
         //dd($request->all());
         $this->validate($request, [

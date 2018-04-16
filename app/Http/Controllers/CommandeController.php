@@ -25,7 +25,5 @@ class CommandeController extends Controller
     {
         $commande = Commande::create(Input::all());
         return redirect()->back()->with('flash_message', 'Commande ajouté');
-
     }
-
 }
