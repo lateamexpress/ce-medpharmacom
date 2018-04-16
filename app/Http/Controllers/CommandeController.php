@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Models\Commande;
 
 class CommandeController extends Controller
@@ -18,6 +19,12 @@ class CommandeController extends Controller
         return view('client/commande',[
             'commande' => $commande,
         ]);
+    }
+
+    public function ajoutCommande()
+    {
+        $commande = Commande::create(Input::all());
+        return 'Commande ajouté';
     }
 
 }
