@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Mail;
 use Illuminate\Http\Request;
+use App\Models\Commande;
+use App\Models\Contact;
 
 class ContactMessageController extends Controller
 {
@@ -12,6 +14,9 @@ class ContactMessageController extends Controller
     }
 
     public function store(Request $request) {
+
+        $ontact = Contact::create(Input::all());
+
         //dd($request->all());
         $this->validate($request, [
            'name' => 'required',

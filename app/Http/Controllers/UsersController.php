@@ -10,7 +10,8 @@ class UsersController extends Controller
     public function insertUsers()
     {
         $utilisateur = Utilisateur::create(Input::all());
-        return 'Utilisateur ajouté';
+        return redirect()->back()->with('flash_message', 'Utilisateur ajouté');
+
     }
 
     public function index() {
