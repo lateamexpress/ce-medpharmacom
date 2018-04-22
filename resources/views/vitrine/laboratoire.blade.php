@@ -31,11 +31,15 @@
                         <div class="col s4 m4 mt50">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="{{ $labo['ref_id_image'] }}">
-                                    <span class="card-title">{{ $labo['nom'] }}</span>
+                                    @isset($labo['ref_id_image'])
+                                        <img src="{{ $labo['ref_id_image'] }}">
+                                        <span class="card-title">{{ $labo['nom'] }}</span>
+                                        @else
+                                        <img src="http://materializecss.com/images/sample-1.jpg">
+                                        <span class="card-title">{{ $labo['nom'] }}</span>
+                                    @endisset
                                 </div>
                                 <div class="card-content">
-                                    <p>{{ $labo['nom'] }}</p>
                                     <ul>
                                         <li>Tél : {{ $labo['tel'] }}</li>
                                         <li>FAX : {{ $labo['fax'] }}</li>
@@ -43,7 +47,11 @@
                                     </ul>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#">Lien laboratoire</a>
+                                    @isset($labo['site'])
+                                        <a href="{{ $labo['site'] }}">Lien laboratoire</a>
+                                        @else
+                                        <a href="#">Lien laboratoire</a>
+                                    @endisset
                                 </div>
                             </div>
                         </div>
