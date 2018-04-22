@@ -10,7 +10,7 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class Contact
+ * Class Image
  *
  * @property int $id_image
  * @property string $lien
