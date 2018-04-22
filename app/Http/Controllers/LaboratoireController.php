@@ -12,15 +12,16 @@ class LaboratoireController extends Controller
         return view('vitrine.laboratoire');
     }
 
-    public function filtre($slug)
+    public function filtre(Request $request)
     {
+        $this->validate($request, [
+            'laboratoire' => 'required'
+        ]);
+
+        $slug = $request->all()['laboratoire'];
         $slug = strtoupper($slug);
 
         $laboratoire = Laboratoire::where('nom', 'like', '%'. $slug .'%')->get();
-
-        return view('vitrine.laboratoire',[
-            'laboratoire' => $laboratoire,
-        ]);
-
+        return view('vitrine.laboratoire')->with('laboratoire', $laboratoire);
     }
 }

@@ -22,7 +22,11 @@ Route::get('/equivalence-generique', 'EquivalencegeneriqueController@index');
 Route::post('/equivalence-generique/medicament/{slug}', 'EquivalencegeneriqueController@filtreMedicament');
 Route::post('/equivalence-generique/generique/{slug}', 'EquivalencegeneriqueController@filtreGenerique');
 Route::get('/laboratoire', 'LaboratoireController@index');
-Route::post('/laboratoire/{slug}', 'LaboratoireController@filtre');
+
+Route::post('/laboratoire', [
+    'as' => 'laboratoire.store',
+    'uses' => 'LaboratoireController@filtre'
+]);
 
 /*
 Route::get('/contact',function(){
