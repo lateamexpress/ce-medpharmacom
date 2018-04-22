@@ -13,18 +13,30 @@ class EquivalencegeneriqueController extends Controller
         return view("vitrine.equivalence-generique");
     }
 
-    public function filtreMedicament($slug)
+    public function filtreMedicament(Request $request)
     {
+        $this->validate($request, [
+            'equivalence-generique' => 'required'
+        ]);
+
+        $slug = $request->all()['equivalence-generique'];
         $slug = strtoupper($slug);
+
         $medicament = Medicament::where('actif', 'like', '%'. $slug .'%')->get();
         return view("vitrine.equivalence-generique",[
             'medicament' => $medicament,
         ]);
     }
 
-    public function filtreGenerique($slug)
+    public function filtreGenerique(Request $request)
     {
+        $this->validate($request, [
+            'equivalence-generique' => 'required'
+        ]);
+
+        $slug = $request->all()['equivalence-generique'];
         $slug = strtoupper($slug);
+
         $generique = Generique::where('actif', 'like', '%'. $slug .'%')->get();
         return view("vitrine.equivalence-generique",[
             'generique' => $generique,
