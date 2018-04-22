@@ -16,7 +16,7 @@ class EquivalencegeneriqueController extends Controller
     public function filtreMedicament($slug)
     {
         $slug = strtoupper($slug);
-        $medicament = Laboratoire::where('actif', 'like', '%'. $slug .'%')->get();
+        $medicament = Medicament::where('actif', 'like', '%'. $slug .'%')->get();
         return view("vitrine.equivalence-generique",[
             'medicament' => $medicament,
         ]);
@@ -25,7 +25,7 @@ class EquivalencegeneriqueController extends Controller
     public function filtreGenerique($slug)
     {
         $slug = strtoupper($slug);
-        $generique = Laboratoire::where('actif', 'like', '%'. $slug .'%')->get();
+        $generique = Generique::where('actif', 'like', '%'. $slug .'%')->get();
         return view("vitrine.equivalence-generique",[
             'generique' => $generique,
         ]);

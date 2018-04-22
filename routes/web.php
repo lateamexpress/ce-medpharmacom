@@ -21,7 +21,6 @@ Route::get('/news',function(){
 Route::get('/equivalence-generique', 'EquivalencegeneriqueController@index');
 Route::post('/equivalence-generique/medicament/{slug}', 'EquivalencegeneriqueController@filtreMedicament');
 Route::post('/equivalence-generique/generique/{slug}', 'EquivalencegeneriqueController@filtreGenerique');
-Route::post('/equivalence-generique/{slug}', 'EquivalencegeneriqueController@filtre');
 Route::get('/laboratoire', 'LaboratoireController@index');
 Route::post('/laboratoire/{slug}', 'LaboratoireController@filtre');
 
