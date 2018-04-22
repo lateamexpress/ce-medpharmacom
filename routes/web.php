@@ -18,10 +18,7 @@ Route::get('/news',function(){
     return view("vitrine.news");
 });
 
-Route::get('/equivalence-generique',function(){
-    return view("vitrine.equivalence-generique");
-});
-
+Route::get('/equivalence-generique', 'GeneriqueController@index');
 Route::get('/laboratoire', 'LaboratoireController@index');
 Route::post('/laboratoire/{slug}', 'LaboratoireController@filtre');
 
