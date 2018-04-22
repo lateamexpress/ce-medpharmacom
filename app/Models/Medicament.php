@@ -47,9 +47,9 @@ class Medicament extends Eloquent
     ];
 
     protected $fillable = [
-        '$cip7',
-        '$title',
-        '$ref_id_image',
+        'cip7',
+        'title',
+        'ref_id_image',
         'ref_id_labo',
         'classe',
         'actif',
