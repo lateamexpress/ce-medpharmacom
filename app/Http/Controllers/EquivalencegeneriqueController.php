@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Generique;
 
-class GeneriqueController extends Controller
+class EquivalencegeneriqueController extends Controller
 {
     public function index()
     {

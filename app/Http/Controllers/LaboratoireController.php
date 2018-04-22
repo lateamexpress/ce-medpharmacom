@@ -9,15 +9,18 @@ class LaboratoireController extends Controller
 {
     public function index()
     {
-        $laboratoire = Laboratoire::all();
-
-        return view('vitrine.laboratoire',[
-            'laboratoire' => $laboratoire,
-        ]);
+        return view('vitrine.laboratoire');
     }
 
     public function filtre($slug)
     {
+        $slug = strtoupper($slug);
+
+        $laboratoire = Laboratoire::where('nom', 'like', '%'. $slug .'%')->get();
+
+        return view('vitrine.laboratoire',[
+            'laboratoire' => $laboratoire,
+        ]);
 
     }
 }
