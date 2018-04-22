@@ -15,11 +15,12 @@
 @section('contenu-container')
     <div class="row">
         <div class="offset-l2 col m12 s12 l7" style="margin-top: 75px; margin-bottom: 50vh;">
-            <form method="POST">
+            <form method="post" action="{{ route('laboratoire') }}">
+                {{ csrf_field() }}
                 <div class="input-field col s12 card-search">
                     <i class="material-icons prefix">search</i>
-                    <input id="equivalence-generique" type="text" class="validate">
-                    <label for="equivalence-generique">Rechercher les laboratoires</label>
+                    <input name="laboratoire" id="laboratoire" :name="laboratoire" type="text" class="validate">
+                    <label for="laboratoire">Rechercher les laboratoires</label>
                     <div class="btn-laboratoire">
                         <button type="submit" class="waves-effect waves-light btn">Afficher les résultats</button>
                     </div>
