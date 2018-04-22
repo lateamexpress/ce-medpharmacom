@@ -12,7 +12,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 /**
  * Class Contact
  * 
- * @property int id_contact
+ * @property int $id_contact
  * @property string $adresse
  * @property string $cp
  * @property string $ville
