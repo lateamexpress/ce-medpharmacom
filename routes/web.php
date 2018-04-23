@@ -19,6 +19,9 @@ Route::get('/news',function(){
 });
 
 Route::get('/equivalence-generique', 'EquivalencegeneriqueController@index');
+
+/*
+
 Route::post('/equivalence-generique/medicament', [
     'uses' => 'EquivalencegeneriqueController@filtreMedicament',
     'as' => 'equivalence-medicament.store'
@@ -27,6 +30,18 @@ Route::post('/equivalence-generique/generique', [
     'uses' => 'EquivalencegeneriqueController@filtreGenerique',
     'as' => 'equivalence-generique.store'
 ]);
+
+*/
+
+Route::post('/equivalence-generique', [
+    'uses' => 'EquivalencegeneriqueController@filtreMedicament',
+]);
+Route::post('/equivalence-generique', [
+    'uses' => 'EquivalencegeneriqueController@filtreMedicament',
+]);
+
+
+
 Route::get('/laboratoire', 'LaboratoireController@index');
 
 Route::post('/laboratoire', [

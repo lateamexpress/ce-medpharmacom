@@ -15,15 +15,15 @@
 @section('contenu-container')
     <div class="row">
         <div class="offset-l2 col m12 s12 l7" style="margin-top: 75px; margin-bottom: 50vh;">
-            <form method="post" action="{{ route('equivalence-medicament.store') }}">
+            <form method="post" action="{{ url('equivalence-generique')}}">
                 {{ csrf_field() }}
                 <div class="input-field col s12 card-search">
                     <i class="material-icons prefix">search</i>
                     <input id="equivalence-generique" name="equivalence-generique" type="text" class="validate">
                     <label for="equivalence-generique">Equivalence générique</label>
                     <div class="btn-equivalence-generique">
-                        <button type="submit" class="waves-effect waves-light btn">Afficher le générique</button>
-                        <button type="submit" class="waves-effect waves-light btn">Afficher le médicament</button>
+                        <input type="submit" name="Generique" class="waves-effect waves-light btn" value="Generique"/>
+                        <input type="submit" name="Medicament" class="waves-effect waves-light btn" value="Medicament"/>
                     </div>
                 </div>
                 <div class="row">
