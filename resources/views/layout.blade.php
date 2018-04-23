@@ -29,6 +29,7 @@
                     <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu"/>
                 </a>
                 <ul id="nav-mobile" class="left">
+                    <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
                     <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
                     <li class="li-menu"><a href="{{ url('formation') }}">Formation</a></li>
                     <li class="li-menu"><a href="{{ url('news') }}">Actualités</a></li>

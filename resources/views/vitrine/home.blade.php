@@ -152,14 +152,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Découpage à faire -->
-                    <div class="col s6 mt50">
-                        <img src="{{ asset('img/12.PNG') }}"/>
-                    </div>
-                    <div class="col s6">
-                        <img src="{{ asset('img/14.PNG') }}"/>
-                    </div>
-                    <!-- Découpage à faire -->
                 </div>
             </div>
             <div class="row no-mb">
@@ -171,33 +163,6 @@
                 </div>
             </div>
         </div>
-    {{-- TO DO RESPONSIVE LOGO
-    <div class="row">
-        <div class="col s12 row-logo">
-            <div class="col s1">
-                <img class="responsive-img logo-sante" src="{{ asset('img/cpam-logo.png') }}" alt="assurance-maladie-logo" title="assurance-maladie-logo"/>
-            </div>
-            <div class="col s1">
-                <img class="responsive-img logo-sante" src="{{ asset('img/ansm.png') }}" alt="ansm-logo" title="ansm-logo"/>
-            </div>
-            <div class="col s1">
-                <img class="responsive-img logo-sante" src="{{ asset('img/ministere.png') }}" alt="ministere-logo" title="ministere-logo"/>
-            </div>
-            <div class="col s1">
-                <img class="responsive-img logo-sante" src="{{ asset('img/cpam-logo.png') }}" alt="assurance-maladie-logo" title="assurance-maladie-logo"/>
-            </div>
-        </div>
-    </div>
-    --}}
-
-        {{--
-    @foreach($datas as $new) {
-
-        {{ $new }}
-    }
-    @endforeach
-
-    --}}
 @endsection
 
 @section('specific-js')
