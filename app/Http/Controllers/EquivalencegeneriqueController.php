@@ -13,7 +13,7 @@ class EquivalencegeneriqueController extends Controller
         return view("vitrine.equivalence-generique");
     }
 
-    public function filtreMedicament(Request $request)
+    public function filtreMedicamentGenerique(Request $request)
     {
         $this->validate($request, [
             'equivalence-generique' => 'required'
@@ -29,42 +29,17 @@ class EquivalencegeneriqueController extends Controller
 
         array_push($submitArray, $submitGenerique, $submitMedicament);
 
-        var_dump($submitArray);
-
-        foreach($submitArray as $key => $val) {
-            var_dump($key);
-            switch ($key) {
-                // Medic
-                case 'Medicament':
-                    $medicament = Medicament::where('actif', 'like', '%'. $slug .'%')->get();
-                    return view("vitrine.equivalence-generique",[
-                        'medicament' => $medicament,
-                    ]);
-                    break;
-                // Generic
-                case 'Generique':
-                    $generique = Generique::where('actif', 'like', '%'. $slug .'%')->get();
-                    return view("vitrine.equivalence-generique",[
-                        'generique' => $generique,
-                    ]);
-                    break;
-                default:
-                    var_dump('Error');
-                    break;
-
-            }
+        if($submitArray[0] == 'Generique') {
+            $generique = Generique::where('actif', 'like', '%'. $slug .'%')->get();
+            return view("vitrine.equivalence-generique",[
+                'generique' => $generique,
+            ]);
         }
-
-    }
-
-
-    public function filtreGenerique(Request $request)
-    {
-        $this->validate($request, [
-            'equivalence-generique' => 'required'
-        ]);
-
-        $slug = $request->all()['equivalence-generique'];
-        $slug = strtoupper($slug);
+        elseif ($submitArray[1] == 'Medicament') {
+            $medicament = Medicament::where('actif', 'like', '%'. $slug .'%')->get();
+            return view("vitrine.equivalence-generique",[
+                'medicament' => $medicament,
+            ]);
+        }
     }
 }
