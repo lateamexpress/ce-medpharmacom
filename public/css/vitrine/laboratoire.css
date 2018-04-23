@@ -218,4 +218,17 @@ h1 {
   right: 10px;
 }
 
+.card {
+  height: 80%;
+}
+
+.card .card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .card-content {
+  height: 170px;
+}
+
 /*# sourceMappingURL=laboratoire.css.map */

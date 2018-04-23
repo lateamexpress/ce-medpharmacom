@@ -22,14 +22,14 @@
                     <input id="equivalence-generique" name="equivalence-generique" type="text" class="validate">
                     <label for="equivalence-generique">Equivalence générique</label>
                     <div class="btn-equivalence-generique">
-                        <input type="submit" name="Generique" class="waves-effect waves-light btn" value="Generique"/>
-                        <input type="submit" name="Medicament" class="waves-effect waves-light btn" value="Medicament"/>
+                        <input type="submit" id="Generique" name="Generique" class="waves-effect waves-light btn" value="Generique"/>
+                        <input type="submit" id="Medicament" name="Medicament" class="waves-effect waves-light btn" value="Medicament"/>
                     </div>
                 </div>
                 <div class="row">
                     @isset($medicament)
                         @foreach ($medicament as $med)
-                            <div class="col s3 m3 mt50">
+                            <div class="col s12 l3 m4 mt50">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="http://saint-andre-d-olerargues.com/wpdossier/wp-content/uploads/2015/03/paracetamole.jpg">
@@ -45,7 +45,7 @@
                     @endisset
                     @isset($generique)
                             @foreach ($generique as $gen)
-                                <div class="col s3 m3 mt50">
+                                <div class="col s12 m4 l3 mt50">
                                     <div class="card">
                                         <div class="card-image">
                                             <img src="http://saint-andre-d-olerargues.com/wpdossier/wp-content/uploads/2015/03/paracetamole.jpg">

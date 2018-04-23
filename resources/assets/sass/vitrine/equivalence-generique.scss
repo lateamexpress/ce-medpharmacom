@@ -10,3 +10,21 @@
     right: 10px;
   }
 }
+
+.card {
+  height: 35vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 600px){
+  .card {
+    height: 100%;
+  }
+}
+
+
+@media screen and (max-width: 339px){
+  .btn {
+    width: 48%;
+  }
+}

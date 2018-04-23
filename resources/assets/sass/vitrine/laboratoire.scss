@@ -10,3 +10,14 @@
     right: 10px;
   }
 }
+
+.card {
+  height: 80%;
+  .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-content {
+    height: 170px;
+  }
+}

@@ -28,7 +28,7 @@
                 <div class="row">
                 @isset($laboratoire)
                     @foreach ($laboratoire as $labo)
-                        <div class="col s4 m4 mt50">
+                        <div class="col s12 l4 mt50">
                             <div class="card">
                                 <div class="card-image">
                                     @isset($labo['ref_id_image'])
