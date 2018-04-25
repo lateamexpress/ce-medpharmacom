@@ -43,26 +43,76 @@
   display: none;
 }
 // responsive
+
+#logo-home-pc:hover {
+  background: transparent;
+}
+
 @media screen and (max-width: 1420px) {
-  #nav-mobile {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1050px) {
-  #nav-mobile {
-    width: 75%;
-  }
-}
-@media screen and (max-width: 921px) {
   #nav-mobile {
     width: 85%;
   }
+  .li-menu a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 937px){
   #nav-mobile {
     width: 100%;
   }
 }
+
+@media screen and (min-width: 665px) {
+  #logo-medpharmacom-menu-pc {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #logo-medpharmacom-menu-pc {
+    display: none;
+  }
+  #logo-medpharmacom-menu {
+    display: block;
+    width: 30%;
+  }
+  .button-collapse-side {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+  #nav-mobile .li-menu:not(#burger-menu) {
+    display: none;
+  }
+  .button-collapse-side {
+    top: -40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #logo-medpharmacom-menu {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .button-collapse-side {
+    top: -48px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #logo-medpharmacom-menu {
+    width: 55%;
+  }
+  .button-collapse-side {
+    top: -50px;
+  }
+}
+
 @media screen and (max-width: 687px) {
   #logo-medpharmacom-menu {
     display: block;

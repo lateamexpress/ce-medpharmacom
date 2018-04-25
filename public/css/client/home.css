@@ -2,6 +2,18 @@
   position: relative;
 }
 
+.btn-network {
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+}
+
+.fa-linkedin:before {
+  position: relative;
+  top: -7px;
+}
+
 .divider-custom {
   margin-left: auto;
   margin-right: auto;
@@ -125,27 +137,72 @@ h1 {
   display: none;
 }
 
+#logo-home-pc:hover {
+  background: transparent;
+}
+
 @media screen and (max-width: 1420px) {
-  #nav-mobile {
-    width: 70%;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  #nav-mobile {
-    width: 75%;
-  }
-}
-
-@media screen and (max-width: 921px) {
   #nav-mobile {
     width: 85%;
   }
+  .li-menu a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 937px) {
   #nav-mobile {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 665px) {
+  #logo-medpharmacom-menu-pc {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #logo-medpharmacom-menu-pc {
+    display: none;
+  }
+  #logo-medpharmacom-menu {
+    display: block;
+    width: 30%;
+  }
+  .button-collapse-side {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+  #nav-mobile .li-menu:not(#burger-menu) {
+    display: none;
+  }
+  .button-collapse-side {
+    top: -40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #logo-medpharmacom-menu {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .button-collapse-side {
+    top: -48px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #logo-medpharmacom-menu {
+    width: 55%;
+  }
+  .button-collapse-side {
+    top: -50px;
   }
 }
 
@@ -192,6 +249,51 @@ h1 {
   .button-collapse-side {
     top: -40px;
   }
+}
+
+.panel-home {
+  height: 100px;
+  border: 1px solid #EEEEEE;
+  margin-top: 100px;
+  background: #26A69A;
+  color: #FFFFFF;
+}
+
+.panel-home:hover {
+  cursor: pointer;
+}
+
+.panel-home a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+}
+
+#last-selection {
+  margin-top: 100px;
+}
+
+#header-home {
+  padding: 5px;
+  text-align: center;
+}
+
+.partners-img img {
+  width: 200px;
+  height: auto;
+}
+
+.card-right #header-card {
+  background: #EEEEEE;
+  margin-top: 100px;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  height: 50px;
 }
 
 /*# sourceMappingURL=home.css.map */

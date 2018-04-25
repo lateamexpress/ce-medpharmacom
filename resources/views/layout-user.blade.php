@@ -5,6 +5,7 @@
     <title>@yield('titre')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('specific-css')
 </head>
@@ -27,6 +28,7 @@
                 <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
             </a>
             <ul id="nav-mobile" class="left">
+                <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
@@ -70,6 +72,7 @@
         <div class="footer-copyright grey darken-4">
             <div class="container">
                 © 2018 Copyright Medpharmacom.fr
+                <a class="waves-effect waves-light btn btn-network" style="float: right;" href="https://fr.linkedin.com/company/medpharmacom"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
         <!-- Authors :
