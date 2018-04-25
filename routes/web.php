@@ -10,59 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/formation',function(){
-    return view("vitrine.formation");
-});
 
-Route::get('/news',function(){
-    return view("vitrine.news");
-});
-
-Route::get('/equivalence-generique', 'EquivalencegeneriqueController@index');
-
-Route::post('/equivalence-generique', [
-    'uses' => 'EquivalencegeneriqueController@filtreMedicamentGenerique',
-]);
-Route::post('/equivalence-generique', [
-    'uses' => 'EquivalencegeneriqueController@filtreMedicamentGenerique',
-]);
-
-
-
-Route::get('/laboratoire', 'LaboratoireController@index');
-
-Route::post('/laboratoire', [
-    'as' => 'laboratoire.store',
-    'uses' => 'LaboratoireController@filtre'
-]);
-
-/*
-Route::get('/contact',function(){
-    return view("vitrine.contact");
-});
-*/
-
-Route::get('/contact', [
-    'uses' => 'ContactMessageController@create'
-]);
-
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@store',
-    'as' => 'contact.store'
-]);
 
 Route::auth();
 
 Route::group(["middleware" => "auth"],function(){
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-    
     Route::get('/check-role','Controller@index');
-
-    // rss testing
-    Route::get('/news', 'HomeController@index');
-
-    Route::get('/', 'HomeController@returnView');
-    
+    Route::get('/', function()
+    {
+        return view('admin/admin');
+    });
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){
         /* ADMIN (toutes les routes admin ici)*/
         Route::get('/', function()
@@ -76,10 +34,6 @@ Route::group(["middleware" => "auth"],function(){
 
         Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
 
-        Route::get('/gestion-equivalences', 'GestionController@equivalences');
-
-        Route::get('/gestion-laboratoires', 'GestionController@laboratoires');
-
         Route::get('/gestion-visiteurs', 'GestionController@visiteurs');
 
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
@@ -91,6 +45,7 @@ Route::group(["middleware" => "auth"],function(){
 
     Route::group(["middleware" =>"users"],function(){
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
+        Route::get('/', 'HomeController@returnView');
         Route::get('/catalogue', 'CatalogueController@index');
         Route::get('/catalogue/{id}', 'CatalogueController@produitAll');
         Route::get('/mon-compte', 'UsersController@index');

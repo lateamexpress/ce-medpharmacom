@@ -30,31 +30,31 @@
         </div>
         <ul class="collapsible" data-collapsible="accordion" id="vertical-menu">
             <li class="vertical-menu-item">
-               <a href="{{ url('gestion-centres') }}"><i class="material-icons">school</i> Gestion des centres de formation</a>
+               <a href="{{ url('admin/gestion-centres') }}"><i class="material-icons">school</i> Gestion des centres de formation</a>
             </li>
             <li class="vertical-menu-item">
-               <a href="{{ url('gestion-commandes') }}"><i class="material-icons">shopping_cart</i> Gestion des commandes</a>
+               <a href="{{ url('admin/gestion-commandes') }}"><i class="material-icons">shopping_cart</i> Gestion des commandes</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-encarts-publicitaires') }}"><i class="material-icons">library_add</i> Gestion des encarts publicitaires</a>
+                <a href="{{ url('admin/gestion-encarts-publicitaires') }}"><i class="material-icons">library_add</i> Gestion des encarts publicitaires</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-equivalences') }}"><i class="material-icons">healing</i> Gestion des équivalences génériques</a>
+                <a href="{{ url('admin/gestion-equivalences') }}"><i class="material-icons">healing</i> Gestion des équivalences génériques</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-laboratoires') }}"><i class="material-icons">donut_small</i> Gestion des laboratoires</a>
+                <a href="{{ url('admin/gestion-laboratoires') }}"><i class="material-icons">donut_small</i> Gestion des laboratoires</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-visiteurs')}}"><i class="material-icons">people</i> Gestion du nombre de visiteurs</a>
+                <a href="{{ url('admin/gestion-visiteurs')}}"><i class="material-icons">people</i> Gestion du nombre de visiteurs</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-partenaires')}}"><i class="material-icons">group_add</i> Gestion des partenaires</a>
+                <a href="{{ url('admin/gestion-partenaires')}}"><i class="material-icons">group_add</i> Gestion des partenaires</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-produits')}}"><i class="material-icons">add_shopping_cart</i> Gestion des produits</a>
+                <a href="{{ url('admin/gestion-produits')}}"><i class="material-icons">add_shopping_cart</i> Gestion des produits</a>
             </li>
             <li class="vertical-menu-item">
-                <a href="{{ url('gestion-utilisateurs')}}"><i class="material-icons">person_pin</i> Gestion des utilisateurs</a>
+                <a href="{{ url('admin/gestion-utilisateurs')}}"><i class="material-icons">person_pin</i> Gestion des utilisateurs</a>
             </li>
             <li class="vertical-menu-item">
                 <a href="{{ url('logout')}}"><i class="material-icons">sync_disabled</i> Se déconnecter</a>
