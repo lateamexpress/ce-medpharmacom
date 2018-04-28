@@ -6,29 +6,124 @@
 
 @section('specific-css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/client/catalogue.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/client/nouislider.css') }}">
 @endsection
 
 @section('contenu')
     <div class="row">
         <div class="block-filter-products">
-            <h2 class="h2-catalog center-align">Filter by :</h2>
-            <div class="divider-custom"></div>
-            <div class="block-filter-products-inputs">
-                <input type="search" placeholder="Name">
-                <input type="checkbox" id="ascending-price" name="price">
-                <label for="ascending-price">
-                    Prix croissant
-                </label>
-                <input type="checkbox" id="decreasing-price" name="price">
-                <label for="decreasing-price">
-                    Prix décroissant
-                </label>
+            <div id="header-filter-products">
+                <h2 class="h2-catalog center-align">Filtres de recherche</h2>
+                <div class="block-filter-products-inputs">
+                    <h3>Gamme</h3>
+                    <div id="gamme-prix"></div>
+                    <h3>Catégorie</h3>
+                    <div class="input-field col s12" style="margin-top: 0;">
+                        <select multiple>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <h3>Sous-catégorie</h3>
+                    <div class="input-field col s12" style="margin-top: 0;">
+                        <select multiple>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <h3>Marque</h3>
+                    <div class="input-field col s12" style="margin-top: 0;">
+                        <select multiple>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <h3>Référence</h3>
+                    <input type="text">
+                    <h3>Mots clefs</h3>
+                    <div class="chips chips-autocomplete"></div>
+                    <div class="center-align mb10"><button class="btn btn-waves">Rechercher</button></div>
+                </div>
             </div>
         </div>
     </div>
 @endsection
 
 @section('contenu-container')
+    <div style="min-height: 80vh; margin-top: 100px;">
+        <div id="block-tendances-header">
+            <h1 class="center-align">Les articles tendances</h1>
+        </div>
+        <div id="block-tendances-content" class="center-align">
+            <div class="row">
+                <div class="col l4 s12">
+                    <h1 class="marque-produit">Apple</h1>
+                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
+                    <br>
+                    <a href="{{ url('produit') }}"><img src="https://i2.cdscdn.com/pdt2/7/0/2/1/300x300/app3700942925702/rw/apple-iphone-5c-rose-8go.jpg"/></a>
+                </div>
+                <div class="col l4 s12">
+                    <h1 class="marque-produit">Moulinex</h1>
+                    <span class="nom-produit">CE55800</span>
+                    <br>
+                    <img src="https://www.media-rdc.com/medias/dc61702f7af3330091ccb1c496969d40/p_300x300/fe260ced833c356ba44faf1857e8aec6.png"/>
+                </div>
+                <div class="col l4 s12">
+                    <h1 class="marque-produit">Samsung</h1>
+                    <span class="nom-produit">Galaxy S8 argent artique</span>
+                    <br>
+                    <img src="https://www.media-rdc.com/medias/3600ed1ee51137479867dab73bd5b4b2/p_300x300/sm-g950f-galaxys8-noir.jpg"/>
+                </div>
+            </div>
+        </div>
+        <div id="block-tendances-header" class="mt50">
+            <h1 class="center-align">Les nouveautés</h1>
+        </div>
+        <div id="block-tendances-content" class="center-align mb50">
+            <div class="row">
+                <div class="col l2 s12">
+                    <h1 class="marque-produit">Apple</h1>
+                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
+                    <br><br>
+                    <img src="https://www.materiel.net/live/360387.200.200.jpg"/>
+                </div>
+                <div class="col l2">
+                    <h1 class="marque-produit">Moulinex</h1>
+                    <span class="nom-produit">CE55800</span>
+                    <br><br>
+                    <img src="https://imtc.qccdn.fr/test/robot-cuiseur/produit/moulinex-cuisine-companion-hf800a10_001.jpg"/>
+                </div>
+                <div class="col l2 s12">
+                    <h1 class="marque-produit">Samsung</h1>
+                    <span class="nom-produit">Galaxy S8 argent artique</span>
+                    <br><br>
+                    <img src="https://i2.cdscdn.com/pdt2/6/3/5/1/200x200/sam8806088709635/rw/samsung-galaxy-s8-plus-64go-noir.jpg"/>
+                </div>
+                <div class="col l2 s12">
+                    <h1 class="marque-produit">Apple</h1>
+                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
+                    <br>
+                    <img src="https://www.materiel.net/live/360387.200.200.jpg"/>
+                </div>
+                <div class="col l2 s12">
+                    <h1 class="marque-produit">Jeu PC</h1>
+                    <span class="nom-produit">FIFA 18</span>
+                    <br><br>
+                    <img src="https://apollo-ireland.akamaized.net/v1/files/mzgyjofxxk801-KE/image;s=200x0"/>
+                </div>
+                <div class="col l2 s12">
+                    <h1 class="marque-produit">Samsung</h1>
+                    <span class="nom-produit">Galaxy S8 argent artique</span>
+                    <br><br>
+                    <img src="https://i2.cdscdn.com/pdt2/6/3/5/1/200x200/sam8806088709635/rw/samsung-galaxy-s8-plus-64go-noir.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
     <div class="row no-mb">
         <div class="col s12">
             <div class="relative">
@@ -212,10 +307,13 @@
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
         </ul>
     </div>
+    -->
 @endsection
 
 @section('specific-js')
     <script src="{{ asset('js/client/catalogue.js') }}"></script>
+    <script src="{{ asset('js/client/nouislider.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.min.js"></script>
     <script>
         $(function(){
             // Début AJAX
@@ -230,6 +328,28 @@
                 },
                 error: function (result, status, error) {
                     
+                }
+            });
+
+            var slider = document.getElementById('gamme-prix');
+            noUiSlider.create(slider, {
+                start: [20, 80],
+                connect: true,
+                step: 1,
+                orientation: 'horizontal',
+                range: {
+                    'min': 0,
+                    'max': 100
+                },
+            });
+            $('.chips-autocomplete').material_chip({
+                autocompleteOptions: {
+                    data: {
+                        'Apple': null,
+                        'Microsoft': null,
+                        'Google': null
+                    },
+                    limit: 3
                 }
             });
         });

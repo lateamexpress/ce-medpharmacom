@@ -1,4 +1,5 @@
 $(function () {
+    $('select').material_select();
     $('.materialboxed').materialbox();
     let nbPointList = [];
     $('.nb-point').each((index, elem) => {

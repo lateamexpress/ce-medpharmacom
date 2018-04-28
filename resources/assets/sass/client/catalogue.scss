@@ -9,6 +9,21 @@
     margin: 0;
   }
 }
+#block-tendances-header {
+  border: 1px solid #dddddd;
+  background: $turquoise;
+  color: $white;
+}
+#block-tendances-content {
+  border: {
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    top: 0px;
+    color: #DDDDDD;
+    style: solid;
+  }
+}
 .block-produits:hover {
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
@@ -29,13 +44,23 @@
   font-size: 18px;
   font-weight: 700;
 }
+h3 {
+  font-size: 14px;
+}
+.block-filter-products-inputs {
+  margin:{
+    left: 15px;
+    right: 15px;
+  }
+}
 .block-filter-products {
-  border: 1px solid #dddddd;
-  height: 400px;
+  @extend .shadow-cards;
+  height: auto;
   position: fixed;
-  top: 20%;
+  top:10%;
   left: 1.5%;
   width: 13%;
+  background: #fefefe;
 }
 .quantity-text::before {
   content: 'Quantité : ';
@@ -66,12 +91,6 @@
 .pagination {
   .active {
     background-color: #26a69a !important;
-  }
-}
-.block-filter-products-inputs {
-  margin-left: 20%;
-  input[type=search] {
-    width: 70%;
   }
 }
 .command {
