@@ -17,35 +17,21 @@ Route::auth();
 Route::group(["middleware" => "auth"],function(){
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('/check-role','Controller@index');
-    Route::get('/', function()
-    {
-        return view('admin/admin');
-    });
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){
         /* ADMIN (toutes les routes admin ici)*/
-        Route::get('/', function()
-        {
-            return view('admin/admin');
-        });
-
+        Route::get('/admin', 'HomeController@returnSpecificHome');
         Route::get('/gestion-centres', 'GestionController@centres');
-
         Route::get('/gestion-commandes', 'GestionController@commandes');
-
         Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
-
         Route::get('/gestion-visiteurs', 'GestionController@visiteurs');
-
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
-
         Route::get('/gestion-produits', 'GestionController@produits');
-
         Route::get('/gestion-utilisateurs', 'GestionController@utilisateurs');
     });
 
     Route::group(["middleware" =>"users"],function(){
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
-        Route::get('/', 'HomeController@returnView');
+        Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/catalogue', 'CatalogueController@index');
         Route::get('/catalogue/{id}', 'CatalogueController@produitAll');
         Route::get('/mon-compte', 'UsersController@index');

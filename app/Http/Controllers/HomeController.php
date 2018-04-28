@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    // testing affichage
-
-    public function returnView() {
-        return view('client/home');
+    public function returnSpecificHome() {
+        $user = Auth::user();
+        if($user['role'] == 'users') {
+            return view('client/home');
+        }
+        elseif($user['role'] == 'admin') {
+            return view('admin/admin');
+        }
     }
 }
