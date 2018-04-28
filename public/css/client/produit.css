@@ -279,4 +279,13 @@ h1 {
   }
 }
 
+.description-produit {
+  background: #DDDDDD;
+  padding: 10px;
+}
+
+.point-value {
+  font-size: 30px;
+}
+
 /*# sourceMappingURL=produit.css.map */
