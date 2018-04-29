@@ -33,7 +33,7 @@ Route::group(["middleware" => "auth"],function(){
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/produit/{id]', 'ProduitController@index');
-        Route::get('/catalogue', 'CatalogueController@index');
+        Route::get('/catalogue', 'CatalogueController@produitAll');
         Route::get('/catalogue/{id}', 'CatalogueController@produitAll');
         Route::get('/mon-compte', 'UsersController@index');
         Route::post('/mon-compte/ajout', 'UsersController@insertUsers');

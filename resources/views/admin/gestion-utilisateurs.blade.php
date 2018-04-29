@@ -67,9 +67,9 @@
                 <div id="modal2" class="modal">
                     <div class="modal-content">
                         <h4>Modification d'un utilisateur</h4>
-                        <div class="input-field col s6 offset-s6">
+                        <div class="input-field col l6 offset-l6 s12">
                             <input type="text" id="user-update" name="user-update" class="autocomplete">
-                            <label for="user-update">Rechercher un utilisateur</label>
+                            <label for="user-update">Rechercher...</label>
                         </div>
                         <div class="input-field col l6 s12 mt20">
                             <input id="prenom" name="prenom" type="text" class="validate">
@@ -113,9 +113,9 @@
                 <div id="modal3" class="modal">
                     <div class="modal-content">
                         <h4>Suppression d'un utilisateur</h4>
-                        <div class="input-field col s6 offset-s6">
+                        <div class="input-field col l6 offset-l6 s12">
                             <input type="text" id="user-delete" name="user-delete" class="autocomplete">
-                            <label for="user-delete">Rechercher un utilisateur</label>
+                            <label for="user-delete">Rechercher...</label>
                         </div>
                         <div class="input-field col l6 s12 mt20">
                             <input id="prenom" name="prenom" type="text" class="validate">
