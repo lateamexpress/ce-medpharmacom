@@ -19,7 +19,7 @@ Route::group(["middleware" => "auth"],function(){
     Route::get('/check-role','Controller@index');
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){
         /* ADMIN (toutes les routes admin ici)*/
-        Route::get('/admin', 'HomeController@returnSpecificHome');
+        Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/gestion-centres', 'GestionController@centres');
         Route::get('/gestion-commandes', 'GestionController@commandes');
         Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
