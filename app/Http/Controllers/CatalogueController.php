@@ -7,11 +7,6 @@ use App\Models\Produit;
 
 class CatalogueController extends Controller
 {
-    public function index()
-    {
-        return view('client/catalogue');
-    }
-
     public function produitAll()
     {
         $catalogue = Produit::all();
