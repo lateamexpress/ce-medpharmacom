@@ -8,6 +8,9 @@ elixir((mix) => {
         .sass([
             'admin/gestion-encarts-publicitaires.scss'
         ], 'public/css/admin/gestion-encarts-publicitaires.css')
+        .sass([
+            'admin/gestion-utilisateurs.scss'
+        ], 'public/css/admin/gestion-utilisateurs.css')
         // Client
         .sass([
             'client/catalogue.scss'

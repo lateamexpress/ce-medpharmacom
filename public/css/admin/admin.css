@@ -118,6 +118,15 @@ h1 {
     width: 200px;
     float: right;
   }
+  #container-admin {
+    width: 100%;
+  }
+  #menu-mobile {
+    display: block;
+  }
+  .settings-pc {
+    display: none;
+  }
 }
 
 #vertical-menu {
@@ -221,18 +230,6 @@ h1 {
   .block-lg, .block-md {
     width: 49% !important;
     margin-left: 0 !important;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  #container-admin {
-    width: 100%;
-  }
-  #menu-mobile {
-    display: block;
-  }
-  .settings-pc {
-    display: none;
   }
 }
 

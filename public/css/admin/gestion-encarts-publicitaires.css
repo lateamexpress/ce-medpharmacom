@@ -118,6 +118,15 @@ h1 {
     width: 200px;
     float: right;
   }
+  #container-admin {
+    width: 100%;
+  }
+  #menu-mobile {
+    display: block;
+  }
+  .settings-pc {
+    display: none;
+  }
 }
 
 #vertical-menu {

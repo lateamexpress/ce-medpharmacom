@@ -1,7 +1,7 @@
 @extends('layout-app')
 
 @section('titre')
-    Formation
+    Gestion encarts publicitaires
 @endsection
 
 @section('specific-css')

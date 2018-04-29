@@ -64,17 +64,6 @@ $height-lg-block: 350px;
     margin-left: 0 !important;
   }
 }
-@media screen and (max-width: 992px) {
-  #container-admin {
-    width: 100%;
-  }
-  #menu-mobile {
-    display: block;
-  }
-  .settings-pc {
-    display: none;
-  }
-}
 @media screen and (max-width: 500px) {
   .block-home {
     width: 100% !important;
