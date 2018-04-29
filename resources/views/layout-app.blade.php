@@ -5,6 +5,7 @@
     <title>@yield('titre')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('specific-css')
 </head>
 <body>
@@ -20,11 +21,11 @@
     </div>
 </div>
 <div class="row no-mb">
-    <div class="col s2 no-pdr no-pdl">
+    <div class="col s2 no-pdr no-pdl" id="menu-left-admin">
         <div id="logo-admin" class="pdb20 pdt20">
             <!-- INSERT LOGO COMPANY -->
             <a href="{{ url('admin') }}">
-                <img src="{{ asset('img/logo-medpharma.png') }}" alt="logo-entreprise" title="logo-entreprise"/>
+                <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
             </a>
             <!-- INSERT LOGO COMPANY -->
         </div>
@@ -61,11 +62,54 @@
             </li>
         </ul>
     </div>
-    <div class="col s10 no-pdl no-pdr">
+    <div class="col s10 no-pdl no-pdr" id="container-admin">
         <nav id="horizontal-menu-dashboard">
             <div class="nav-wrapper">
-                <ul class="right hide-on-med-and-down">
+                <ul id="slide-out" class="side-nav">
+                    <li><div class="user-view">
+                            <div class="background">
+                                <img src="https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?cs=srgb&dl=abstract-art-background-370799.jpg&fm=jpg">
+                            </div>
+                            <a href="#!user"><img class="circle" src="https://n6-img-fp.akamaized.net/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg"></a>
+                            <a href="#!name"><span class="white-text name">John Doe</span></a>
+                            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                        </div></li>
                     <li>
+                        <a href="{{ url('admin/gestion-centres') }}"><i class="material-icons">school</i> Centres de formation</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-commandes') }}"><i class="material-icons">shopping_cart</i> Commandes</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-encarts-publicitaires') }}"><i class="material-icons">library_add</i> Encarts publicitaires</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-equivalences') }}"><i class="material-icons">healing</i> Equivalences génériques</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-laboratoires') }}"><i class="material-icons">donut_small</i> Laboratoires</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-visiteurs')}}"><i class="material-icons">people</i> Nombre de visiteurs</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-partenaires')}}"><i class="material-icons">group_add</i> Partenaires</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-produits')}}"><i class="material-icons">add_shopping_cart</i> Produits</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/gestion-utilisateurs')}}"><i class="material-icons">person_pin</i> Utilisateurs</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('logout')}}"><i class="material-icons">sync_disabled</i> Se déconnecter</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="ml10" id="menu-mobile">
+                        <a href="#" data-activates="slide-out" class="button-collapse"><i style="color: #A5A5A5" class="material-icons">menu</i></a>
+                    </li>
+                    <li class="right">
                         <a class="dropdown-button" href="#!" data-activates="dropdown1">
                             <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/d6/d6bb00249634bb8d1cffafd78b308740e2bf736f_full.jpg" id="avatar-admin" alt="avatar-admin" title="avatar-admin" class="circle">
                             <i class="material-icons right" style="color: #A5A5A5">arrow_drop_down</i>

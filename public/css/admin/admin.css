@@ -140,13 +140,19 @@ h1 {
   box-shadow: 0 3px 2px -2px #A5A5A5;
 }
 
+@media screen and (max-width: 992px) {
+  #menu-left-admin {
+    display: none;
+  }
+}
+
 .block-home {
   background: #FFFFFF;
   margin-bottom: 5px;
   margin-right: 5px;
   text-align: center;
   height: 200px;
-  width: 390px !important;
+  width: 24.5% !important;
 }
 
 #block-table {
@@ -160,6 +166,10 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+#menu-mobile {
+  display: none;
 }
 
 .block-lg, .block-md {
@@ -184,6 +194,42 @@ h1 {
 
 .block-graph {
   height: 300px;
+}
+
+@media screen and (max-width: 1250px) {
+  .block-home {
+    width: 49% !important;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .block-home {
+    width: 49% !important;
+  }
+  .block-lg, .block-md {
+    width: 49% !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #container-admin {
+    width: 100%;
+  }
+  #menu-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .block-home {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .block-lg, .block-md {
+    width: 100% !important;
+  }
 }
 
 /*# sourceMappingURL=admin.css.map */

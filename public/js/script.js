@@ -7,4 +7,6 @@ $(document).ready(() => {
     });
     /* ENABLE SIDENAV */
     $(".button-collapse-side").sideNav();
+    // ENABLE SIDENAV ADMIN
+    $(".button-collapse").sideNav();
 });
