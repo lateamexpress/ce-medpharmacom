@@ -71,6 +71,9 @@ $height-lg-block: 350px;
   #menu-mobile {
     display: block;
   }
+  .settings-pc {
+    display: none;
+  }
 }
 @media screen and (max-width: 500px) {
   .block-home {

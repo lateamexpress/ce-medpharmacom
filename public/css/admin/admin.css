@@ -6,6 +6,10 @@ html, body {
   overflow-x: hidden;
 }
 
+#logo-mobile {
+  display: none;
+}
+
 .number {
   font-size: 50px;
 }
@@ -106,6 +110,14 @@ h1 {
   margin-left: 5px;
   margin-right: 0px;
   width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  #logo-mobile {
+    display: block;
+    width: 200px;
+    float: right;
+  }
 }
 
 #vertical-menu {
@@ -218,6 +230,9 @@ h1 {
   }
   #menu-mobile {
     display: block;
+  }
+  .settings-pc {
+    display: none;
   }
 }
 

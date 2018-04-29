@@ -66,14 +66,16 @@
         <nav id="horizontal-menu-dashboard">
             <div class="nav-wrapper">
                 <ul id="slide-out" class="side-nav">
-                    <li><div class="user-view">
+                    <li>
+                        <div class="user-view">
                             <div class="background">
                                 <img src="https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?cs=srgb&dl=abstract-art-background-370799.jpg&fm=jpg">
                             </div>
                             <a href="#!user"><img class="circle" src="https://n6-img-fp.akamaized.net/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg"></a>
                             <a href="#!name"><span class="white-text name">John Doe</span></a>
                             <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                        </div></li>
+                        </div>
+                    </li>
                     <li>
                         <a href="{{ url('admin/gestion-centres') }}"><i class="material-icons">school</i> Centres de formation</a>
                     </li>
@@ -106,10 +108,15 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="ml10" id="menu-mobile">
+                    <li class="ml10" id="menu-mobile" style="width: 25%;">
                         <a href="#" data-activates="slide-out" class="button-collapse"><i style="color: #A5A5A5" class="material-icons">menu</i></a>
                     </li>
-                    <li class="right">
+                    <li id="logo-mobile" style="width: 70%;">
+                        <a href="{{ url('admin') }}">
+                            <img src="{{ asset('img/logo-medpharma.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
+                        </a>
+                    </li>
+                    <li class="right settings-pc">
                         <a class="dropdown-button" href="#!" data-activates="dropdown1">
                             <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/d6/d6bb00249634bb8d1cffafd78b308740e2bf736f_full.jpg" id="avatar-admin" alt="avatar-admin" title="avatar-admin" class="circle">
                             <i class="material-icons right" style="color: #A5A5A5">arrow_drop_down</i>
