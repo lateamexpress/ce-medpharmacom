@@ -16,7 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $nom_produit
  * @property int $cout
  * @property string $description
- * @property string $photo
+ * @property string $ref_id_image
  * @property int $ref_id_categorie
  * 
  * @property \App\Models\Categorie $categorie
@@ -39,7 +39,7 @@ class Produit extends Eloquent
 		'nom_produit',
 		'cout',
 		'description',
-		'photo',
+		'ref_id_image',
 		'ref_id_categorie'
 	];
 
