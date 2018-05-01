@@ -7,6 +7,9 @@ $white: #FFFFFF;
 .shadow-cards {
   box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.2);
 }
+img {
+  z-index: -1;
+}
 .btn-network {
   display: inline-block;
   border-radius: 60px;

@@ -25,10 +25,10 @@
     <nav id="menu">
         <div class="nav-wrapper">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
+                <img src="{{ asset('img/logo-new.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
             </a>
             <ul id="nav-mobile" class="left">
-                <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/logo-medpharma.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
+                <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/logo-new.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
@@ -63,9 +63,23 @@
     <footer class="page-footer grey darken-3">
         <div class="container container-footer">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam mauris, lobortis at dictum vitae, vestibulum a purus. In ac ornare ante.</p>
+                <div class="col l4 s12">
+                    <h5 class="white-text">A propos de Medpharmacom</h5>
+                    <p class="grey-text text-lighten-4">Destinés aux professionnels de santé, Medpharmacom permet de trouver facilement toutes les équivalences génériques des médicaments.</p>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Nos différents sites</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                    <ul>
+                        <li><a href="medpharmacom.ipmeo.com">Notre site vitrine</a></li>
+                        <li><a href="ce-medpharmacom.ipmeo.com">Notre application</a></li>
+                    </ul>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Nous contacter</h5>
+                    <p class="grey-text text-lighten-4">53 Rue de Vauban 69006 Lyon</p>
+                    <p class="grey-text text-lighten-4">Tel : 01 83 80 46 03 / 06 51 40 43 38 </p>
+                    <p class="grey-text text-lighten-4">Siret : 812 261 535 Rcs Lyon</p>
                 </div>
             </div>
         </div>
