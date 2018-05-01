@@ -112,14 +112,14 @@
                             <img src="{{ asset('img/logo-new.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
                         </a>
                     </li>
-                    <li id="logo-admin">
+                    <li id="logo-admin" style="margin-left:40%">
                         <a href="{{ url('admin') }}">
                             <img src="{{ asset('img/logo-new.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
                         </a>
                     </li>
                     <li class="right settings-pc">
                         <a class="dropdown-button" href="#!" data-activates="dropdown1">
-                            <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/d6/d6bb00249634bb8d1cffafd78b308740e2bf736f_full.jpg" id="avatar-admin" alt="avatar-admin" title="avatar-admin" class="circle">
+                            <img src="https://cdn2.iconfinder.com/data/icons/users-6/100/USER7-512.png" id="avatar-admin" alt="avatar-admin" title="avatar-admin" class="circle">
                             <i class="material-icons right" style="color: #A5A5A5">arrow_drop_down</i>
                         </a>
                     </li>
@@ -131,7 +131,6 @@
        </div>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Paramètres</a></li>
             <li><a href="{{ route('logout') }}">Deconnexion</a></li>
         </ul>
     </div>

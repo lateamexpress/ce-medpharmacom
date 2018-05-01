@@ -29,10 +29,10 @@
             </a>
             <ul id="nav-mobile" class="left">
                 <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/logo-new.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
+                <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
-                <li class="li-menu"><a href="http://medpharmacom.ipmeo.com">Retourner sur medpharmacom</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
@@ -68,11 +68,11 @@
                     <p class="grey-text text-lighten-4">Destinés aux professionnels de santé, Medpharmacom permet de trouver facilement toutes les équivalences génériques des médicaments.</p>
                 </div>
                 <div class="col l4 s12">
-                    <h5 class="white-text">Nos différents sites</h5>
+                    <h5 class="white-text">En savoir plus</h5>
                     <p class="grey-text text-lighten-4"></p>
                     <ul>
-                        <li><a href="medpharmacom.ipmeo.com">Notre site vitrine</a></li>
-                        <li><a href="ce-medpharmacom.ipmeo.com">Notre application</a></li>
+                        <li><a href="medpharmacom.ipmeo.com">Site web Medpharmacom</a></li>
+                        <li><a href="ce-medpharmacom.ipmeo.com">Application CE</a></li>
                     </ul>
                 </div>
                 <div class="col l4 s12">
@@ -86,7 +86,7 @@
         <div class="footer-copyright grey darken-4">
             <div class="container">
                 © 2018 Copyright Medpharmacom.fr
-                <a class="waves-effect waves-light btn btn-network" style="float: right;" href="https://fr.linkedin.com/company/medpharmacom"><i class="fa fa-linkedin"></i></a>
+                <a class="waves-effect waves-light btn btn-network" style="position:absolute; right: 37.5%" href="https://fr.linkedin.com/company/medpharmacom"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
         <!-- Authors :
