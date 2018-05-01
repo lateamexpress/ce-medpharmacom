@@ -22,12 +22,8 @@
 </div>
 <div class="row no-mb">
     <div class="col s2 no-pdr no-pdl" id="menu-left-admin">
-        <div id="logo-admin" class="pdb20 pdt20">
-            <!-- INSERT LOGO COMPANY -->
-            <a href="{{ url('admin') }}">
-                <img src="{{ asset('img/logo-medpharma.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
-            </a>
-            <!-- INSERT LOGO COMPANY -->
+        <div style="background: #2e3c54;" class="pdb20 pdt20 center-align">
+            <h1 style="color: white;">Interface administrateur</h1>
         </div>
         <ul class="collapsible" data-collapsible="accordion" id="vertical-menu">
             <li class="vertical-menu-item">
@@ -113,7 +109,12 @@
                     </li>
                     <li id="logo-mobile" style="width: 70%;">
                         <a href="{{ url('admin') }}">
-                            <img src="{{ asset('img/logo-medpharma.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
+                            <img src="{{ asset('img/logo-new.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
+                        </a>
+                    </li>
+                    <li id="logo-admin">
+                        <a href="{{ url('admin') }}">
+                            <img src="{{ asset('img/logo-new.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
                         </a>
                     </li>
                     <li class="right settings-pc">

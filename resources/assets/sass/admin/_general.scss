@@ -20,13 +20,14 @@ html, body{
   top: 50%; left: 50%;
 }
 #logo-admin {
-  background: $dark-blue;
-  text-align: center;
-  padding-bottom: 20px;
   img {
-    padding-top: 20px;
-    width: 95%;
-    height: auto;
+    width: 180px;
+  }
+  a {
+    height: 64px;
+    &:hover {
+      background: transparent;
+    }
   }
 }
 #avatar-admin {
@@ -35,7 +36,7 @@ html, body{
   margin: 15px;
 }
 .dropdown-button {
-  height: 64px;
+  height: 80px;
 }
 .no-pdl {
   padding-left: 0 !important;
@@ -96,8 +97,15 @@ h1 {
 @media screen and (max-width: 992px){
   #logo-mobile {
     display: block;
-    width: 200px;
+    width: 180px;
     float: right;
+  }
+  #menu-mobile {
+    position: absolute;
+    top: 10px;
+  }
+  #logo-admin {
+    display: none;
   }
   #container-admin {
     width: 100%;

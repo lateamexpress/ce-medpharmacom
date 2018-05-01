@@ -21,9 +21,6 @@
     left: 0;
   }
 }
-#menu-mobile {
-  display: none;
-}
 @function blockResize($width) {
   @return ($width / 2) - 2.5;
 }
