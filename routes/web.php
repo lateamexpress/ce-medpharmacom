@@ -27,6 +27,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
         Route::get('/gestion-produits', 'GestionController@produits');
         Route::get('/gestion-utilisateurs', 'GestionController@utilisateurs');
+        Route::get('/gestion-utilisateurs/ajout-csv', 'GestionController@utilisateursajout');
     });
 
     Route::group(["middleware" =>"users"],function(){
