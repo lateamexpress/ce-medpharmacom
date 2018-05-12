@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col l4 s12">
                     <h5 class="white-text">A propos de Medpharmacom</h5>
-                    <p class="grey-text text-lighten-4">Destinés aux professionnels de santé, Medpharmacom permet de trouver facilement toutes les équivalences génériques des médicaments.</p>
+                    <p class="grey-text text-lighten-4">Ce site est réservé aux CE d'entreprise dans le domaine des professionnels de la santé.</p>
                 </div>
                 <div class="col l4 s12">
                     <h5 class="white-text">En savoir plus</h5>
@@ -79,6 +79,7 @@
                     <h5 class="white-text">Nous contacter</h5>
                     <p class="grey-text text-lighten-4">53 Rue de Vauban 69006 Lyon</p>
                     <p class="grey-text text-lighten-4">Tel : 01 83 80 46 03 / 06 51 40 43 38 </p>
+                    <p class="grey-text text-lighten-4">SAS au capital de 260 000 €</p>
                     <p class="grey-text text-lighten-4">Siret : 812 261 535 Rcs Lyon</p>
                 </div>
             </div>

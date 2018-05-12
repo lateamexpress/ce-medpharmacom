@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class GestionController extends Controller
 {
-    public function centres()
-    {
-        return view('admin/gestion-centres');
-    }
-
     public function commandes()
     {
         return view('admin/gestion-commandes');
@@ -29,11 +24,6 @@ class GestionController extends Controller
     public function laboratoires()
     {
         return view('admin/gestion-laboratoires');
-    }
-
-    public function visiteurs()
-    {
-        return view('admin/gestion-visiteurs');
     }
 
     public function partenaires()

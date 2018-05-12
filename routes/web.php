@@ -23,7 +23,6 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/gestion-centres', 'GestionController@centres');
         Route::get('/gestion-commandes', 'GestionController@commandes');
         Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
-        Route::get('/gestion-visiteurs', 'GestionController@visiteurs');
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
         Route::get('/gestion-produits', 'GestionController@produits');
         Route::get('/gestion-utilisateurs', 'GestionController@utilisateurs');
