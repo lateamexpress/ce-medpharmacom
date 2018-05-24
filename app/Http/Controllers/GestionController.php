@@ -4,17 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Commande;
+use App\Models\Pub;
+use App\Models\Laboratoire;
+use App\Models\Generique;
 
 class GestionController extends Controller
 {
     public function commandes()
     {
-        return view('admin/gestion-commandes');
+        $commande = Commande::all();
+
+        return view('admin/gestion-commandes', [
+            'commande' => $commande,
+        ]);
+    }
+
+    public function commandesbyid($id)
+    {
+        $commande = Commande::find($id);
+
+        return view('admin/gestion-commandes', [
+            'commande' => $commande,
+        ]);
     }
 
     public function encarts_publicitaires()
     {
-        return view('admin/gestion-encarts-publicitaires');
+        $pub = Pub::all();
+
+        return view('admin/gestion-encarts-publicitaires', [
+            'pub' => $pub,
+        ]);
     }
 
     public function equivalences()
@@ -24,7 +45,11 @@ class GestionController extends Controller
 
     public function laboratoires()
     {
-        return view('admin/gestion-laboratoires');
+        $laboratoire = Laboratoire::find($id);
+
+        return view('admin/gestion-laboratoires', [
+            'laboratoire' => $laboratoire,
+        ]);
     }
 
     public function partenaires()

@@ -22,6 +22,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/gestion-centres', 'GestionController@centres');
         Route::get('/gestion-commandes', 'GestionController@commandes');
+        Route::get('/gestion-commandes/{id}', 'GestionController@commandesbyid');
         Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
         Route::get('/gestion-produits', 'GestionController@produits');
