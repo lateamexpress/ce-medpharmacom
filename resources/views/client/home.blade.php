@@ -15,7 +15,7 @@
 @endsection
 
 @section('contenu-container')
-    <div style="height: 70vh;">
+    <div style="min-height: 110vh;">
         <div class="row">
             <div class="col s3">
                 <div class="panel-home">
@@ -37,18 +37,64 @@
         </div>
         <div class="row">
             <div class="col s12">
+                <h1 class="center-align">Informations</h1>
+                <div class="divider-custom"></div>
+                <p class="center-align mb50">Découvrez notre gamme de cadeaux d'affaires incentives</p>
                 <div id="header-home">
-                    <h1>Informations</h1>
-                    <div class="divider-custom"></div>
-                    <p>Découvrez notre gamme de cadeaux d'affaires incentives</p>
-                    <div class="owl-carousel owl-theme">
-                        <div class="col l4"><img src="{{ asset('img/vertbaudet.png') }}" class="" alt="vertbaudet" title="vertbaudet"/></div>
-                        <div class="col l4"><img src="{{ asset('img/Le_Creuset_Logo.png') }}" alt="Le_Creuset_Logo" title="Le_Creuset_Logo"/></div>
-                        <div class="col l4"><img src="{{ asset('img/swarovski.png') }}" alt="swarovski" title="swarovski"/></div>
-                        <div class="col l4"><img src="{{ asset('img/DELSEY_LOGO.png') }}" alt="Delsey logo" title="Delsey logo"/></div>
-                        <div class="col l4"><img src="{{ asset('img/longchamp.png') }}" alt="longchamp" title="longchamp"/></div>
-                        <div class="col l4"><img src="{{ asset('img/apple.png') }}"  class="responsive-img" alt="apple" title="apple"/></div>
+                    <div class="col l4">
+                        <img class="responsive-img partners" src="{{ asset('img/partenaires/727.png') }}">
                     </div>
+                    <div class="col l4">
+                        <img class="responsive-img partners" src="{{ asset('img/partenaires/alpina.png') }}">
+                    </div>
+                    <div class="col l4">
+                        <img class="responsive-img partners" src="{{ asset('img/partenaires/braun.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/delonghi.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/kenwood.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/kreafunk.png') }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/frederique.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/trimm.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/weber.png') }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col l4">
+                    <img class="responsive-img partners" src="{{ asset('img/partenaires/meistersinger.png') }}">
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 120px;">
+            <div class="col s12">
+                <div class="owl-carousel owl-theme">
+                    <div class="col l4"><img src="{{ asset('img/vertbaudet.png') }}" class="test-img" alt="vertbaudet" title="vertbaudet"/></div>
+                    <div class="col l4"><img src="{{ asset('img/Le_Creuset_Logo.png') }}" class="test-img" alt="Le_Creuset_Logo" title="Le_Creuset_Logo"/></div>
+                    <div class="col l4"><img src="{{ asset('img/swarovski.png') }}" class="test-img" alt="swarovski" title="swarovski"/></div>
+                    <div class="col l4"><img src="{{ asset('img/DELSEY_LOGO.png') }}" class="test-img" alt="Delsey logo" title="Delsey logo"/></div>
+                    <div class="col l4"><img src="{{ asset('img/longchamp.png') }}" class="test-img" alt="longchamp" title="longchamp"/></div>
+                    <div class="col l4"><img src="{{ asset('img/apple.png') }}"  class="responsive-img test-img" alt="apple" title="apple"/></div>
                 </div>
             </div>
         </div>
@@ -67,10 +113,10 @@
                         items:1
                     },
                     600:{
-                        items:3
+                        items:2
                     },
                     1000:{
-                        items:4
+                        items:3
                     }
                 }
             });

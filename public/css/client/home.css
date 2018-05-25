@@ -281,6 +281,11 @@ h1 {
   text-align: center;
 }
 
+.test-img {
+  width: 200px;
+  height: 100px;
+}
+
 .partners-img img {
   width: 100px;
   height: auto;
@@ -293,6 +298,10 @@ h1 {
   -webkit-box-pack: center;
   display: -webkit-box;
   height: 50px;
+}
+
+.partners {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=home.css.map */
