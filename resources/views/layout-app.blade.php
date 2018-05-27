@@ -97,12 +97,12 @@
                     </li>
                     <li id="logo-mobile" style="width: 70%;">
                         <a href="{{ url('admin') }}">
-                            <img src="{{ asset('img/logo-new.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
+                            <img src="{{ asset('img/medpharmacomCe.jpg') }}" id="logo-mobile" alt="logo-entreprise" title="logo-entreprise"/>
                         </a>
                     </li>
                     <li id="logo-admin" style="margin-left:40%">
                         <a href="{{ url('admin') }}">
-                            <img src="{{ asset('img/logo-new.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
+                            <img src="{{ asset('img/medpharmacomCe.jpg') }}" alt="logo-entreprise" title="logo-entreprise"/>
                         </a>
                     </li>
                     <li class="right settings-pc">

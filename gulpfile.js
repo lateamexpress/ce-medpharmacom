@@ -12,6 +12,12 @@ elixir((mix) => {
             'admin/gestion-commandes.scss'
         ], 'public/css/admin/gestion-commandes.css')
         .sass([
+            'admin/gestion-produits.scss'
+        ], 'public/css/admin/gestion-produits.css')
+        .sass([
+            'admin/gestion-partners.scss'
+        ], 'public/css/admin/gestion-partners.css')
+        .sass([
             'admin/gestion-utilisateurs.scss'
         ], 'public/css/admin/gestion-utilisateurs.css')
         // Client
