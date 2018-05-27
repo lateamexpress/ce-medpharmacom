@@ -304,4 +304,8 @@ h1 {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
+.partnersNoBorder {
+  height: 150px;
+}
+
 /*# sourceMappingURL=home.css.map */

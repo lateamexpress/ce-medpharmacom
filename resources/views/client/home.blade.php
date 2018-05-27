@@ -86,6 +86,31 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/at.JPG') }}">
+                </div>
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/hairspring.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/Konjac-HiRes.jpg') }}">
+                </div>
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/Samsonite.png') }}">
+                </div>
+                <div class="col l8">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/theoriginalbb.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/Tumi.png') }}">
+                </div>
+                <div class="col l4">
+                    <img class="partnersNoBorder" src="{{ asset('img/partenaires/wetbrush.png') }}">
+                </div>
+            </div>
+        </div>
         <div class="row" style="margin-top: 120px;">
             <div class="col s12">
                 <div class="owl-carousel owl-theme">
