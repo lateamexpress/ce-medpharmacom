@@ -28,7 +28,7 @@
                 <img src="{{ asset('img/medpharmacomCe.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu" />
             </a>
             <ul id="nav-mobile" class="left">
-                <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/medpharmacomCe.jpg.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
+                <li style="width:20%;"><a id="logo-home-pc" href="{{ url('/') }}"><img src="{{ asset('img/medpharmacomCe.jpg') }}" alt="medpharmacom-logo" title="medpharmacom-logo" id="logo-medpharmacom-menu-pc"/></a></li>
                 <li class="li-menu"><a href="{{ url('/') }}">Accueil</a></li>
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>

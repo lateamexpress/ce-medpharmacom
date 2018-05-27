@@ -17,6 +17,22 @@
                 <p>Cette page vous permet de gérer l'ordre d'affichage de vos encarts publicitaires</p>
                 <div>
                     <h1 class="left-align">Vitrine</h1>
+                    <div class="input-field col s3">
+                        <input type="text" name="nomImage" placeholder="Nom de l'image...">
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" name="lienImage" placeholder="Lien de l'image...">
+                    </div>
+                    <div class="input-field col s3">
+                        <select>
+                            <option value="" disabled selected>Actif ?</option>
+                            <option value="1">Oui</option>
+                            <option value="0">Non</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s3">
+                        <button type="submit" class="btn waves-effect">Mettre à jour</button>
+                    </div>
                     <table id="pubVitrineTable" class="hover">
                         <thead>
                         <tr>
@@ -95,6 +111,7 @@
                 "bInfo": false,
                 responsive: true
             });
+            $('select').material_select();
         } );
     </script>
 @endsection

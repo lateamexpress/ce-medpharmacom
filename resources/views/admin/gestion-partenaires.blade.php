@@ -17,6 +17,31 @@
                 <p>Cette page vous permet de gérer l'ordre d'affichage de vos partenaires</p>
                 <div>
                     <h1 class="left-align">Vitrine</h1>
+                    <div class="file-field input-field col l12">
+                        <div class="btn">
+                            <span>Votre image</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" name="nomImage" placeholder="Nom de l'image...">
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" name="lienImage" placeholder="Lien de l'image...">
+                    </div>
+                    <div class="input-field col s3">
+                        <select>
+                            <option value="" disabled selected>Actif ?</option>
+                            <option value="1">Oui</option>
+                            <option value="0">Non</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s3">
+                        <button type="submit" class="btn waves-effect">Mettre à jour</button>
+                    </div>
                     <table id="partnersVitrineTable" class="hover">
                         <thead>
                         <tr>
@@ -95,6 +120,7 @@
                 "bInfo": false,
                 responsive: true
             });
+            $('select').material_select();
         } );
     </script>
 @endsection

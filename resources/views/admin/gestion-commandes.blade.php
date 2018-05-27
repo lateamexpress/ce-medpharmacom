@@ -22,8 +22,8 @@
                     <thead>
                     <tr>
                         <th>id_commande</th>
-                        <th>ref_id_utilisateur</th>
-                        <th>ref_id_produit</th>
+                        <th>ref_nom_user</th>
+                        <th>ref_nom_produit</th>
                         <th>date</th>
                         <th>statut</th>
                     </tr>
@@ -31,21 +31,21 @@
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td>5</td>
+                        <td>Master jloQ</td>
                         <td>Montre Stella, Bracelet en cuir, blanc, ton argenté</td>
                         <td>22-03-2005</td>
                         <td contenteditable>En cours</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>8</td>
+                        <td>Xcas l'intrépide</td>
                         <td>Montre Stella, Bracelet en cuir, rose</td>
                         <td>01-11-2010</td>
                         <td contenteditable>Cloturé</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>8</td>
+                        <td>Le ragout superficiel</td>
                         <td>Montre Stella, Bracelet en cuir, bleue</td>
                         <td>01-11-2010</td>
                         <td contenteditable>A vérifier</td>
