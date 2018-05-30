@@ -67,7 +67,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/produit/{id]', 'ProduitController@index');
         Route::get('/catalogue', 'CatalogueController@produitAll');
-        Route::get('/catalogue/{id}', 'CatalogueController@produitById');
+        Route::get('/produit/{id}', 'CatalogueController@produitById');
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
         Route::get('/mon-compte', 'UsersController@index');
         Route::post('/mon-compte/ajout', 'UsersController@insertUsers');
