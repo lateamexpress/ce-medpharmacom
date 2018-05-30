@@ -70,46 +70,18 @@
             </div>
         </div>
         <div id="block-tendances-header" class="mt50">
-            <h1 class="center-align">Les nouveautés</h1>
+            <h1 class="center-align">Découvrir</h1>
         </div>
         <div id="block-tendances-content" class="center-align mb50">
             <div class="row">
-                <div class="col l2 s12">
-                    <h1 class="marque-produit">Apple</h1>
-                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
-                    <br><br>
-                    <img src="https://www.materiel.net/live/360387.200.200.jpg"/>
-                </div>
-                <div class="col l2">
-                    <h1 class="marque-produit">Moulinex</h1>
-                    <span class="nom-produit">CE55800</span>
-                    <br><br>
-                    <img src="https://imtc.qccdn.fr/test/robot-cuiseur/produit/moulinex-cuisine-companion-hf800a10_001.jpg"/>
-                </div>
-                <div class="col l2 s12">
-                    <h1 class="marque-produit">Samsung</h1>
-                    <span class="nom-produit">Galaxy S8 argent artique</span>
-                    <br><br>
-                    <img src="https://i2.cdscdn.com/pdt2/6/3/5/1/200x200/sam8806088709635/rw/samsung-galaxy-s8-plus-64go-noir.jpg"/>
-                </div>
-                <div class="col l2 s12">
-                    <h1 class="marque-produit">Apple</h1>
-                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
-                    <br>
-                    <img src="https://www.materiel.net/live/360387.200.200.jpg"/>
-                </div>
-                <div class="col l2 s12">
-                    <h1 class="marque-produit">Jeu PC</h1>
-                    <span class="nom-produit">FIFA 18</span>
-                    <br><br>
-                    <img src="https://apollo-ireland.akamaized.net/v1/files/mzgyjofxxk801-KE/image;s=200x0"/>
-                </div>
-                <div class="col l2 s12">
-                    <h1 class="marque-produit">Samsung</h1>
-                    <span class="nom-produit">Galaxy S8 argent artique</span>
-                    <br><br>
-                    <img src="https://i2.cdscdn.com/pdt2/6/3/5/1/200x200/sam8806088709635/rw/samsung-galaxy-s8-plus-64go-noir.jpg"/>
-                </div>
+                @foreach($catalogue as $produit)
+                    <div class="col l4 s12">
+                        <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
+                        <span class="nom-produit">{{ $produit['cout'] }}</span>
+                        <br><br>
+                        <a href="{{ url('produit/').$produit['id_produit'] }}"><img src="http://via.placeholder.com/300x200"/></a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
