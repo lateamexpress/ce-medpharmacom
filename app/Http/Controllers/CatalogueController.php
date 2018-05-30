@@ -21,7 +21,7 @@ class CatalogueController extends Controller
     {
         $produit = Produit::find($id);
 
-        return view('client/catalogue', [
+        return view('client/produit', [
             'produit' => $produit
         ]);
     }

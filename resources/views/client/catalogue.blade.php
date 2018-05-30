@@ -56,28 +56,17 @@
     <div style="min-height: 80vh; margin-top: 100px;">
         <div id="block-tendances-header">
             <h1 class="center-align">Les articles tendances</h1>
-            {{ $produitLastFive }}
         </div>
         <div id="block-tendances-content" class="center-align">
             <div class="row">
+                @foreach($produitLastFive as $produitTendance)
                 <div class="col l4 s12">
-                    <h1 class="marque-produit">Apple</h1>
-                    <span class="nom-produit">iPhone 7 128 Go Silver</span>
-                    <br>
-                    <a href="{{ url('produit') }}"><img src="https://i2.cdscdn.com/pdt2/7/0/2/1/300x300/app3700942925702/rw/apple-iphone-5c-rose-8go.jpg"/></a>
+                    <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
+                    <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
+                    <br><br>
+                    <a href="{{ url('produit/'.$produitTendance['id_produit']) }}"><img src="http://via.placeholder.com/300x200"/></a>
                 </div>
-                <div class="col l4 s12">
-                    <h1 class="marque-produit">Moulinex</h1>
-                    <span class="nom-produit">CE55800</span>
-                    <br>
-                    <img src="https://www.media-rdc.com/medias/dc61702f7af3330091ccb1c496969d40/p_300x300/fe260ced833c356ba44faf1857e8aec6.png"/>
-                </div>
-                <div class="col l4 s12">
-                    <h1 class="marque-produit">Samsung</h1>
-                    <span class="nom-produit">Galaxy S8 argent artique</span>
-                    <br>
-                    <img src="https://www.media-rdc.com/medias/3600ed1ee51137479867dab73bd5b4b2/p_300x300/sm-g950f-galaxys8-noir.jpg"/>
-                </div>
+                 @endforeach
             </div>
         </div>
         <div id="block-tendances-header" class="mt50">
