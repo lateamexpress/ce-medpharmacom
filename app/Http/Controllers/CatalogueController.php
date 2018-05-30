@@ -9,7 +9,7 @@ class CatalogueController extends Controller
 {
     public function produitAll()
     {
-        $catalogue = Produit::all()->paginate(15);;
+        $catalogue = Produit::paginate(15);
         $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(5);
         return view('client/catalogue',[
             'catalogue' => $catalogue,
