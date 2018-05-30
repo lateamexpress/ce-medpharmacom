@@ -56,6 +56,7 @@
     <div style="min-height: 80vh; margin-top: 100px;">
         <div id="block-tendances-header">
             <h1 class="center-align">Les articles tendances</h1>
+            {{ $produitLastFive }}
         </div>
         <div id="block-tendances-content" class="center-align">
             <div class="row">
