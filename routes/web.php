@@ -71,7 +71,13 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
         Route::get('/mon-compte', 'UsersController@index');
         Route::post('/mon-compte/ajout', 'UsersController@insertUsers');
-        Route::get('/mes-commandes', 'MesCommandesController@index');
+
+        Route::get('/mes-commandes', 'MesCommandesController@commandesAll');
+        Route::get('/mes-commandes/{id}', 'MesCommandesController@commandebyid');
+        Route::post('/mes-commandes/ajout', 'MesCommandesController@commandeAjouter');
+        Route::post('/mes-commandes/modifier/{id}', 'MesCommandesController@commandeModifier');
+        Route::post('/mes-commandes/supprimer/{id}', 'MesCommandesController@commandeSupprimer');
+
         Route::get('/commande', 'CommandeController@index');
         Route::post('/commande/ajout', 'CommandeController@ajoutCommande');
         Route::get('/commande/{id}', 'CommandeController@commandeParId');
