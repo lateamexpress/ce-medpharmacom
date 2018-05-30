@@ -83,6 +83,7 @@
                     </div>
                 @endforeach
             </div>
+            {{ $catalogue->links('vendor.pagination.default') }}
         </div>
     </div>
     <!--
