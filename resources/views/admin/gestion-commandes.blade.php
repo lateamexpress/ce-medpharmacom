@@ -25,31 +25,21 @@
                         <th>ref_nom_user</th>
                         <th>ref_nom_produit</th>
                         <th>date</th>
+                        <th>quantité</th>
                         <th>statut</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Master jloQ</td>
-                        <td>Montre Stella, Bracelet en cuir, blanc, ton argenté</td>
-                        <td>22-03-2005</td>
-                        <td contenteditable>En cours</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Xcas l'intrépide</td>
-                        <td>Montre Stella, Bracelet en cuir, rose</td>
-                        <td>01-11-2010</td>
-                        <td contenteditable>Cloturé</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Le ragout superficiel</td>
-                        <td>Montre Stella, Bracelet en cuir, bleue</td>
-                        <td>01-11-2010</td>
-                        <td contenteditable>A vérifier</td>
-                    </tr>
+                    @foreach($commande as $cmd)
+                        <tr>
+                            <td> {{ $cmd['id_commande'] }}</td>
+                            <td> {{ $cmd['ref_id_utilisateur'] }}</td>
+                            <td> {{ $cmd['ref_id_produit'] }}</td>
+                            <td> {{ $cmd['date'] }}</td>
+                            <td> {{ $cmd['quantite'] }}</td>
+                            <td contenteditable> {{ $cmd['statut'] }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </form>

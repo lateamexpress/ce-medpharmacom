@@ -19,7 +19,7 @@ class GestionProduitController extends Controller
     public function produitsAll_And_FiveLast()
     {
         $produitAll = Produit::all();
-        $poduitLastFive = Produit::all()->orderBy('id_produit', 'desc')->limit(5)->offset(5)->get();
+        $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(5);
 
         return view('admin/gestion-produits',[
             'produit' => $produitAll,

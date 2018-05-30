@@ -23,7 +23,7 @@ Route::group(["middleware" => "auth"],function(){
 
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
 
-        Route::get('/gestion-commandes', 'GestionCommandeController@commandesAll');
+        Route::get('/gestion-commandes', 'GestionCommandeController@commandeAll');
         Route::get('/gestion-commandes/{id}', 'GestionController@commandebyid');
         Route::post('/gestion-commandes/ajout', 'GestionController@commandeAjouter');
         Route::post('/gestion-commandes/modifier/{id}', 'GestionController@commandeModifier');
