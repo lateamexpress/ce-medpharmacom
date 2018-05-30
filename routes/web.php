@@ -20,14 +20,46 @@ Route::group(["middleware" => "auth"],function(){
     Route::group(['middleware' => "admin","prefix" => "admin"],function(){
         /* ADMIN (toutes les routes admin ici)*/
         Route::get('/', 'HomeController@returnSpecificHome');
-        Route::get('/gestion-centres', 'GestionController@centres');
-        Route::get('/gestion-commandes', 'GestionController@commandes');
-        Route::get('/gestion-commandes/{id}', 'GestionController@commandesbyid');
-        Route::get('/gestion-encarts-publicitaires', 'GestionController@encarts_publicitaires');
+
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
-        Route::get('/gestion-produits', 'GestionController@produits');
-        Route::get('/gestion-utilisateurs', 'GestionController@utilisateurs');
-        Route::get('/gestion-utilisateurs/ajout-csv', 'GestionController@utilisateursajout');
+
+        Route::get('/gestion-commandes', 'GestionCommandeController@commandesAll');
+        Route::get('/gestion-commandes/{id}', 'GestionController@commandebyid');
+        Route::post('/gestion-commandes/ajout', 'GestionController@commandeAjouter');
+        Route::post('/gestion-commandes/modifier/{id}', 'GestionController@commandeModifier');
+        Route::post('/gestion-commandes/supprimer/{id}', 'GestionController@commandeSupprimer');
+
+        Route::get('/gestion-equivalences', 'GestionEquivalenceController@generiqueAll');
+        Route::get('/gestion-equivalences/{id}', 'GestionEquivalenceController@generiqueById');
+        Route::post('/gestion-equivalences/ajout', 'GestionEquivalenceController@generiqueAjouter');
+        Route::post('/gestion-equivalences/modifier/{id}', 'GestionEquivalenceController@generiqueModifier');
+        Route::post('/gestion-equivalences/supprimer/{id}', 'GestionEquivalenceController@generiqueSupprimer');
+
+        Route::get('/gestion-encarts-publicitaires', 'GestionPubController@pubAll');
+        Route::get('/gestion-encarts-publicitaires/{id}', 'GestionPubController@pubById');
+        Route::post('/gestion-encarts-publicitaires/ajout', 'GestionPubController@pubAjouter');
+        Route::post('/gestion-encarts-publicitaires/modifier/{id}', 'GestionPubController@pubModifier');
+        Route::post('/gestion-encarts-publicitaires/supprimer/{id}', 'GestionPubController@pubSupprimer');
+
+        Route::get('/gestion-produits', 'GestionProduitController@produitAll');
+        Route::get('/gestion-produits/withfivelast/', 'GestionProduitController@produitsAll_And_FiveLast');
+        Route::get('/gestion-produits/{id}', 'GestionProduitController@produitById');
+        Route::post('/gestion-produits/ajout', 'GestionProduitController@produitAjouter');
+        Route::post('/gestion-produits/modifier/{id}', 'GestionProduitController@produitModifier');
+        Route::post('/gestion-produits/supprimer/{id}', 'GestionProduitController@produitSupprimer');
+
+        Route::get('/gestion-laboratoires', 'GestionLaboratoireController@laboratoireAll');
+        Route::get('/gestion-laboratoires/{id}', 'GestionLaboratoireController@laboratoireById');
+        Route::post('/gestion-laboratoires/ajout', 'GestionLaboratoireController@laboratoireAjouter');
+        Route::post('/gestion-laboratoires/modifier/{id}', 'GestionLaboratoireController@laboratoireModifier');
+        Route::post('/gestion-laboratoires/supprimer/{id}', 'GestionLaboratoireController@laboratoireSupprimer');
+
+        Route::get('/gestion-utilisateurs', 'GestionUtilisateurController@utilisateurAll');
+        Route::get('/gestion-utilisateurs/{id}', 'GestionUtilisateurController@utilisateurById');
+        Route::post('/gestion-utilisateurs/ajout', 'GestionUtilisateurController@utilisateurAjouter');
+        Route::post('/gestion-utilisateurs/modifier/{id}', 'GestionUtilisateurController@utilisateurModifier');
+        Route::post('/gestion-utilisateurs/supprimer/{id}', 'GestionUtilisateurController@utilisateurSupprimer');
+        Route::post('/gestion-utilisateurs/ajout-csv', 'GestionUtilisateurController@utilisateursAjouterByCSV');
     });
 
     Route::group(["middleware" =>"users"],function(){
