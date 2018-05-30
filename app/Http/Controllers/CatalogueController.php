@@ -16,4 +16,13 @@ class CatalogueController extends Controller
             'produitLastFive' => $poduitLastFive
         ]);
     }
+
+    public function produitById($id)
+    {
+        $produit = Produit::find($id);
+
+        return view('client/catalogue', [
+            'produit' => $produit
+        ]);
+    }
 }
