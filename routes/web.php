@@ -27,6 +27,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/gestion-commandes/{id}', 'GestionCommandeController@commandebyid');
         Route::post('/gestion-commandes/ajout', 'GestionCommandeController@commandeAjouter');
         Route::post('/gestion-commandes/modifier/{id}', 'GestionCommandeController@commandeModifier');
+
         Route::post('/gestion-commandes/supprimer/{id}', 'GestionCommandeController@commandeSupprimer');
 
         Route::get('/gestion-equivalences', 'GestionEquivalenceController@generiqueAll');

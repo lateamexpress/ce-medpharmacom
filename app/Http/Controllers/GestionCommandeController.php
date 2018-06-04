@@ -20,7 +20,7 @@ class GestionCommandeController extends Controller
     {
         $commande = Commande::find($id);
 
-        return view('admin/gestion-commandes', [
+        return view('admin/gestion-commandes-solo', [
             'commande' => $commande,
         ]);
     }
@@ -39,7 +39,6 @@ class GestionCommandeController extends Controller
         $commande->quantite = $request->quantite;
         $commande->date = $request->date;
         $commande->statut = $request->statut;
-
         $commande->save();
         return redirect()->back()->with('flash_message', 'Commande modifié');
     }
