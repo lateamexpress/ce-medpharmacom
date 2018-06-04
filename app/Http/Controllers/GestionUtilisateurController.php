@@ -11,7 +11,7 @@ class GestionUtilisateurController extends Controller
     {
         $utilisateur = Utilisateur::all();
 
-        return view('admin/Utilisateur ajouté', [
+        return view('admin/gestion-utilisateurs', [
             'utilisateur' => $utilisateur,
         ]);
     }
@@ -20,7 +20,7 @@ class GestionUtilisateurController extends Controller
     {
         $utilisateur = Utilisateur::find($id);
 
-        return view('admin/Utilisateur ajouté', [
+        return view('admin/gestion-utilisateurs', [
             'utilisateur' => $utilisateur,
         ]);
     }
