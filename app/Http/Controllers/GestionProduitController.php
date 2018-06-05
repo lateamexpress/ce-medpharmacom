@@ -31,7 +31,7 @@ class GestionProduitController extends Controller
     {
         $produit = Produit::find($id);
 
-        return view('admin/gestion-produits', [
+        return view('admin/gestion-produits-solo', [
             'produit' => $produit
         ]);
     }
