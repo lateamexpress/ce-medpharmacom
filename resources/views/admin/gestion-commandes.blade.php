@@ -27,8 +27,8 @@
                 @foreach($commande as $cmd)
                     <tr>
                         <td><a href="{{ url('/admin/gestion-commandes/'.$cmd['id_commande']) }}">{{ $cmd['id_commande'] }}</a></td>
-                        <td>{{ $cmd['ref_id_utilisateur'] }}</td>
-                        <td> {{ $cmd['ref_id_produit'] }}</td>
+                        <td>{{ $cmd->utilisateur->nom }}</td>
+                        <td> {{ $cmd->produit->nom_produit }}</td>
                         <td> {{ $cmd['date'] }}</td>
                         <td> {{ $cmd['quantite'] }}</td>
                         <td> {{ $cmd['statut'] }}</td>
