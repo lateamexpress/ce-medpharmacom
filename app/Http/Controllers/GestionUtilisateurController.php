@@ -20,7 +20,7 @@ class GestionUtilisateurController extends Controller
     {
         $utilisateur = Utilisateur::find($id);
 
-        return view('admin/gestion-utilisateurs', [
+        return view('admin/gestion-utilisateurs-solo', [
             'utilisateur' => $utilisateur,
         ]);
     }
@@ -33,8 +33,10 @@ class GestionUtilisateurController extends Controller
 
     public function utilisateurModifier(Request $request, $id)
     {
+        $passwordHash = bcrypt($request->password);
         $utilisateur = Utilisateur::find($id);
         $utilisateur->nbr_point = $request->nbr_point;
+        $utilisateur->password = $passwordHash;
         $utilisateur->email = $request->email;
         $utilisateur->nom = $request->nom;
         $utilisateur->prenom = $request->prenom;
@@ -43,7 +45,6 @@ class GestionUtilisateurController extends Controller
         $utilisateur->code_postal = $request->code_postal;
         $utilisateur->ville = $request->ville;
         $utilisateur->role = $request->role;
-
         $utilisateur->save();
         return redirect()->back()->with('flash_message', 'Utilisateur modifié');
     }

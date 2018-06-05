@@ -15,21 +15,11 @@
             <div class="col s12 center-align">
                 <h1>Gestion des utilisateurs</h1>
                 <div class="divider-custom"></div>
-                <p>Cette page permet d'ajouter / modifier ou supprimer un utilisateur depuis une modale ou en insérant un fichier CSV.</p>
-
-                <!-- Modal Trigger -->
-                <a class="btn-floating waves-effect waves-light btn modal-trigger green" href="#modal1"><i class="material-icons">person_add</i></a>
-                <a class="btn-floating waves-effect waves-light btn modal-trigger blue" href="#modal2"><i class="material-icons">edit</i></a>
-                <a class="btn-floating waves-effect waves-light btn modal-trigger red" href="#modal3"><i class="material-icons">delete_forever</i></a>
-                    <div class="file-field input-field col s10">
-                        <div class="btn">
-                            <span>File</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
+                 <form method="post" action="{{ url('admin/gestion-utilisateurs/modifier/'.$utilisateur['id_utilisateur'])}}">
+                     @csrf
+                     <div class="left-align">
+                         <button type="submit" class="waves-effect btn">Modifier</button>
+                     </div>
                     <table id="usersTable" class="hover">
                         <thead>
                         <tr>
@@ -47,23 +37,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($utilisateur as $user)
                         <tr>
-                            <td><a href="{{ url('/admin/gestion-utilisateurs/'.$user['id_utilisateur']) }}">{{ $user['id_utilisateur'] }}</a></td>
-                            <td>{{ $user['email'] }}</td>
-                            <td>{{ $user['password'] }}</td>
-                            <td>{{ $user['nom'] }}</td>
-                            <td contenteditable>{{ $user['prenom'] }}</td>
-                            <td>{{ $user['tel'] }}</td>
-                            <td>{{$user['adresse']}}</td>
-                            <td>{{$user['code_postal']}}</td>
-                            <td>{{ $user['ville'] }}</td>
-                            <td>{{ $user['nbr_point'] }}</td>
-                            <td>{{ $user['role'] }}</td>
+                            <td>{{ $utilisateur['id_utilisateur'] }}</td>
+                            <td><input type="text" name="email" value="{{ $utilisateur['email'] }}"/> </td>
+                            <td><input type="text" name="password" value="{{ $utilisateur['password'] }}"/></td>
+                            <td><input type="text" name="nom" value="{{ $utilisateur['nom'] }}"/> </td>
+                            <td><input type="text" name="prenom" value="{{ $utilisateur['prenom'] }}"/> </td>
+                            <td><input type="text" name="tel" value="{{ $utilisateur['tel'] }}"/> </td>
+                            <td><input type="text" name="adresse" value="{{$utilisateur['adresse']}}"/> </td>
+                            <td><input type="text" name="code_postal" value="{{$utilisateur['code_postal']}}"/> </td>
+                            <td><input type="text" name="ville" value="{{ $utilisateur['ville'] }}"/> </td>
+                            <td><input type="text" name="nbr_point" value="{{ $utilisateur['nbr_point'] }}"/> </td>
+                            <td><input type="text" name="role" value="{{ $utilisateur['role'] }}"/> </td>
                         </tr>
-                        @endforeach
                         </tbody>
                     </table>
+                </form>
 
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
