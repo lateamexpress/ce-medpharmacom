@@ -28,8 +28,8 @@
                     <tbody>
                     <tr>
                         <td>{{$commande['id_commande'] }}  <input type="hidden" name="id_commande" value="{{ $commande['id_commande'] }}"> </td>
-                        <td>{{ $cmd->utilisateur->nom }}  <input type="hidden" name="ref_id_utilisateur" value="{{ $commande['ref_id_utilisateur'] }}"> </td>
-                        <td> {{ $cmd->produit->nom_produit }}  <input type="hidden" name="ref_id_produit" value="{{ $commande['ref_id_produit'] }}"> </td>
+                        <td>{{ $commande->utilisateur->nom }}  <input type="hidden" name="ref_id_utilisateur" value="{{ $commande['ref_id_utilisateur'] }}"> </td>
+                        <td> {{ $commande->produit->nom_produit }}  <input type="hidden" name="ref_id_produit" value="{{ $commande['ref_id_produit'] }}"> </td>
                         <td> {{ $commande['date'] }}  <input type="hidden" name="date" value="{{ $commande['date'] }}"> </td>
                         <td> {{ $commande['quantite'] }}  <input type="hidden" name="quantite" value="{{ $commande['quantite'] }}"></td>
                         <td contenteditable><input type="text" name="statut" value="{{ $commande['statut'] }}"> </td>
