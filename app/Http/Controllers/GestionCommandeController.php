@@ -9,7 +9,8 @@ class GestionCommandeController extends Controller
 {
     public function commandeAll()
     {
-        $commande = Commande::all();
+        //$commande = Commande::all();
+        $commande = Commande::with(['utilisateur', 'produit'])->get();
 
         return view('admin/gestion-commandes', [
             'commande' => $commande,
@@ -18,7 +19,7 @@ class GestionCommandeController extends Controller
 
     public function commandebyid($id)
     {
-        $commande = Commande::find($id);
+        $commande = Commande::with(['utilisateur', 'produit'])->get()->find($id);
 
         return view('admin/gestion-commandes', [
             'commande' => $commande,
