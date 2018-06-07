@@ -9,6 +9,18 @@
     margin: 0;
   }
 }
+.block-filter-products {
+  border: 1px solid #e2e3e5;
+  margin: {
+    left: 10%;
+    right: 10%;
+    top: 100px;
+  }
+}
+.block-filter-products {
+  @extend .shadow-cards
+}
+
 #block-tendances-header {
   border: 1px solid #dddddd;
   background: $turquoise;
@@ -47,21 +59,6 @@
 h3 {
   font-size: 14px;
 }
-.block-filter-products-inputs {
-  margin:{
-    left: 15px;
-    right: 15px;
-  }
-}
-.block-filter-products {
-  @extend .shadow-cards;
-  height: auto;
-  position: fixed;
-  top:10%;
-  left: 1.5%;
-  width: 13%;
-  background: #fefefe;
-}
 .quantity-text::before {
   content: 'Quantité : ';
 }
@@ -98,7 +95,18 @@ h3 {
   line-height: 30px;
   padding: 0 0.8rem;
 }
-
+.marque-produit {
+  max-width: 90%;
+  overflow-wrap: break-word;
+}
+.produit-block {
+  border: 1px solid #e2e3e5;
+  margin: 1%;
+  padding: 5%;
+  &:hover {
+    @extend .shadow-cards
+  }
+}
 #checkout {
   position: absolute;
   right: 0;
