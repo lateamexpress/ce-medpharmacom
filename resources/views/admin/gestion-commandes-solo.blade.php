@@ -61,7 +61,7 @@
             $('select').material_select();
 
         // Worst method... We must create a table and fetch the array... (lazy back)
-            
+
         const optVal = document.querySelector('#option_3').value;
         switch(optVal) {
             case 'Validé':
@@ -85,8 +85,8 @@
                 break;
             case 'Autre':
                 $('#option_1').text('En cours').val('En cours');
-                $('#option_2').text('Validé').val('Validé');
-                $('#option_4').text('Autre').val('Autre');
+                $('#option_2').text('Annulé').val('Annulé');
+                $('#option_4').text('Validé').val('Validé');
                 $('select').material_select();
                 break;
             default:
