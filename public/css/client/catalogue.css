@@ -265,7 +265,7 @@ h1 {
   border: 1px solid #e2e3e5;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 100px;
+  margin-top: 2%;
 }
 
 #block-tendances-header {
@@ -383,8 +383,20 @@ h3 {
 }
 
 @media screen and (max-width: 992px) {
-  .block-filter-products {
-    display: none;
+  #block-filter-products-mobile {
+    display: block;
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+  #collapseProduct {
+    overflow: scroll;
+    height: 450px;
+  }
+  .blockProduits {
+    margin-top: 140px;
   }
   .block-filter-products-mobile {
     display: block;
