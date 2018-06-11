@@ -56,20 +56,23 @@ class GestionUtilisateurController extends Controller
         return redirect()->back()->with('flash_message', 'Utilisateur supprimé');
     }
 
-    public function utilisateursAjouterByCSV()
+    public function utilisateursAjouterByCSV(Request $request)
     {
+        var_dump($request->fileCsv);
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "medpharmacom";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new \mysqli($servername, $username, $password, $dbname);
 
-        if (($handle = fopen("../storage/app/gabarit.csv", "r")) !== FALSE)
+        if (($handle = fopen("../storage/app/jojo.csv", "r")) !== FALSE)
         {
+
+            $characters = str_split('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"');
             while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE)
             {
-                if(!$titre){
+                //if(!$titre){
                     $num = count($data);
                     $ligne = explode(";", $data[0]);
                     $motdepase = 0;
@@ -77,18 +80,24 @@ class GestionUtilisateurController extends Controller
                     {
                         $motdepase .= ($i%2) ? strtoupper($characters[array_rand($characters)]) : $characters[array_rand($characters)];
                     }
-                    $motdepasseHash = Hash::make(motdepase);
+
+                    fwrite($data, '1');
+                    $motdepasseHash = \Hash::make($motdepase);
                     $sqlUtilisateur = "INSERT INTO utilisateur (`email`,`password`,`nom`,`prenom`,`tel`,`adresse`,`code_postal`,`ville`)
 			VALUES ('$ligne[0]','$motdepasseHash','$ligne[1]', '$ligne[2]', '$ligne[3]', '$ligne[4]', '$ligne[5]','$ligne[6]')";
 
                     $conn->query($sqlUtilisateur);
-                }
-                $titre = FALSE;
+                //}
+                //$titre = FALSE;
             }
             fclose($handle);
         }
         $conn->close();
 
+        $out = fopen('php://output', 'w');
+        fputcsv($out, array('this','is some', 'csv "stuff", you know.'));
+        var_dump($out);
+        fclose($out);
 
         return redirect()->back()->with('flash_message', 'Utilisateur ajouté');
     }
