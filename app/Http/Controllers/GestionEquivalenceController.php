@@ -21,7 +21,7 @@ class GestionEquivalenceController extends Controller
     {
         $generique = Generique::find($id);
 
-        return view('admin/gestion-equivalences', [
+        return view('admin/gestion-equivalences-solo', [
             'generique' => $generique,
         ]);
     }

@@ -48,7 +48,12 @@
                             <td><input type="text" name="code_postal" value="{{$utilisateur['code_postal']}}"/> </td>
                             <td><input type="text" name="ville" value="{{ $utilisateur['ville'] }}"/> </td>
                             <td><input type="text" name="nbr_point" value="{{ $utilisateur['nbr_point'] }}"/> </td>
-                            <td><input type="text" name="role" value="{{ $utilisateur['role'] }}"/> </td>
+                            <td>
+                                <select name="role">
+                                    <option id="option_1"></option>
+                                    <option id="option_2" selected value="{{ $utilisateur['role'] }}">{{ $utilisateur['role'] }}</option>
+                                </select>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -80,6 +85,20 @@
                 "bInfo": false,
                 responsive: true
             });
+
+            const optVal = document.querySelector('#option_2').value;
+            switch(optVal) {
+                case 'admin':
+                    $('#option_1').text('users').val('users');
+                    $('select').material_select();
+                    break;
+                case 'users':
+                    $('#option_1').text('admin').val('admin');
+                    $('select').material_select();
+                    break;
+                default:
+                    break;
+            }
         });
     </script>
 @endsection

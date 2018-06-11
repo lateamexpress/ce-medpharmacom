@@ -48,6 +48,6 @@ class GestionCommandeController extends Controller
     {
         $commande = Commande::find($id);
         $commande->delete();
-        return redirect()->back()->with('flash_message', 'Commande supprimé');
+        return redirect()->back()->with('test', $commande);
     }
 }

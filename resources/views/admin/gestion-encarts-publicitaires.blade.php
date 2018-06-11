@@ -12,7 +12,7 @@
 @section('specific-content-dashboard')
     <div class="container">
         <div class="row">
-            <div class="col s12 center-align">
+            <div class="col s12 center-align">{{$pub}}
                 <h1>Gestion des encarts publicitaires</h1>
                 <p>Cette page vous permet de gérer l'ordre d'affichage de vos encarts publicitaires</p>
                 <div>
@@ -45,22 +45,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td contenteditable>Pub 1</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td contenteditable>Pub 2</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
-                        </tr>
+                        @foreach($pub as $p)
+                            <tr>
+                                <td>{{ $p['id_pub'] }}</td>
+                                <td>{{ $p['nom'] }}</td>
+                                <td>{{ $p['lien'] }}</td>
+                                <td>{{ $p['ref_id_image'] }}</td>
+                                <td>{{ $p['actif'] }}</td>
+                                <td><input type="checkbox" name="delete" value="{{ $pb['id_pub'] }}"><label for="{{ $pb['id_pub'] }}"></label></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -84,15 +78,7 @@
                             <td contenteditable>NULL</td>
                             <td contenteditable>NULL</td>
                             <td contenteditable>NULL</td>
-                            <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td contenteditable>Pub 4</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td contenteditable>NULL</td>
-                            <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
+                            <td><input type="checkbox" name="delete"  id="test5" value=""> <label for="test5"></label></td>
                         </tr>
                         </tbody>
                     </table>

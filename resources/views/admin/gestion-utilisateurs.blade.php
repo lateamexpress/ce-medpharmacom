@@ -15,6 +15,15 @@
             <div class="col s12 center-align">
                 <h1>Gestion des utilisateurs</h1>
                 <div class="divider-custom"></div>
+                <div class="file-field input-field col s6">
+                    <div class="btn">
+                        <span>Upload CSV</span>
+                        <input name="fileCsv" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
                     <table id="usersTable" class="hover">
                         <thead>
                         <tr>

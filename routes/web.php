@@ -22,7 +22,6 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/', 'HomeController@returnSpecificHome');
 
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
-
         Route::get('/gestion-commandes', 'GestionCommandeController@commandeAll');
         Route::get('/gestion-commandes/{id}', 'GestionCommandeController@commandebyid');
         Route::post('/gestion-commandes/ajout', 'GestionCommandeController@commandeAjouter');
