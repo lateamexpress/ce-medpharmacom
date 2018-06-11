@@ -15,7 +15,7 @@
         </div>
         <div class="col l6 s12">
             <div>
-                <div class="right-align"><button class="btn" style="border-radius:1000px;" type="submit"><i class="material-icons">add_shopping_cart</i></button></div>
+                <div class="right-align"><a href="{{ url('commande/'.$produit['id_produit']) }}"><i class="material-icons">add_shopping_cart</i></a></div>
             </div>
             <h2 style="font-size: 15px;">{{ $produit['nom_produit'] }}</h2>
             <span>Ref : {{ $produit['ref_id_categorie'] }}</span>

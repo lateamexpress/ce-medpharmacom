@@ -50,4 +50,11 @@ class GestionCommandeController extends Controller
         $commande->delete();
         return redirect()->back()->with('test', $commande);
     }
+
+    public function checkOut($id)
+    {
+        return view('client/commande', [
+           'commande' => 'datacmd',
+        ]);
+    }
 }

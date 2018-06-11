@@ -15,7 +15,7 @@
 @section('contenu-container')
     <div class="row" id="commande-recap">
         <div class="col s12">
-            <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit</h1>
+            <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit {{ $commande }}</h1>
             <div class="divider-custom"></div>
             <table class="highlight responsive-table mt20">
                 <thead>
@@ -35,7 +35,7 @@
             </table>
             <div id="infos-cmd">
                 <a class="waves-effect waves-light btn mt20" href="{{url('mes-commandes')}}" class="">Envoyer ma demande</a>
-                <blockquote>Apres avoir envoyer votre demande, merpharmacom validera votre achat sous 48h</blockquote>
+                <blockquote>Apres avoir envoyé votre demande, merpharmacom validera votre achat sous 48h</blockquote>
             </div>
         </div>
     </div>
