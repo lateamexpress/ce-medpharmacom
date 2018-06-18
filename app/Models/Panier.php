@@ -10,29 +10,29 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class Commande
+ * Class Panier
  * 
- * @property int $id_commande
+ * @property int $id_panier
  * @property int $ref_id_utilisateur
- * @property int $ref_id_commandeproduit
+ * @property int $ref_id_panierproduit
  * @property \Carbon\Carbon $date
  * @property int $quantite
  * @property string $statut
  * 
  * @property \App\Models\Utilisateur $utilisateur
- * @property \App\Models\Commandeproduit $commandeproduit
+ * @property \App\Models\Produit $produit
  *
  * @package App\Models
  */
-class Commande extends Eloquent
+class Panier extends Eloquent
 {
-	protected $table = 'commande';
-	protected $primaryKey = 'id_commande';
+	protected $table = 'panier';
+	protected $primaryKey = 'id_panier';
 	public $timestamps = false;
 
 	protected $casts = [
 		'ref_id_utilisateur' => 'int',
-		'ref_id_commandeproduit' => 'int',
+		'ref_id_panierproduit' => 'int',
 		'quantite' => 'int'
 	];
 
@@ -42,7 +42,7 @@ class Commande extends Eloquent
 
 	protected $fillable = [
 		'ref_id_utilisateur',
-		'ref_id_commandeproduit',
+		'ref_id_panierproduit',
 		'date',
 		'quantite',
 		'statut'
@@ -53,8 +53,8 @@ class Commande extends Eloquent
 		return $this->belongsTo(\App\Models\Utilisateur::class, 'ref_id_utilisateur');
 	}
 
-	public function commandeproduit()
+	public function produit()
 	{
-		return $this->belongsTo(\App\Models\Commandeproduit::class, 'ref_id_produit');
+		return $this->belongsTo(\App\Models\Panierproduit::class, 'ref_id_produit');
 	}
 }
