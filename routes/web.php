@@ -46,6 +46,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/gestion-produits/ajout', 'GestionProduitController@produitAjouter');
         Route::post('/gestion-produits/modifier/{id}', 'GestionProduitController@produitModifier');
         Route::post('/gestion-produits/supprimer/{id}', 'GestionProduitController@produitSupprimer');
+        Route::post('/gestion-produits/ajout-csv', 'GestionProduitController@produitAjouterByCSV');
 
         Route::get('/gestion-laboratoires', 'GestionLaboratoireController@laboratoireAll');
         Route::get('/gestion-laboratoires/{id}', 'GestionLaboratoireController@laboratoireById');
@@ -76,6 +77,11 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/mes-commandes/ajout', 'MesCommandesController@commandeAjouter');
         Route::post('/mes-commandes/modifier/{id}', 'MesCommandesController@commandeModifier');
         Route::post('/mes-commandes/supprimer/{id}', 'MesCommandesController@commandeSupprimer');
+
+        Route::get('/panier/{id}', 'PanierController@panierbyid');
+        Route::post('/panier/ajout', 'PanierController@panierAjouter');
+        Route::post('/panier/modifier/{id}', 'PanierController@panierModifier');
+        Route::post('/panier/supprimer/{id}', 'PanierController@panierSupprimer');
 
         Route::get('/commande', 'CommandeController@index');
         Route::post('/commande/ajout', 'CommandeController@ajoutCommande');

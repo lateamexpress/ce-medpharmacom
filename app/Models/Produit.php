@@ -17,8 +17,11 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $cout
  * @property string $description
  * @property string $ref_id_image
+ * @property string $ref_id_marque
  * @property int $ref_id_categorie
- * 
+ *
+ * @property \App\Models\Categorie $image
+ * @property \App\Models\Categorie $marque
  * @property \App\Models\Categorie $categorie
  * @property \Illuminate\Database\Eloquent\Collection $commandes
  *
@@ -31,7 +34,8 @@ class Produit extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'cout' => 'int',
+        'ref_id_image' => 'int',
+        'ref_id_marque' => 'int',
 		'ref_id_categorie' => 'int'
 	];
 
@@ -39,17 +43,24 @@ class Produit extends Eloquent
 		'nom_produit',
 		'cout',
 		'description',
-		'ref_id_image',
+        'ref_id_image',
+        'ref_id_marque',
 		'ref_id_categorie'
 	];
 
-	public function categorie()
+    public function image()
+    {
+        return $this->hasMany(\App\Models\Image::class, 'ref_id_image');
+    }
+
+    public function marque()
+    {
+        return $this->hasMany(\App\Models\Marque::class, 'ref_id_marque');
+    }
+
+    public function categorie()
 	{
 		return $this->belongsTo(\App\Models\Categorie::class, 'ref_id_categorie');
 	}
 
-	public function commandes()
-	{
-		return $this->hasMany(\App\Models\Commande::class, 'ref_id_produit');
-	}
 }

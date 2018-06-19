@@ -36,9 +36,9 @@ class GestionCommandeController extends Controller
     {
         $commande = Commande::find($id);
         $commande->ref_id_utilisateur = $request->ref_id_utilisateur;
-        $commande->ref_id_produit = $request->ref_id_produit;
-        $commande->quantite = $request->quantite;
+        $commande->ref_id_commandeproduit = $request->ref_id_commandeproduit;
         $commande->date = $request->date;
+        $commande->quantite = $request->quantite;
         $commande->statut = $request->statut;
         $commande->save();
         return redirect()->back()->with('flash_message', 'Commande modifié');

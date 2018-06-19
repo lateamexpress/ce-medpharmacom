@@ -99,7 +99,7 @@ class GestionUtilisateurController extends Controller
         var_dump($out);
         fclose($out);
 
-        return redirect()->back()->with('flash_message', 'Utilisateur ajouté');
+        return redirect()->back()->with('flash_message', 'Utilisateurs ajoutés');
     }
 
 }
