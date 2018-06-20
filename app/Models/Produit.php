@@ -50,12 +50,12 @@ class Produit extends Eloquent
 
     public function image()
     {
-        return $this->hasMany(\App\Models\Image::class, 'ref_id_image');
+        return $this->belongsTo(\App\Models\Image::class, 'ref_id_image');
     }
 
     public function marque()
     {
-        return $this->hasMany(\App\Models\Marque::class, 'ref_id_marque');
+        return $this->belongsTo(\App\Models\Marque::class, 'ref_id_marque');
     }
 
     public function categorie()

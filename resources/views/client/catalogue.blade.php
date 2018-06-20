@@ -145,7 +145,7 @@
                                 <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
                                 <span class="nom-produit">{{ $produit['cout'] }} pts</span>
                                 <br><br>
-                                <a href="{{ url('produit/'.$produit['id_produit']) }}"><img class="responsive-img" src="http://via.placeholder.com/300x200"/></a>
+                                <a href="{{ url('produit/'.$produit['id_produit']) }}"><img class="responsive-img" src="{{ (!is_null($produit->image ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200')) }}"/></a>
                             </div>
                         </div>
                     @endforeach
