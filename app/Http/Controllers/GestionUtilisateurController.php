@@ -92,7 +92,7 @@ class GestionUtilisateurController extends Controller
                     'adresse' => $ligne[4],
                     'code_postal' => $ligne[5],
                     "ville" => $ligne[6],
-                    'nbr_point',
+                    'nbr_point' => $ligne[7],
                 ]);
                 fputcsv($userFile,[$ligne[0],$motdepase]);
             }
