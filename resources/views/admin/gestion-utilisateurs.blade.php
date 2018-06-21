@@ -15,7 +15,7 @@
             <div class="col s12 center-align">
                 <h1>Gestion des utilisateurs</h1>
                 <div class="divider-custom"></div>
-                <form method="POST" action="{{ url('/admin/gestion-utilisateurs/ajout-csv') }}">
+                <form method="POST" action="{{ url('/admin/gestion-utilisateurs/ajout-csv') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="file-field input-field col s8">
                         <div class="btn">
