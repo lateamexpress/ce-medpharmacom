@@ -71,8 +71,8 @@
                     <h5 class="white-text">En savoir plus</h5>
                     <p class="grey-text text-lighten-4"></p>
                     <ul>
-                        <li><a href="medpharmacom.ipmeo.com">Site web Medpharmacom</a></li>
-                        <li><a href="ce-medpharmacom.ipmeo.com">Application CE</a></li>
+                        <li><a href="http://medpharmacom.ipmeo.com/">Site web Medpharmacom</a></li>
+                        <li><a href="http://ce-medpharmacom.ipmeo.com/">Application CE</a></li>
                     </ul>
                 </div>
                 <div class="col l4 s12">

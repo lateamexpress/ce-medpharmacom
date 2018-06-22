@@ -15,45 +15,44 @@
             <h1>Gestion des produits</h1>
             <div class="divider-custom"></div>
             <p>Sur cette page vous pouvez gérer vos produits en important via un fichier Excel ou en voulant modifier, supprimer ou insérer un nouveau produit.</p>
-            <form action="#">
+            <form action="{{  url('admin/gestion-produits') }}" method="post">
                 <div class="file-field input-field col s12 l4">
                     <div class="btn">
                         <span>File</span>
-                        <input type="file">
+                        <input name="fileName" type="file">
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
                     </div>
                 </div>
-            </form>
-            <br>
-            <button type="submit" class="waves-effect btn-floating blue"><i class="material-icons">edit</i></button>
-            <table id="productsTable" class="hover">
-                <thead>
-                <tr>
-                    <th>id_produit</th>
-                    <th>nom_produit</th>
-                    <th>cout</th>
-                    <th>description</th>
-                    <th>ref_id_image</th>
-                    <th>ref_id_categorie</th>
-                    <th>Supprimer</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($produit as $prod)
+                <button type="submit" class="waves-effect btn-floating blue"><i class="material-icons">edit</i></button>
+                <table id="productsTable" class="hover">
+                    <thead>
                     <tr>
-                        <td><a href="{{ url('/admin/gestion-produits/'.$prod['id_produit']) }}">{{ $prod['id_produit'] }}</a></td>
-                        <td>{{ $prod['nom_produit'] }}</td>
-                        <td>{{ $prod['cout'] }}</td>
-                        <td>{{ $prod['description'] }}</td>
-                        <td>{{ $prod['ref_id_image'] }}</td>
-                        <td>{{ $prod['ref_id_catégorie'] }}</td>
-                        <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
+                        <th>id_produit</th>
+                        <th>nom_produit</th>
+                        <th>cout</th>
+                        <th>description</th>
+                        <th>ref_id_image</th>
+                        <th>ref_id_categorie</th>
+                        <th>Supprimer</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($produit as $prod)
+                        <tr>
+                            <td><a href="{{ url('/admin/gestion-produits/'.$prod['id_produit']) }}">{{ $prod['id_produit'] }}</a></td>
+                            <td>{{ $prod['nom_produit'] }}</td>
+                            <td>{{ $prod['cout'] }}</td>
+                            <td>{{ $prod['description'] }}</td>
+                            <td>{{ $prod['ref_id_image'] }}</td>
+                            <td>{{ $prod['ref_id_catégorie'] }}</td>
+                            <td><button class="waves-light btn-floating red"><i class="material-icons">delete_forever</i></button></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 @endsection

@@ -122,12 +122,14 @@
                 <div class="row">
                     @foreach($produitLastFive as $produitTendance)
                         <div class="col l4 s12">
+                            <a href="{{ url('produit/'.$produitTendance['id_produit']) }}">
                             <div class="produit-block">
                                 <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
                                 <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
                                 <br><br>
-                                <a href="{{ url('produit/'.$produitTendance['id_produit']) }}"><img width="300" height="200" class="" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/></a>
+                               <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -141,12 +143,14 @@
                 <div class="row">
                     @foreach($catalogue as $produit)
                         <div class="col l4 s12">
+                            <a href="{{ url('produit/'.$produit['id_produit']) }}">
                             <div class="produit-block">
                                 <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
                                 <span class="nom-produit">{{ $produit['cout'] }} pts</span>
                                 <br><br>
-                                <a href="{{ url('produit/'.$produit['id_produit']) }}"><img width="300" height="200" class="" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/></a>
+                               <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

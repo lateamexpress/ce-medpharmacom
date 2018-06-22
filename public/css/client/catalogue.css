@@ -261,6 +261,10 @@ h1 {
   margin: 0;
 }
 
+.produits-catalogue {
+  max-width: 200px;
+}
+
 .block-filter-products {
   border: 1px solid #e2e3e5;
   margin-left: 10%;
@@ -374,6 +378,8 @@ h3 {
   border: 1px solid #e2e3e5;
   margin: 1%;
   padding: 5%;
+  width: 95%;
+  height: 420px;
 }
 
 #checkout {

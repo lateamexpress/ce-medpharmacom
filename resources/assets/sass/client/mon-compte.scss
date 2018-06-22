@@ -5,21 +5,11 @@
   position: relative;
   height: 35vh;
 }
-#update-info{
-  position:absolute;
-  bottom:0;
-  right:0;
-  margin: {
-    right: 10px;
-    bottom: 10px;
-  }
+#update-info {
+  float: right;
 }
 // responsive
 @media screen and (max-width: 992px) {
-  #update-info {
-    position: absolute;
-    bottom: 0px;
-  }
   #form-info {
     border: none;
   }

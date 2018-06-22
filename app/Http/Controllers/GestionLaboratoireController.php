@@ -20,7 +20,7 @@ class GestionLaboratoireController extends Controller
     {
         $laboratoire = Laboratoire::find($id);
 
-        return view('admin/gestion-laboratoires', [
+        return view('admin/gestion-laboratoires-solo', [
             'laboratoire' => $laboratoire
         ]);
     }
@@ -39,6 +39,10 @@ class GestionLaboratoireController extends Controller
         $laboratoire->adresse = $request->adresse;
         $laboratoire->tel = $request->tel;
         $laboratoire->fax = $request->fax;
+
+        var_dump($laboratoire->nom);
+        var_dump($laboratoire->fax);
+
         $laboratoire->site = $request->site;
 
         $laboratoire->save();

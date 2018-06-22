@@ -11,7 +11,7 @@
 @section('contenu-container')
     <div class="row" style="min-height: 80vh; margin-top: 100px;">
         <div class="col l6 s12">
-            <img class="responsive-img materialboxed" src="https://cdn.shopify.com/s/files/1/0757/9123/products/linjer-classic-watch-34-rose-gold-tan-1-front_400x400_crop_center.jpg?v=1520751203"/>
+            <img class="responsive-img materialboxed" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}" style="margin-top: 70px;"/>
         </div>
         <div class="col l6 s12">
             <div>
