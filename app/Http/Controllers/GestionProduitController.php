@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produit;
+use ZipArchive;
 
 class GestionProduitController extends Controller
 {
@@ -64,6 +65,21 @@ class GestionProduitController extends Controller
 
     public function produitAjouterByCSV()
     {
+        $zip = new ZipArchive;
+        if ($zip->open('/tmp/test.zip') === TRUE) {
+            $zip->extractTo('/tmp/');
+            $zip->close();
+        }
+
+        $path = "/tmp/Images/*.*";
+        $newpath = "img/";
+        $directory = glob($path);
+        foreach($directory as $file){
+            $save = explode("/", $file);
+            rename($file, $newpath. end($save));
+        }
+
+
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -137,7 +153,6 @@ class GestionProduitController extends Controller
                         while ($row = $result->fetch_row()) {
                             $refIdCategorie = $row[0];
                         }
-                        ///////////////////////// TENTATIVE D'INSERT AUTOCARISTE DANS BDD /////////////////////////////////////////////////////
 
                         $sqlUtilisateur = "INSERT INTO produit (`nom_produit`, `cout`,`description`,`ref_id_image`,`ref_id_marque`,`ref_id_categorie`)
     VALUES ('$ligne[0]', $ligne[1], '$ligne[2]', '$refIdImage', '$refIdMarque', '$refIdCategorie')";
