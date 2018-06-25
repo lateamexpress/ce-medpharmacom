@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
+use App\Models\Image;
+use App\Models\Marque;
 use Illuminate\Http\Request;
 use App\Models\Produit;
 use ZipArchive;
@@ -63,114 +66,68 @@ class GestionProduitController extends Controller
         return redirect()->back()->with('flash_message', 'Produit supprimé');
     }
 
-    public function produitAjouterByCSV()
+    public function produitAjouterByCSV(Request $request)
     {
-        $zip = new ZipArchive;
-        if ($zip->open('/tmp/test.zip') === TRUE) {
-            $zip->extractTo('/tmp/');
+        $uploadedFile = $request->file('fileName');
+        $fileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+        $pathTmp = '/tmp/product_' . time();
+        mkdir($pathTmp);
+        $zip = new ZipArchive();
+        if ($zip->open($uploadedFile->path()) === TRUE) {
+            $zip->extractTo($pathTmp);
             $zip->close();
         }
-
-        $path = "/tmp/Images/*.*";
-        $newpath = "img/";
+        else{
+            throw new \Exception($uploadedFile->path() . " file introuvable.");
+        }
+        $path = $pathTmp . "/" . $fileName . "/Images/*.*";
+        $newpath = "./img/";
         $directory = glob($path);
         foreach($directory as $file){
             $save = explode("/", $file);
+            //dump($file);
+            //dump(getcwd());exit;
             rename($file, $newpath. end($save));
         }
 
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "medpharmacom";
-
-// Create connection
-        $conn = new \mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        echo "Connected successfully<br />\n";
-
-
-/////////////////////////// AJOUT DANS UN ARRAY DU CONTENU DU CSV ////////////////////////////////////////////////////////
-        //$ligne;
-        $title = TRUE;
-        if (($handle = fopen("../storage/app/Produits/gabarit.csv", "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
-                $num = count($data);
-                for ($c = 0; $c < $num; $c++) {
-                    if(!$title){
-                        $ligne = explode(";", $data[$c]);
-
-                        $ligne[0] = mysqli_escape_string($conn, str_replace('"', "", $ligne[0]));
-                        $ligne[1] = mysqli_escape_string($conn, str_replace('"', "", $ligne[1]));
-                        $ligne[2] = mysqli_escape_string($conn, str_replace('"', "", $ligne[2]));
-                        $ligne[3] = mysqli_escape_string($conn, str_replace('"', "", $ligne[3]));
-                        $ligne[4] = mysqli_escape_string($conn, str_replace('"', "", $ligne[4]));
-                        $ligne[5] = mysqli_escape_string($conn, str_replace('"', "", $ligne[5]));
-
-                        $sqlImage = "SELECT * FROM `image` WHERE `nom` LIKE '$ligne[3]'";
-                        //$refIdImage;
-                        $result = $conn->query($sqlImage);
-
-                        if($result->fetch_row() === NULL) {
-                            $sqlInsertImage = "INSERT INTO image (`lien`, `nom`) VALUES ('$ligne[3].png', '$ligne[3]')";
-                            $conn->query($sqlInsertImage);
-                            $result = $conn->query($sqlImage);
-                        }
-                        mysqli_data_seek($result, 0);
-                        while ($row = $result->fetch_row()) {
-                            $refIdImage = $row[0];
-                        }
-
-                        $sqlMarque = "SELECT * FROM `marque` WHERE `nom_marque` LIKE '$ligne[4]'";
-                        //$refIdMarque;
-                        $result = $conn->query($sqlMarque);
-
-                        if($result->fetch_row() === NULL) {
-                            $sqlInsertMarque = "INSERT INTO marque (`nom_marque`) VALUES ('$ligne[4]')";
-                            $conn->query($sqlInsertMarque);
-                            $result = $conn->query($sqlMarque);
-                        }
-                        mysqli_data_seek($result, 0);
-                        while ($row = $result->fetch_row()) {
-                            $refIdMarque = $row[0];
-                        }
-
-                        $sqlCategorie = "SELECT * FROM `categorie` WHERE `nom_categorie` LIKE '$ligne[5]'";
-                        //$refIdCategorie;
-                        $result = $conn->query($sqlCategorie);
-
-                        if($result->fetch_row() === NULL) {
-                            $sqlInsertCategorie = "INSERT INTO categorie (`nom_categorie`) VALUES ('$ligne[5]')";
-                            $conn->query($sqlInsertCategorie);
-                            $result = $conn->query($sqlCategorie);
-                        }
-                        mysqli_data_seek($result, 0);
-                        while ($row = $result->fetch_row()) {
-                            $refIdCategorie = $row[0];
-                        }
-
-                        $sqlUtilisateur = "INSERT INTO produit (`nom_produit`, `cout`,`description`,`ref_id_image`,`ref_id_marque`,`ref_id_categorie`)
-    VALUES ('$ligne[0]', $ligne[1], '$ligne[2]', '$refIdImage', '$refIdMarque', '$refIdCategorie')";
-
-                        //echo $sqlUtilisateur;
-                        if ($conn->query($sqlUtilisateur) === TRUE) {
-                            //echo "New record created successfully<br />\n";
-                        } else {
-                            echo "Error: " . $sqlUtilisateur . "<br>" . $conn->error;
-                        }
-                    }
-                    $title = FALSE;
+        $i = 0;
+        if (($handle = fopen($pathTmp . "/" . $fileName . "/gabarit.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+                if(!$i){
+                    $i++;
+                    continue;
                 }
+
+                $image = Image::where(['nom' => $data[3]])->first();
+
+
+                if($image=== NULL) {
+                    $image = Image::create([
+                        'nom' => $data[3],
+                        'lien' => $data[3]
+                    ]);
+                }
+                $refIdImage = $image->id_image;
+
+
+                $marque = Marque::firstOrCreate(['nom_marque' => $data[4]]);
+                $refIdMarque = $marque->id_marque;
+
+                $categorie = Categorie::firstOrCreate(['nom_categorie' => $data[5]]);
+                $refIdCategorie = $categorie->id_categorie;
+
+                Produit::create([
+                    'nom_produit' => $data[0],
+                    'cout' => $data[1],
+                    'description' => $data[2],
+                    'ref_id_image' => $refIdImage,
+                    'ref_id_marque' => $refIdMarque,
+                    'ref_id_categorie' => $refIdCategorie
+                ]);
+
             }
             fclose($handle);
         }
-////////////////////// FERMETURE DE LA BDD ////////////////////////////////////////////////////////
-        $conn->close();
         return redirect()->back()->with('flash_message', 'Produits ajoutés');
     }
 }

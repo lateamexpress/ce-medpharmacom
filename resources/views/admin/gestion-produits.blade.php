@@ -15,7 +15,8 @@
             <h1>Gestion des produits</h1>
             <div class="divider-custom"></div>
             <p>Sur cette page vous pouvez gérer vos produits en important via un fichier Excel ou en voulant modifier, supprimer ou insérer un nouveau produit.</p>
-            <form action="{{  url('admin/gestion-produits') }}" method="post">
+            <form action="{{  url('admin/gestion-produits/ajout-csv') }}" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="file-field input-field col s12 l4">
                     <div class="btn">
                         <span>File</span>

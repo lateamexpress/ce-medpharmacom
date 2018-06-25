@@ -33,7 +33,7 @@
                         <tr>
                             <th>id_utilisateur</th>
                             <th>email</th>
-                            <th>password</th>
+                            <!--<th>password</th>-->
                             <th>nom</th>
                             <th>prenom</th>
                             <th>tel</th>
@@ -49,7 +49,7 @@
                         <tr>
                             <td><a href="{{ url('/admin/gestion-utilisateurs/'.$user['id_utilisateur']) }}">{{ $user['id_utilisateur'] }}</a></td>
                             <td>{{ $user['email'] }}</td>
-                            <td>{{ $user['password'] }}</td>
+                            {{-- <td>{{ $user['password'] }}</td> --}}
                             <td>{{ $user['nom'] }}</td>
                             <td contenteditable>{{ $user['prenom'] }}</td>
                             <td>{{ $user['tel'] }}</td>

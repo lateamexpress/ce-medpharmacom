@@ -65,7 +65,6 @@ class GestionUtilisateurController extends Controller
         if (($handle = fopen($request->file('fileCsv')->path(), "r")) !== FALSE)
         {
             $i = 0;
-            $characters = str_split('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"');
             while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE)
             {
                 if(!$i)
@@ -73,16 +72,8 @@ class GestionUtilisateurController extends Controller
                     $i++;
                     continue;
                 }
-                //$num = count($data);
                 $ligne = explode(";", $data[0]);
-                $motdepase = 0;
-                for($i=0;$i<10;$i++)
-                {
-                    $motdepase .= ($i%2) ? strtoupper($characters[array_rand($characters)]) : $characters[array_rand($characters)];
-                }
-                //dump($ligne);exit;
-                //$sqlUtilisateur = "INSERT INTO utilisateur (`email`,`password`,`nom`,`prenom`,`tel`,`adresse`,`code_postal`,`ville`)
-        //VALUES ('$ligne[0]','$motdepasseHash','$ligne[1]', '$ligne[2]', '$ligne[3]', '$ligne[4]', '$ligne[5]','$ligne[6]')";
+                $motdepase = str_random(10);
                 Utilisateur::create([
                     'email' => $ligne[0],
                     'password' => bcrypt($motdepase),
