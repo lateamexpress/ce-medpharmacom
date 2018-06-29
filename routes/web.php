@@ -94,7 +94,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/mon-compte', 'UsersController@index');
         Route::post('/mon-compte/ajout', 'UsersController@insertUsers');
 
-        Route::get('/mes-commandes', 'MesCommandesController@commandesAll');
+        Route::get('/mes-commandes', 'MesCommandesController@commandeAll');
         Route::get('/mes-commandes/{id}', 'MesCommandesController@commandebyid');
         Route::post('/mes-commandes/ajout', 'MesCommandesController@commandeAjouter');
         Route::post('/mes-commandes/modifier/{id}', 'MesCommandesController@commandeModifier');

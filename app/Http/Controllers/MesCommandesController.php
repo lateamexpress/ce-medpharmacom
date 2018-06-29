@@ -11,7 +11,7 @@ class MesCommandesController extends Controller
     {
         $commande = Commande::all();
 
-        return view('admin/gestion-commandes', [
+        return view('client/mes-commandes', [
             'commande' => $commande,
         ]);
     }
@@ -20,7 +20,7 @@ class MesCommandesController extends Controller
     {
         $commande = Commande::find($id);
 
-        return view('admin/gestion-commandes', [
+        return view('client/mes-commandes', [
             'commande' => $commande,
         ]);
     }
