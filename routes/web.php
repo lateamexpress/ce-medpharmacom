@@ -27,18 +27,28 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/gestion-commandes/ajout', 'GestionCommandeController@commandeAjouter');
         Route::post('/gestion-commandes/modifier/{id}', 'GestionCommandeController@commandeModifier');
         Route::post('/gestion-commandes/supprimer/{id}', 'GestionCommandeController@commandeSupprimer');
+        Route::post('/gestion-commandes', [
+            'uses' => 'GestionCommandeController@commandeFiltre',
+        ]);
 
         Route::get('/gestion-equivalences', 'GestionEquivalenceController@generiqueAll');
         Route::get('/gestion-equivalences/{id}', 'GestionEquivalenceController@generiqueById');
         Route::post('/gestion-equivalences/ajout', 'GestionEquivalenceController@generiqueAjouter');
         Route::post('/gestion-equivalences/modifier/{id}', 'GestionEquivalenceController@generiqueModifier');
         Route::post('/gestion-equivalences/supprimer/{id}', 'GestionEquivalenceController@generiqueSupprimer');
+        Route::post('/gestion-equivalences', [
+            'uses' => 'GestionEquivalenceController@generiqueFiltre',
+        ]);
 
         Route::get('/gestion-encarts-publicitaires', 'GestionPubController@pubAll');
         Route::get('/gestion-encarts-publicitaires/{id}', 'GestionPubController@pubById');
         Route::post('/gestion-encarts-publicitaires/ajout', 'GestionPubController@pubAjouter');
         Route::post('/gestion-encarts-publicitaires/modifier/{id}', 'GestionPubController@pubModifier');
         Route::post('/gestion-encarts-publicitaires/supprimer/{id}', 'GestionPubController@pubSupprimer');
+        Route::post('/gestion-encarts-publicitaires', [
+            'uses' => 'GestionPubController@pubFiltre',
+        ]);
+
 
         Route::get('/gestion-produits', 'GestionProduitController@produitAll');
         Route::get('/gestion-produits/withfivelast/', 'GestionProduitController@produitsAll_And_FiveLast');
@@ -47,12 +57,18 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/gestion-produits/modifier/{id}', 'GestionProduitController@produitModifier');
         Route::post('/gestion-produits/supprimer/{id}', 'GestionProduitController@produitSupprimer');
         Route::post('/gestion-produits/ajout-csv', 'GestionProduitController@produitAjouterByCSV');
+        Route::post('/gestion-produits', [
+            'uses' => 'GestionProduitController@produitFiltre',
+        ]);
 
         Route::get('/gestion-laboratoires', 'GestionLaboratoireController@laboratoireAll');
         Route::get('/gestion-laboratoires/{id}', 'GestionLaboratoireController@laboratoireById');
         Route::post('/gestion-laboratoires/ajout', 'GestionLaboratoireController@laboratoireAjouter');
         Route::post('/gestion-laboratoires/modifier/{id}', 'GestionLaboratoireController@laboratoireModifier');
         Route::post('/gestion-laboratoires/supprimer/{id}', 'GestionLaboratoireController@laboratoireSupprimer');
+        Route::post('/gestion-laboratoires', [
+            'uses' => 'GestionLaboratoireController@laboratoireFiltre',
+        ]);
 
         Route::get('/gestion-utilisateurs', 'GestionUtilisateurController@utilisateurAll');
         Route::get('/gestion-utilisateurs/{id}', 'GestionUtilisateurController@utilisateurById');
@@ -60,6 +76,9 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/gestion-utilisateurs/modifier/{id}', 'GestionUtilisateurController@utilisateurModifier');
         Route::post('/gestion-utilisateurs/supprimer/{id}', 'GestionUtilisateurController@utilisateurSupprimer');
         Route::post('/gestion-utilisateurs/ajout-csv', 'GestionUtilisateurController@utilisateursAjouterByCSV');
+        Route::post('/gestion-utilisateurs', [
+            'uses' => 'GestionUtilisateurController@utilisateurFiltre',
+        ]);
     });
 
     Route::group(["middleware" =>"users"],function(){

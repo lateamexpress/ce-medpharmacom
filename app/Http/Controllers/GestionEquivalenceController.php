@@ -62,4 +62,35 @@ class GestionEquivalenceController extends Controller
         $generique->delete();
         return redirect()->back()->with('flash_message', 'Générique supprimé');
     }
+
+    public function generiqueFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'equivalence-generique' => 'required'
+        ]);
+
+        $slug = $request->all()['equivalence-generique'];
+        $slug = strtoupper($slug);
+
+        $submitArray = [];
+
+        $submitGenerique = $request['Generique'];
+        $submitMedicament = $request['Medicament'];
+
+        array_push($submitArray, $submitGenerique, $submitMedicament);
+
+        if($submitArray[0] == 'Generique') {
+            $generique = Generique::where('actif', 'like', '%'. $slug .'%')->get();
+            return view("admin/gestion-equivalences",[
+                'generique' => $generique,
+            ]);
+        }
+        elseif ($submitArray[1] == 'Medicament') {
+            $medicament = Medicament::where('actif', 'like', '%'. $slug .'%')->get();
+            return view("admin/gestion-equivalences",[
+                'medicament' => $medicament,
+            ]);
+        }
+
+    }
 }

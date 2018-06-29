@@ -135,4 +135,19 @@ class GestionProduitController extends Controller
         }
         return redirect()->back()->with('flash_message', 'Produits ajoutés');
     }
+
+    public function produitFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'produit' => 'required'
+        ]);
+
+        $slug = $request->all()['produit'];
+
+        $produit = Produit::where('nom_produit', 'like', '%'. $slug .'%')->get();
+
+        return view('admin/gestion-produits', [
+            'produit' => $produit
+        ]);
+    }
 }

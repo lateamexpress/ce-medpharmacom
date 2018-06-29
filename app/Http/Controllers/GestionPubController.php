@@ -49,4 +49,19 @@ class GestionPubController extends Controller
         $pub->delete();
         return redirect()->back()->with('flash_message', 'Encart publicitaire supprimé');
     }
+
+    public function pubFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'pub' => 'required'
+        ]);
+
+        $slug = $request->all()['pub'];
+
+        $pub = Pub::where('nom', 'like', '%'. $slug .'%')->get();
+
+        return view('admin/gestion-encarts-publicitaires', [
+            'pub' => $pub,
+        ]);
+    }
 }

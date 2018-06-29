@@ -94,4 +94,18 @@ class GestionUtilisateurController extends Controller
         return response()->download("/tmp/utilisateurs.csv")->deleteFileAfterSend(true);
     }
 
+    public function utilisateurFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'utilisateur' => 'required'
+        ]);
+
+        $slug = $request->all()['utilisateur'];
+
+        $utilisateur = Utilisateur::where('email', 'like', '%'. $slug .'%')->get();
+
+        return view('admin/gestion-utilisateurs', [
+            'utilisateur' => $utilisateur,
+        ]);
+    }
 }

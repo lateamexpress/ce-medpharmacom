@@ -57,4 +57,19 @@ class GestionCommandeController extends Controller
            'commande' => 'datacmd',
         ]);
     }
+
+    public function commandeFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'commande' => 'required'
+        ]);
+
+        $slug = $request->all()['commande'];
+
+        $commande = Commande::find($slug);
+
+        return view("admin/gestion-commandes",[
+            'commande' => $commande,
+         ]);
+    }
 }

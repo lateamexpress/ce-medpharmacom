@@ -55,4 +55,19 @@ class GestionLaboratoireController extends Controller
         $laboratoire->delete();
         return redirect()->back()->with('flash_message', 'Laboratoire supprimé');
     }
+
+    public function laboratoireFiltre(Request $request)
+    {
+        $this->validate($request, [
+            'laboratoire' => 'required'
+        ]);
+
+        $slug = $request->all()['laboratoire'];
+
+        $laboratoire = Laboratoire::where('nom', 'like', '%'. $slug .'%')->get();
+
+        return view('admin/gestion-laboratoires', [
+            'laboratoire' => $laboratoire
+        ]);
+    }
 }
