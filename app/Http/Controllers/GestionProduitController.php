@@ -69,13 +69,18 @@ class GestionProduitController extends Controller
     public function produitAjouterByCSV(Request $request)
     {
         $uploadedFile = $request->file('fileName');
-        $fileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+        $fileName = "";
         $pathTmp = '/tmp/product_' . time();
         mkdir($pathTmp);
         $zip = new ZipArchive();
         if ($zip->open($uploadedFile->path()) === TRUE) {
             $zip->extractTo($pathTmp);
             $zip->close();
+            foreach (glob($pathTmp . "/*") as $dir) {
+                if(pathinfo($dir,PATHINFO_FILENAME) !== "__MACOSX"){
+                    $fileName = pathinfo($dir,PATHINFO_FILENAME);
+                }
+            }
         }
         else{
             throw new \Exception($uploadedFile->path() . " file introuvable.");
