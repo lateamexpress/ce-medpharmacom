@@ -177,12 +177,14 @@
                     arrayProduits.push({
                         produit, quantite
                     });
+
+                    console.log(arrayProduits);
+
                     $.ajax({
                         type:'POST',
                         url:'{{ url('catalogue')}}',
                         data:{
-                            produit: produit,
-                            quantite: quantite
+                            arrayProduits: arrayProduits
                         },
                         success:function(data){
                             alert(data.success);
