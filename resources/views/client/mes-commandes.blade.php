@@ -17,25 +17,19 @@
                 <tr>
                     <th>Nom</th>
                     <th>Date</th>
+                    <th>Quantité</th>
                     <th>Statut</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($commande as $cmd)
                 <tr>
-                    <td>Stylo Medpharmacom</td>
-                    <td>2009/01/12</td>
-                    <td>En cours de validation</td>
+                    <td>{{ $cmd['ref_id_produit'] }}</td>
+                    <td>{{ $cmd['date'] }}</td>
+                    <td>{{ $cmd['quantite'] }}</td>
+                    <td>{{ $cmd['statut'] }}</td>
                 </tr>
-                <tr>
-                    <td>Etui</td>
-                    <td>2010/02/11</td>
-                    <td>Validé</td>
-                </tr>
-                <tr>
-                    <td>T-shirt</td>
-                    <td>2002/01/01</td>
-                    <td>Livré</td>
-                </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
