@@ -56,6 +56,7 @@
             </ul>
         </form>
         <form method="post" action="{{url('catalogue')}}">
+            @csrf
             <div class="block-filter-products show-on-large hide-on-med-and-down" style="padding-right: 10%; padding-left: 10%;">
                 <div id="header-filter-products">
                     <h2 class="h2-catalog center-align">Filtres de recherche</h2>
