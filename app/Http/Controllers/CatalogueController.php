@@ -51,4 +51,10 @@ class CatalogueController extends Controller
             'catalogue' => $catalogue,
         ]);
     }
+
+    public function checkout(Request $request) {
+        $arrayProduit = request()->all();
+        var_dump($arrayProduit);
+        return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
+    }
 }

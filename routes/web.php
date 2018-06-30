@@ -89,6 +89,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/catalogue', [
             'uses' => 'CatalogueController@produitFiltre',
         ]);
+        Route::post('/catalogue', 'CatalogueController@checkout');
         Route::get('/produit/{id}', 'CatalogueController@produitById');
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
         Route::get('/mon-compte', 'UsersController@index');

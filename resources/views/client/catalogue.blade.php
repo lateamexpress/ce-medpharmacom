@@ -7,6 +7,7 @@
 @section('specific-css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/client/catalogue.css') }}">
     <link rel="stylesheet" href="{{ asset('css/client/nouislider.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 @section('contenu')
@@ -94,53 +95,56 @@
                 </div>
             </div>
         </form>
-
     </div>
-    <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
-        <div>
-            <div id="block-tendances-header">
-                <h1 class="center-align">Les articles tendances</h1>
-            </div>
-            <div id="block-tendances-content" class="center-align">
-                <div class="row">
-                    @foreach($produitLastFive as $produitTendance)
-                        <div class="col l4 s12">
-                            <a href="{{ url('produit/'.$produitTendance['id_produit']) }}">
-                            <div class="produit-block">
-                                <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
-                                <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
-                                <br><br>
-                               <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
+        <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
+            <div>
+                <div id="block-tendances-header">
+                    <h1 class="center-align">Les articles tendances</h1>
+                </div>
+                <div id="block-tendances-content" class="center-align">
+                    <div class="row">
+                        @foreach($produitLastFive as $produitTendance)
+                            <div class="col l4 s12">
+                                <a id="{{$produitTendance['id_produit'] }}" href="{{ url('produit/'.$produitTendance['id_produit']) }}">
+                                    <div class="produit-block">
+                                        <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
+                                        <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
+                                        <br><br>
+                                        <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
+                                    </div>
+                                </a>
+                                Quantité : <input type="number" class="quantity" value="1">
+                                <button class="btn waves-effet add-product">Checkout</button>
                             </div>
-                            </a>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="block-tendances-header" class="mt50">
+                    <h1 class="center-align">Découvrir</h1>
+                </div>
+                <div id="block-tendances-content" class="center-align mb50">
+                    <div class="row">
+                        @foreach($catalogue as $produit)
+                            <div class="col l4 s12">
+                                <a id="{{$produit['id_produit'] }}" href="{{ url('produit/'.$produit['id_produit']) }}">
+                                    <div class="produit-block">
+                                        <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
+                                        <span class="nom-produit">{{ $produit['cout'] }} pts</span>
+                                        <br><br>
+                                        <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
+                                    </div>
+                                </a>
+                                Quantité : <input type="number" class="quantity" value="1">
+                                <button class="btn waves-effet add-product">Checkout</button>
+                            </div>
+                        @endforeach
+                    </div>
+                    {{ $catalogue->links('vendor.pagination.default') }}
                 </div>
             </div>
         </div>
-        <div>
-            <div id="block-tendances-header" class="mt50">
-                <h1 class="center-align">Découvrir</h1>
-            </div>
-            <div id="block-tendances-content" class="center-align mb50">
-                <div class="row">
-                    @foreach($catalogue as $produit)
-                        <div class="col l4 s12">
-                            <a href="{{ url('produit/'.$produit['id_produit']) }}">
-                            <div class="produit-block">
-                                <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
-                                <span class="nom-produit">{{ $produit['cout'] }} pts</span>
-                                <br><br>
-                               <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
-                            </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-                {{ $catalogue->links('vendor.pagination.default') }}
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('contenu-container')
@@ -151,6 +155,7 @@
     <script src="{{ asset('js/client/catalogue.js') }}"></script>
     <script>
         $(function(){
+            let arrayProduits = [];
             $('.collapsible-header').on('click', () => {
                if(!$('.collapsible-header').hasClass('active')) {
                   $('body').css('overflow', 'hidden');
@@ -158,6 +163,32 @@
                else {
                    $('body').css('overflow', 'scroll');
                }
+            });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.add-product').each(function () {
+                $(this).click(function(e){
+                    e.preventDefault();
+                    let produit = $(this).siblings('a').attr('id');
+                    let quantite = $(this).siblings('.quantity').val();
+                    arrayProduits.push({
+                        produit, quantite
+                    });
+                    $.ajax({
+                        type:'POST',
+                        url:'{{ url('catalogue')}}',
+                        data:{
+                            produit: produit,
+                            quantite: quantite
+                        },
+                        success:function(data){
+                            alert(data.success);
+                        }
+                    });
+                });
             });
         });
     </script>
