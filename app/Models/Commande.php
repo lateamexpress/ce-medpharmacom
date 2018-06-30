@@ -14,9 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $id_commande
  * @property int $ref_id_utilisateur
- * @property int $ref_id_commandeproduit
  * @property \Carbon\Carbon $date
- * @property int $quantite
  * @property string $statut
  * 
  * @property \App\Models\Utilisateur $utilisateur
@@ -32,7 +30,6 @@ class Commande extends Eloquent
 
 	protected $casts = [
 		'ref_id_utilisateur' => 'int',
-		'ref_id_commandeproduit' => 'int',
 		'quantite' => 'int'
 	];
 
@@ -42,19 +39,12 @@ class Commande extends Eloquent
 
 	protected $fillable = [
 		'ref_id_utilisateur',
-		'ref_id_commandeproduit',
 		'date',
-		'quantite',
 		'statut'
 	];
 
 	public function utilisateur()
 	{
 		return $this->belongsTo(\App\Models\Utilisateur::class, 'ref_id_utilisateur');
-	}
-
-	public function commandeproduit()
-	{
-		return $this->belongsTo(\App\Models\Commandeproduit::class, 'ref_id_produit');
 	}
 }

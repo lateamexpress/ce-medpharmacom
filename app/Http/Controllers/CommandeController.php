@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Commande;
+use App\Models\Commandeproduit;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CommandeController extends Controller
 {
@@ -21,18 +24,30 @@ class CommandeController extends Controller
         ]);
     }
 
-    public function ajoutCommande()
+    public function ajoutCommande(Request $request)
     {
-        $commande = Commande::create(Input::all());
+        $commande = Commande::create([
+            'ref_id_utilisateur' => Auth::id(),
+            'date' => date("Y-m-d"),
+        ]);
+
+        $refIdCommande = $commande->id_commande;
+
+        for($i=0;$i<count(Session::get());$i++){
+            Commandeproduit::create([
+                'ref_id_commande' => $refIdCommande,
+                'ref_id_produit' => Session::get(),
+            ]);
+        }
         return redirect()->back()->with('flash_message', 'Commande ajouté');
     }
 
     public function updateCommande()
     {
-        // TODO le mieux serait de me return de l'HTML pour que je puisse hydrater les views
+
     }
     public function deleteCommande()
     {
-        // TODO le mieux serait de me return de l'HTML pour que je puisse hydrater les views
+
     }
 }

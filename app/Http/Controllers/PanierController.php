@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Panier;
+use Illuminate\Support\Facades\Session;
 
 class PanierController extends Controller
 {
@@ -19,8 +20,7 @@ class PanierController extends Controller
 
     public function panierAjouter()
     {
-        Panier::create(Input::all());
-        return redirect()->back()->with('flash_message', 'Commande ajouté');
+        dd(Session::all());
     }
 
     public function panierModifier(Request $request, $id)
