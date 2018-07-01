@@ -29,15 +29,15 @@ class CommandeController extends Controller
         $commande = Commande::create([
             'ref_id_utilisateur' => Auth::id(),
             'date' => date("Y-m-d"),
+            'statut' => "En cours",
         ]);
 
         $refIdCommande = $commande->id_commande;
 
-        for($i=0;$i<count(Session::get());$i++){
+        for($i=0;$i<count(session()->get('produits'));$i++){
             Commandeproduit::create([
                 'ref_id_commande' => $refIdCommande,
-                'ref_id_produit' => Session::get(),
-                'statut' => "En cours",
+                'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
         }
         return redirect()->back()->with('flash_message', 'Commande ajouté');
