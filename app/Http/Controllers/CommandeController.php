@@ -37,6 +37,7 @@ class CommandeController extends Controller
             Commandeproduit::create([
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => Session::get(),
+                'statut' => "En cours",
             ]);
         }
         return redirect()->back()->with('flash_message', 'Commande ajouté');

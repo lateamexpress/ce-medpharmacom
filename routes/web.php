@@ -98,6 +98,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/mes-commandes', 'MesCommandesController@commandeAll');
         Route::get('/mes-commandes/{id}', 'MesCommandesController@commandebyid');
         Route::post('/mes-commandes/ajout', 'MesCommandesController@commandeAjouter');
+        Route::post('/mes-commandes/statut/{id}', 'MesCommandesController@commandeChangeStatut');
         Route::post('/mes-commandes/modifier/{id}', 'MesCommandesController@commandeModifier');
         Route::post('/mes-commandes/supprimer/{id}', 'MesCommandesController@commandeSupprimer');
 

@@ -38,7 +38,6 @@ class GestionCommandeController extends Controller
         $commande->ref_id_utilisateur = $request->ref_id_utilisateur;
         $commande->ref_id_commandeproduit = $request->ref_id_commandeproduit;
         $commande->date = $request->date;
-        $commande->quantite = $request->quantite;
         $commande->statut = $request->statut;
         $commande->save();
         return redirect()->back()->with('flash_message', 'Commande modifié');
@@ -56,6 +55,15 @@ class GestionCommandeController extends Controller
         return view('client/commande', [
            'commande' => 'datacmd',
         ]);
+    }
+
+    public function commandeChangeStatut($id)
+    {
+        $commande = Commande::find($id);
+        $commande->statut = "Validé";
+        $commande->save();
+        ////////////////////////// Envoyer le mail commande
+        return redirect()->back()->with('flash_message', 'Commande validé');
     }
 
     public function commandeFiltre(Request $request)
