@@ -251,13 +251,7 @@ h1 {
 }
 
 #commande-recap {
-  height: 60vh;
   position: relative;
-}
-
-#infos-cmd {
-  position: absolute;
-  bottom: 0;
 }
 
 /*# sourceMappingURL=commande.css.map */

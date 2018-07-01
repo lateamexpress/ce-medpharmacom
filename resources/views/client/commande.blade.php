@@ -13,34 +13,36 @@
 @endsection
 
 @section('contenu-container')
-    <div class="row" id="commande-recap">
-        <div class="col s12">
-            <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit </h1>
-            <div class="divider-custom"></div>
-            <table class="highlight responsive-table mt20">
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prix</th>
-                    <th>Solde restant</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($commande as $cmd)
+    <form method="POST" action="{{ url('client/commande') }}">
+        <div class="row" id="commande-recap">
+            <div class="col s12">
+                <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit </h1>
+                <div class="divider-custom"></div>
+                <table class="highlight responsive-table mt20">
+                    <thead>
                     <tr>
-                        <td>{{ $cmd }}</td>
-                        <td>{{ $cmd }}</td>
-                        <td>{{ $cmd }}</td>
+                        <th>Nom</th>
+                        <th>Cout</th>
+                        <th>Quantite</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
-            <div id="infos-cmd">
-                <a class="waves-effect waves-light btn mt20" href="{{url('mes-commandes')}}" class="">Envoyer ma demande</a>
-                <blockquote>Apres avoir envoyé votre demande, merpharmacom validera votre achat sous 48h</blockquote>
+                    </thead>
+                    <tbody>
+                    @foreach(Session::all()['produits'] as $prod)
+                        <tr>
+                            <td>{{ $prod['produit'] }}</td>
+                            <td>{{ $prod['cout'] }}</td>
+                            <td>{{ $prod['quantite'] }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <div id="infos-cmd">
+                    <a class="waves-effect waves-light btn" href="{{url('mes-commandes')}}">Envoyer ma demande</a>
+                    <blockquote>Apres avoir envoyé votre demande, merpharmacom validera votre achat sous 48h, le total est de : METTRE VALUE</blockquote>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 @endsection
 
 @section('specific-js')

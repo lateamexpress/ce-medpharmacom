@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produit;
+use Illuminate\Support\Facades\Session;
 
 class CatalogueController extends Controller
 {
@@ -53,12 +54,19 @@ class CatalogueController extends Controller
     }
 
     public function checkout(Request $request) {
-        $arrayProduit = request()->all();
-        // Affiche bien les valeurs de $arrayProduit
-        var_dump($arrayProduit);
+
+        if(isset(request()->all()['arrayProduits'])) {
+            $arrayProduits = request()->all()['arrayProduits'];
+            foreach ($arrayProduits as $prod) {
+                $request->session()->push('produits', $prod);
+            }
+        }
+//        $request->session()->forget();
+//        $request->session()->regenerate();
+        //$request->session()->flush();
         if($request['Commander']) {
             // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
-            return View('client/commande')->with('commande', $arrayProduit);
+            return View('client/commande')->with('commande', '');
         }
         else {
             // TODO insert dans la DB chaque produit avec l'id de l'user

@@ -102,7 +102,7 @@
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
             <div>
                 <div id="block-tendances-header">
-                    <h1 class="center-align">Les articles tendances</h1>
+                    <h1 class="center-align">Les articles tendances {{var_dump(Session::all())}}</h1>
                 </div>
                 <div id="block-tendances-content" class="center-align">
                     <div class="row">
@@ -110,7 +110,7 @@
                             <div class="col l4 s12">
                                 <a id="{{$produitTendance['id_produit'] }}" href="{{ url('produit/'.$produitTendance['id_produit']) }}">
                                     <div class="produit-block">
-                                        <h1 name="nom_produit[]" class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
+                                        <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
                                         <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
@@ -133,7 +133,7 @@
                             <div class="col l4 s12">
                                 <a id="{{$produit['id_produit'] }}" href="{{ url('produit/'.$produit['id_produit']) }}">
                                     <div class="produit-block">
-                                        <h1 name="nom_produit[]" class="marque-produit">{{$produit['nom_produit']}}</h1>
+                                        <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
                                         <span class="nom-produit">{{ $produit['cout'] }} pts</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
@@ -175,14 +175,13 @@
             });
             $('.add-product').each(function () {
                 $(this).click(function(e){
-
                     Materialize.toast('Produit ajouté à ce panier', 3000);
-
                     e.preventDefault();
                     let produit = $(this).siblings('a').attr('id');
                     let quantite = $(this).siblings('.quantity').val();
+                    let cout = $(this).siblings('a').find('.produit-block').children('.nom-produit').text();
                     arrayProduits.push({
-                        produit, quantite
+                        produit, quantite, cout
                     });
 
                     console.log(arrayProduits);
