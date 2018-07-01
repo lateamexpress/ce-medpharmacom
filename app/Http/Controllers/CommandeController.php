@@ -36,7 +36,6 @@ class CommandeController extends Controller
         ]);
 
         $refIdCommande = $commande->id_commande;
-
         for($i=0;$i<count(session()->get('produits'));$i++){
             Commandeproduit::create([
                 'ref_id_commande' => $refIdCommande,

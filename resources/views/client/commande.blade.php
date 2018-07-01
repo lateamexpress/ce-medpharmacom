@@ -13,7 +13,8 @@
 @endsection
 
 @section('contenu-container')
-    <form method="POST" action="{{ url('client/commande') }}">
+    <form method="POST" action="{{ url('commande') }}">
+        @csrf
         <div class="row" id="commande-recap">
             <div class="col s12">
                 <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit </h1>
@@ -37,7 +38,7 @@
                     </tbody>
                 </table>
                 <div id="infos-cmd">
-                    <a class="waves-effect waves-light btn" href="{{url('mes-commandes')}}">Envoyer ma demande</a>
+                    <input type="submit" class="waves-effect waves-light btn" value="Envoyer ma demande">
                     <blockquote>Apres avoir envoyé votre demande, merpharmacom validera votre achat sous 48h, le total est de : METTRE VALUE</blockquote>
                 </div>
             </div>
