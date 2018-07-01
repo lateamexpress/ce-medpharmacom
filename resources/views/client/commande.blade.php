@@ -29,7 +29,7 @@
                     <tbody>
                     @foreach(Session::all()['produits'] as $prod)
                         <tr>
-                            <td>{{ $prod['produit'] }}</td>
+                            <td>{{ $prod['nom'] }}</td>
                             <td>{{ $prod['cout'] }}</td>
                             <td>{{ $prod['quantite'] }}</td>
                         </tr>

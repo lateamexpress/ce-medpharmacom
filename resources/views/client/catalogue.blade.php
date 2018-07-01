@@ -179,9 +179,10 @@
                     e.preventDefault();
                     let produit = $(this).siblings('a').attr('id');
                     let quantite = $(this).siblings('.quantity').val();
+                    let nom = $(this).siblings('a').find('.produit-block').children('.marque-produit').text();
                     let cout = $(this).siblings('a').find('.produit-block').children('.nom-produit').text();
                     arrayProduits.push({
-                        produit, quantite, cout
+                        produit, quantite, cout, nom
                     });
 
                     console.log(arrayProduits);
