@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produit;
+use App\Models\Marque;
+use App\Models\Categorie;
 use Illuminate\Support\Facades\Session;
 
 class CatalogueController extends Controller
@@ -11,10 +13,14 @@ class CatalogueController extends Controller
     public function produitAll()
     {
         $catalogue = Produit::paginate(15);
+        $marque = Marque::all();
+        $categorie = Categorie::all();
         $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(5);
         return view('client/catalogue',[
             'catalogue' => $catalogue,
-            'produitLastFive' => $poduitLastFive
+            'produitLastFive' => $poduitLastFive,
+            'marque' => $marque,
+            'categorie' => $categorie,
         ]);
     }
 
