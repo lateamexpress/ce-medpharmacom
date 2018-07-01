@@ -34,9 +34,6 @@
                             <td>{{ $prod['quantite'] }}</td>
                         </tr>
                     @endforeach
-                    <?php
-                        var_dump(session()->get('produits')[0]['produit']);
-                    ?>
                     </tbody>
                 </table>
                 <div id="infos-cmd">
