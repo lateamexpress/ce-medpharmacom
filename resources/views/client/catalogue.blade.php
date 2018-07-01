@@ -111,7 +111,7 @@
                                 <a id="{{$produitTendance['id_produit'] }}" href="{{ url('produit/'.$produitTendance['id_produit']) }}">
                                     <div class="produit-block">
                                         <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
-                                        <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
+                                        <span class="nom-produit">{{ $produitTendance['cout'] }}</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                                     </div>
@@ -134,7 +134,7 @@
                                 <a id="{{$produit['id_produit'] }}" href="{{ url('produit/'.$produit['id_produit']) }}">
                                     <div class="produit-block">
                                         <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
-                                        <span class="nom-produit">{{ $produit['cout'] }} pts</span>
+                                        <span class="nom-produit">{{ $produit['cout'] }}</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                                     </div>

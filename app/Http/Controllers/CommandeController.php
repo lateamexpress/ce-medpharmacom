@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Commande;
+use App\Models\Utilisateur;
 use App\Models\Commandeproduit;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -26,6 +27,8 @@ class CommandeController extends Controller
 
     public function ajoutCommande(Request $request)
     {
+        $user = Commande::find(Auth::id());
+
         $commande = Commande::create([
             'ref_id_utilisateur' => Auth::id(),
             'date' => date("Y-m-d"),
@@ -39,7 +42,9 @@ class CommandeController extends Controller
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
+            $user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
         }
+        $user->save();
         return redirect()->back()->with('flash_message', 'Commande ajouté');
     }
 
