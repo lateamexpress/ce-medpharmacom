@@ -15,7 +15,7 @@
 @section('contenu-container')
     <div class="row" id="commande-recap">
         <div class="col s12">
-            <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit {{ $commande }}</h1>
+            <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit </h1>
             <div class="divider-custom"></div>
             <table class="highlight responsive-table mt20">
                 <thead>
@@ -26,11 +26,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Stylo Medpharmacom</td>
-                    <td>750</td>
-                    <td>1000 - 750 = <b>250</b></td>
-                </tr>
+                @foreach ($commande as $cmd)
+                    <tr>
+                        <td>{{ $cmd }}</td>
+                        <td>{{ $cmd }}</td>
+                        <td>{{ $cmd }}</td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
             <div id="infos-cmd">

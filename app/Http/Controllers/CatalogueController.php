@@ -54,7 +54,15 @@ class CatalogueController extends Controller
 
     public function checkout(Request $request) {
         $arrayProduit = request()->all();
+        // Affiche bien les valeurs de $arrayProduit
         var_dump($arrayProduit);
-        return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
+        if($request['Commander']) {
+            // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
+            return View('client/commande')->with('commande', $arrayProduit);
+        }
+        else {
+            // TODO insert dans la DB chaque produit avec l'id de l'user
+            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
+        }
     }
 }

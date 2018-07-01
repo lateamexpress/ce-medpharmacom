@@ -14,7 +14,7 @@
     <div class="row mt50">
         <form method="post" action="{{ url('catalogue') }}">
             @csrf
-            <ul id="block-filter-products-mobile" class="collapsible show-on-medium" data-collapsible="accordion">
+            <ul id="block-filter-products-mobile" class="collapsible show-on-medium hide-on-large-only" data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>FILTRES</div>
                     <div class="collapsible-body" id="collapseProduct">
@@ -58,7 +58,7 @@
         </form>
         <form method="post" action="{{url('catalogue')}}">
             @csrf
-            <div class="block-filter-products show-on-large hide-on-med-and-down" style="padding-right: 10%; padding-left: 10%;">
+            <div class="block-filter-products show-on-large hide-on-med-and-down" style="margin-top: 5%; padding-right: 10%; padding-left: 10%;">
                 <div id="header-filter-products">
                     <h2 class="h2-catalog center-align">Filtres de recherche</h2>
                     <div class="row">
@@ -96,6 +96,9 @@
             </div>
         </form>
     </div>
+    <form  method="post" action="{{url('catalogue')}}">
+        @csrf
+        <input type="submit" name="Commander" value="Commander" class="btn btn-waves" style="position: fixed; top: 10px; right: 10px; z-index: 2;">
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
             <div>
                 <div id="block-tendances-header">
@@ -107,14 +110,14 @@
                             <div class="col l4 s12">
                                 <a id="{{$produitTendance['id_produit'] }}" href="{{ url('produit/'.$produitTendance['id_produit']) }}">
                                     <div class="produit-block">
-                                        <h1 class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
+                                        <h1 name="nom_produit[]" class="marque-produit">{{ $produitTendance['nom_produit'] }}</h1>
                                         <span class="nom-produit">{{ $produitTendance['cout'] }} pts</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produitTendance->image) ? asset('img/' . $produitTendance->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                                     </div>
                                 </a>
                                 Quantité : <input type="number" class="quantity" value="1">
-                                <button class="btn waves-effet add-product">Checkout</button>
+                                <button class="btn waves-effet add-product">Ajouter</button>
                             </div>
                         @endforeach
                     </div>
@@ -130,14 +133,14 @@
                             <div class="col l4 s12">
                                 <a id="{{$produit['id_produit'] }}" href="{{ url('produit/'.$produit['id_produit']) }}">
                                     <div class="produit-block">
-                                        <h1 class="marque-produit">{{$produit['nom_produit']}}</h1>
+                                        <h1 name="nom_produit[]" class="marque-produit">{{$produit['nom_produit']}}</h1>
                                         <span class="nom-produit">{{ $produit['cout'] }} pts</span>
                                         <br><br>
                                         <img class="produits-catalogue responsive-img" src="{{ (!is_null($produit->image) ? asset('img/' . $produit->image->lien) : 'http://via.placeholder.com/300x200') }}"/>
                                     </div>
                                 </a>
                                 Quantité : <input type="number" class="quantity" value="1">
-                                <button class="btn waves-effet add-product">Checkout</button>
+                                <button class="btn waves-effet add-product">Ajouter</button>
                             </div>
                         @endforeach
                     </div>
@@ -145,6 +148,7 @@
                 </div>
             </div>
         </div>
+    </form>
 @endsection
 
 @section('contenu-container')
@@ -171,6 +175,9 @@
             });
             $('.add-product').each(function () {
                 $(this).click(function(e){
+
+                    Materialize.toast('Produit ajouté à ce panier', 3000);
+
                     e.preventDefault();
                     let produit = $(this).siblings('a').attr('id');
                     let quantite = $(this).siblings('.quantity').val();
