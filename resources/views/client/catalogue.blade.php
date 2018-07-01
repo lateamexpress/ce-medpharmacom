@@ -29,17 +29,17 @@
                                     <div class="col s12 l3">
                                         <h3>Catégorie</h3>
                                         <select name="ref_id_categorie" multiple>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
+                                            @foreach($categorie as $cat)
+                                                <option value="{{$cat['id_categorie']}}">{{$cat['nom_categorie']}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col s12 l3">
                                         <h3>Marque</h3>
                                         <select name="ref_id_marque" multiple>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
+                                            @foreach($marque as $mar)
+                                                <option value="{{$mar['id_marque']}}">{{$mar['nom_marque']}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col s12 l3">
@@ -70,17 +70,17 @@
                             <div class="col l3">
                                 <h3>Catégorie</h3>
                                 <select name="ref_id_categorie" multiple>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
+                                    @foreach($categorie as $cat)
+                                        <option value="{{$cat['id_categorie']}}">{{$cat['nom_categorie']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col l3">
                                 <h3>Marque</h3>
                                 <select name="ref_id_marque" multiple>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
+                                    @foreach($marque as $mar)
+                                        <option value="{{$mar['id_marque']}}">{{$mar['nom_marque']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col l3">
