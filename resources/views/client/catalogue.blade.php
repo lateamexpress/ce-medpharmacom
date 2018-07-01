@@ -102,7 +102,7 @@
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
             <div>
                 <div id="block-tendances-header">
-                    <h1 class="center-align">Les articles tendances {{var_dump(Session::all())}}</h1>
+                    <h1 class="center-align">Les articles tendances</h1>
                 </div>
                 <div id="block-tendances-content" class="center-align">
                     <div class="row">
