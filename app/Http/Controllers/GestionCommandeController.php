@@ -11,6 +11,7 @@ class GestionCommandeController extends Controller
     {
         //$commande = Commande::all();
         $commande = Commande::with(['utilisateur', 'produit'])->get();
+        dump($commande[2]->produit);exit;
 
         return view('admin/gestion-commandes', [
             'commande' => $commande,

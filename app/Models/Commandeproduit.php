@@ -34,7 +34,7 @@ class Commandeproduit extends Eloquent
 
 
 	protected $fillable = [
-		'ref_id_commandeproduit',
+		'ref_id_commande',
 		'ref_id_produit'
 	];
 

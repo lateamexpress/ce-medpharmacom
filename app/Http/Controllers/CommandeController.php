@@ -27,10 +27,10 @@ class CommandeController extends Controller
 
     public function ajoutCommande(Request $request)
     {
-        $user = Commande::find(Auth::id());
+        $user = Auth::user();
 
         $commande = Commande::create([
-            'ref_id_utilisateur' => Auth::id(),
+            'ref_id_utilisateur' => $user->id_utilisateur,
             'date' => date("Y-m-d"),
             'statut' => "En cours",
         ]);
@@ -41,7 +41,7 @@ class CommandeController extends Controller
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
-            $user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
+            //$user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
         }
         $user->save();
         return redirect()->back()->with('flash_message', 'Commande ajouté');

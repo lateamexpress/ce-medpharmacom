@@ -47,4 +47,9 @@ class Commande extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\Utilisateur::class, 'ref_id_utilisateur');
 	}
+
+	public function produit()
+	{
+		return $this->belongsToMany(Produit::class,'commandeproduit','ref_id_commande','ref_id_produit');
+	}
 }
