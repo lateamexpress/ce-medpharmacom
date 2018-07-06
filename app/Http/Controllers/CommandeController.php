@@ -41,7 +41,7 @@ class CommandeController extends Controller
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
-            //$user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
+            $user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
         }
         $user->save();
         return redirect()->back()->with('flash_message', 'Commande ajouté');
