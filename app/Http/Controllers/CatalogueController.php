@@ -77,8 +77,14 @@ class CatalogueController extends Controller
         }
         elseif ($request['Rechercher']) {
             $nom_produit = $request->all()['nom_produit'];
-            $ref_id_marque = $request->all()['ref_id_marque'];
-            $ref_id_categorie = $request->all()['ref_id_categorie'];
+            if(isset($request->all()['ref_id_marque']))
+                $ref_id_marque = $request->all()['ref_id_marque'];
+            else
+                $ref_id_marque = "";
+            if(isset($request->all()['ref_id_categorie']))
+                $ref_id_categorie = $request->all()['ref_id_categorie'];
+            else
+                $ref_id_categorie = "";
             $cout = $request->all()['cout'];
             $marque = Marque::all();
             $categorie = Categorie::all();
