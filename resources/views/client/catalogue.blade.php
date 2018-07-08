@@ -29,6 +29,7 @@
                                     <div class="col s12 l3">
                                         <h3>Catégorie</h3>
                                         <select name="ref_id_categorie" multiple>
+                                            <option value="" disabled selected>Sélectionnez la catégorie</option>
                                             @foreach($categorie as $cat)
                                                 <option value="{{$cat['id_categorie']}}">{{$cat['nom_categorie']}}</option>
                                             @endforeach
@@ -37,6 +38,7 @@
                                     <div class="col s12 l3">
                                         <h3>Marque</h3>
                                         <select name="ref_id_marque" multiple>
+                                            <option value="" disabled selected>Sélectionnez la marque</option>
                                             @foreach($marque as $mar)
                                                 <option value="{{$mar['id_marque']}}">{{$mar['nom_marque']}}</option>
                                             @endforeach
@@ -70,6 +72,7 @@
                             <div class="col l3">
                                 <h3>Catégorie</h3>
                                 <select name="ref_id_categorie" multiple>
+                                    <option value="" disabled selected>Sélectionnez la catégorie</option>
                                     @foreach($categorie as $cat)
                                         <option value="{{$cat['id_categorie']}}">{{$cat['nom_categorie']}}</option>
                                     @endforeach
@@ -78,6 +81,7 @@
                             <div class="col l3">
                                 <h3>Marque</h3>
                                 <select name="ref_id_marque" multiple>
+                                    <option value="" disabled selected>Sélectionnez la marque</option>
                                     @foreach($marque as $mar)
                                         <option value="{{$mar['id_marque']}}">{{$mar['nom_marque']}}</option>
                                     @endforeach
