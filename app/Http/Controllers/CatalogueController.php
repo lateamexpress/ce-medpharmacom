@@ -96,7 +96,7 @@ class CatalogueController extends Controller
                 ['ref_id_marque', 'like', '%'. $ref_id_marque .'%'],
                 ['ref_id_categorie', 'like', '%'. $ref_id_categorie .'%'],
                 ['cout', 'like', '%'. $cout .'%'],
-            ])->get();
+            ])->paginate(15);
 
             return view('client/catalogue',[
                 'catalogue' => $catalogue,
