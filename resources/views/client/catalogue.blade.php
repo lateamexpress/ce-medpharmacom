@@ -47,7 +47,7 @@
                                         <input type="text" name="cout">
                                     </div>
                                     <div class="col l3">
-                                        <button class="btn btn-waves">Rechercher</button>
+                                        <input type="submit" class="btn btn-waves" name="Rechercher" value="Rechercher">
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 <input type="text" name="cout">
                             </div>
                             <div class="col l3 mt50">
-                                <button class="btn btn-waves">Rechercher</button>
+                                <input type="submit" class="btn btn-waves" name="Rechercher" value="Rechercher">
                             </div>
                         </div>
                     </div>

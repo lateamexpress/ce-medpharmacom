@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Models\Produit;
 use App\Models\Marque;
 use App\Models\Categorie;
@@ -60,13 +61,13 @@ class CatalogueController extends Controller
     }
 
     public function checkout(Request $request) {
-
         if(isset(request()->all()['arrayProduits'])) {
             $arrayProduits = request()->all()['arrayProduits'];
             foreach ($arrayProduits as $prod) {
                 $request->session()->push('produits', $prod);
             }
         }
+
 //        $request->session()->forget();
 //        $request->session()->regenerate();
         //$request->session()->flush();
@@ -74,8 +75,11 @@ class CatalogueController extends Controller
             // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
             return View('client/commande')->with('commande', '');
         }
+        elseif ($request['Rechercher']) {
+            // Fait ta requête ou appelle là
+            
+        }
         else {
-            // TODO insert dans la DB chaque produit avec l'id de l'user
             return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
         }
     }
