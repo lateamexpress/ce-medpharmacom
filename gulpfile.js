@@ -37,6 +37,9 @@ elixir((mix) => {
             'client/produit.scss'
         ], 'public/css/client/produit.css')
         .sass([
+            'client/panier.scss'
+        ], 'public/css/client/panier.css')
+        .sass([
             'client/home.scss'
         ], 'public/css/client/home.css');
 });

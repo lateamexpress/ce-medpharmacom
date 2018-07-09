@@ -35,6 +35,7 @@
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
+                <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
         </div>
@@ -54,6 +55,7 @@
         <li><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
         <li><a href="http://medpharmacom.ipmeo.com">Retourner sur medpharmacom</a></li>
         <li><a href="{{ url('logout') }}">Se déconnecter</a></li>
+        <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier</a></li>
     </ul>
     <!-- END SIDE NAV -->
     @yield('contenu')

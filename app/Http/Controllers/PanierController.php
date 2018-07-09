@@ -43,4 +43,8 @@ class PanierController extends Controller
         return redirect()->back()->with('flash_message', 'Panier supprimé');
     }
 
+    public function getTemplatePanier() {
+        return view('client/panier');
+    }
+
 }
