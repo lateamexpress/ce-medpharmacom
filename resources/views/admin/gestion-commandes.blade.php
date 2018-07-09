@@ -17,9 +17,7 @@
                 <tr>
                     <th>id_commande</th>
                     <th>ref_nom_user</th>
-                    <th>ref_nom_produit</th>
                     <th>date</th>
-                    <th>quantité</th>
                     <th>statut</th>
                 </tr>
                 </thead>
@@ -28,9 +26,7 @@
                     <tr>
                         <td><a href="{{ url('/admin/gestion-commandes/'.$cmd['id_commande']) }}">{{ $cmd['id_commande'] }}</a></td>
                         <td>{{ $cmd->utilisateur->nom }}</td>
-                        <td> {{ $cmd->produit->nom_produit }}</td>
                         <td> {{ $cmd['date'] }}</td>
-                        <td> {{ $cmd['quantite'] }}</td>
                         <td> {{ $cmd['statut'] }}</td>
                     </tr>
                 @endforeach

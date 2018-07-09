@@ -19,9 +19,7 @@
                     <tr>
                         <th>id_commande</th>
                         <th>ref_nom_user</th>
-                        <th>ref_nom_produit</th>
                         <th>date</th>
-                        <th>quantité</th>
                         <th>statut</th>
                     </tr>
                     </thead>
@@ -29,9 +27,7 @@
                     <tr>
                         <td>{{$commande['id_commande'] }}  <input type="hidden" name="id_commande" value="{{ $commande['id_commande'] }}"> </td>
                         <td>{{ $commande->utilisateur->nom }}  <input type="hidden" name="ref_id_utilisateur" value="{{ $commande['ref_id_utilisateur'] }}"> </td>
-                        <td> {{ $commande->produit->nom_produit }}  <input type="hidden" name="ref_id_produit" value="{{ $commande['ref_id_produit'] }}"> </td>
                         <td> {{ $commande['date'] }}  <input type="hidden" name="date" value="{{ $commande['date'] }}"> </td>
-                        <td> {{ $commande['quantite'] }}  <input type="hidden" name="quantite" value="{{ $commande['quantite'] }}"></td>
                         <td>
                             <select name="statut">
                                 <option id="option_1" value=""></option>

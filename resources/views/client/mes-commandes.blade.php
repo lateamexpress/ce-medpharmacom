@@ -17,16 +17,14 @@
                 <tr>
                     <th>Nom</th>
                     <th>Date</th>
-                    <th>Quantité</th>
                     <th>Statut</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($commande as $cmd)
                 <tr>
-                    <td>{{ $cmd['ref_id_produit'] }}</td>
+                    <td>{{ $cmd['id_commande'] }}</td>
                     <td>{{ $cmd['date'] }}</td>
-                    <td>{{ $cmd['quantite'] }}</td>
                     <td>{{ $cmd['statut'] }}</td>
                 </tr>
                 @endforeach
