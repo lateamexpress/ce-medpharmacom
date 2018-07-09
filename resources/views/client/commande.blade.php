@@ -39,7 +39,6 @@
                 </table>
                 <div id="infos-cmd">
                     <input type="submit" class="waves-effect waves-light btn" value="Envoyer ma demande">
-                    <blockquote>Apres avoir envoyé votre demande, merpharmacom validera votre achat sous 48h, le total est de : METTRE VALUE</blockquote>
                 </div>
             </div>
         </div>

@@ -188,9 +188,6 @@
                     arrayProduits.push({
                         produit, quantite, cout, nom
                     });
-
-                    console.log(arrayProduits);
-
                     $.ajax({
                         type:'POST',
                         url:'{{ url('catalogue')}}',

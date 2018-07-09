@@ -59,4 +59,10 @@ class PanierController extends Controller
         ]);
     }
 
+    public function clearPanier() {
+        if(isset(request()->all()['test'])) {
+            exit();
+        }
+    }
+
 }

@@ -64,7 +64,12 @@ class CatalogueController extends Controller
         if(isset(request()->all()['arrayProduits'])) {
             $arrayProduits = request()->all()['arrayProduits'];
             foreach ($arrayProduits as $prod) {
-                $request->session()->push('produits', $prod);
+                if(is_array($prod)) {
+                    return response()->json(['success'=>"Vous avez déjà ajouté ce produit !"]);
+                }
+                else {
+                    $request->session()->push('produits', $prod);
+                }
             }
         }
 
