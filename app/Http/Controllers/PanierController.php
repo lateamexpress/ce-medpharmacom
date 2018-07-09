@@ -47,9 +47,11 @@ class PanierController extends Controller
     {
         $cout = 0;
         if(isset(request()->all()['arrayProduits'])) {
+            $i=0;
             $arrayProduits = request()->all()['arrayProduits'];
             foreach ($arrayProduits as $prod) {
                 $cout += intval(session()->get('produits')[$i]['cout']);
+                $i++;
             }
         }
         return view('client/panier', [
