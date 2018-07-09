@@ -43,8 +43,18 @@ class PanierController extends Controller
         return redirect()->back()->with('flash_message', 'Panier supprimé');
     }
 
-    public function getTemplatePanier() {
-        return view('client/panier');
+    public function getTemplatePanier(Request $request)
+    {
+        $cout = 0;
+        if(isset(request()->all()['arrayProduits'])) {
+            $arrayProduits = request()->all()['arrayProduits'];
+            foreach ($arrayProduits as $prod) {
+                $cout += intval(session()->get('produits')[$i]['cout']);
+            }
+        }
+        return view('client/panier', [
+            'cout' => $cout,
+        ]);
     }
 
 }
