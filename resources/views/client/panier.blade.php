@@ -13,7 +13,7 @@
 @endsection
 
 @section('contenu-container')
-    <form method="POST" style="margin-top: 10%;" action="{{ url('mon-panier') }}">
+    <form method="POST" style="margin-top: 10%; height: 800px;" action="{{ url('mon-panier') }}">
         @csrf
         <table>
             <thead>
@@ -25,14 +25,16 @@
             </tr>
             </thead>
             <tbody>
-            @foreach(Session::all()['produits'] as $prod)
-                <tr>
-                    <td>{{ $prod['nom'] }}</td>
-                    <td>{{ $prod['cout'] }}</td>
-                    <td>{{ $prod['quantite'] }}</td>
-                    <td><input type="checkbox" name="produit" id="{{$prod['produit']}}" class="produit" value="{{ $prod['produit'] }}"/> <label for="{{$prod['produit']}}"></label></td>
-                </tr>
-            @endforeach
+            @isset(Session::all()['produits'])
+                @foreach(Session::all()['produits'] as $prod)
+                    <tr>
+                        <td>{{ $prod['nom'] }}</td>
+                        <td>{{ $prod['cout'] }}</td>
+                        <td>{{ $prod['quantite'] }}</td>
+                        <td><input type="checkbox" name="produit" id="{{$prod['produit']}}" class="produit" value="{{ $prod['produit'] }}"/> <label for="{{$prod['produit']}}"></label></td>
+                    </tr>
+                @endforeach
+            @endisset
             </tbody>
         </table>
     </form>
