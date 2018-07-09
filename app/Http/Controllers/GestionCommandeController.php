@@ -58,10 +58,10 @@ class GestionCommandeController extends Controller
         ]);
     }
 
-    public function commandeChangeStatut($id)
+    public function commandeChangeStatut(Request $request, $id)
     {
         $commande = Commande::find($id);
-        $commande->statut = "Validé";
+        $commande->statut = $request->statut;
         $commande->save();
         ////////////////////////// Envoyer le mail commande
         return redirect()->back()->with('flash_message', 'Commande validé');
