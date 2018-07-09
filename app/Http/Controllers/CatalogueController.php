@@ -67,14 +67,28 @@ class CatalogueController extends Controller
 //            }
             $uniqueArray = array_unique($arrayProduits, SORT_REGULAR);
             // TODO NE PUSH QUE LES VALEURS UNIQUES
-            var_dump($uniqueArray);
+            //var_dump($uniqueArray);
+            $unique = true;
+            $save_quantite = 0;
+            for($i = 0; $i < count(Session::all()['produits']); $i++){
+                if($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]){
+                    $unique = false;
+                    $save_quantite = intval(session()->get('produits')[$i]['quantite']);
+                    //$request->session()->forget(['produits'][$i]);
+                }
+            }
+
+            if(!$unique) {
+                $uniqueArray[0]["quantite"] += $save_quantite;
+            }
+            //var_dump(Session::all()['produits'][0]);
             // TODO ON PUSH DANS LA SESSION SEULEMENT LES VALEURS UNE SEULE FOIS
             foreach ($uniqueArray as $prodUnique) {
                 $request->session()->push('produits', $prodUnique);
             }
         }
-//        $request->session()->forget();
-//        $request->session()->regenerate();
+        //$request->session()->forget();
+        //$request->session()->regenerate();
         //$request->session()->flush();
         if($request['Commander']) {
             // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
