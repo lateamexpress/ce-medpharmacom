@@ -62,14 +62,19 @@ class CatalogueController extends Controller
     public function checkout(Request $request) {
         if(isset(request()->all()['arrayProduits'])) {
             $arrayProduits = request()->all()['arrayProduits'];
-//            foreach ($arrayProduits as $prod) {
-//                $request->session()->push('produits', $prod);
-//            }
+
             $uniqueArray = array_unique($arrayProduits, SORT_REGULAR);
             // TODO NE PUSH QUE LES VALEURS UNIQUES
             //var_dump($uniqueArray);
             $unique = true;
             $save_quantite = 0;
+            
+            if(!isset(Session::all()['produits'])) {
+                foreach ($arrayProduits as $prod) {
+                    $request->session()->push('produits', $prod);
+                }
+            }
+
             for($i = 0; $i < count(Session::all()['produits']); $i++){
                 if($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]){
                     $unique = false;
