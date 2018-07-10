@@ -70,7 +70,7 @@ class CatalogueController extends Controller
             $save_quantite = 0;
             
             if(!isset(Session::all()['produits'])) {
-                foreach ($arrayProduits as $prod) {
+                foreach ($uniqueArray as $prod) {
                     $request->session()->push('produits', $prod);
                 }
             }
