@@ -129,8 +129,8 @@ class CatalogueController extends Controller
                 'categorie' => $categorie,
             ]);
         }
-        else {
-            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
-        }
+//        else {
+//            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
+//        }
     }
 }
