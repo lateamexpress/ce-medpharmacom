@@ -68,9 +68,8 @@ class CatalogueController extends Controller
             //var_dump($uniqueArray);
             $unique = true;
             $save_quantite = 0;
-            
-            if(!isset(Session::all()['produits'])) {
-                foreach ($uniqueArray as $prod) {
+            if(!array_key_exists('produits', Session::all())) {
+                foreach ($arrayProduits as $prod) {
                     $request->session()->push('produits', $prod);
                 }
             }
@@ -80,6 +79,7 @@ class CatalogueController extends Controller
                     $unique = false;
                     $save_quantite = intval(session()->get('produits')[$i]['quantite']);
                     //$request->session()->forget(['produits'][$i]);
+                    //$request->session()->forget('produits')[$i];
                 }
             }
 
