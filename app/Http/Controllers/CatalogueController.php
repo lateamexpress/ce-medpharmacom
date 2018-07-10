@@ -68,7 +68,7 @@ class CatalogueController extends Controller
             //var_dump($uniqueArray);
             $unique = true;
             $save_quantite = 0;
-            
+            $save_session = 0;
             if(!isset(Session::all()['produits'])) {
                 foreach ($arrayProduits as $prod) {
                     $request->session()->push('produits', $prod);
@@ -79,7 +79,12 @@ class CatalogueController extends Controller
                 if($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]){
                     $unique = false;
                     $save_quantite = intval(session()->get('produits')[$i]['quantite']);
-                    //$request->session()->forget(['produits'][$i]);
+                    $save_session = session()->get('produits');
+                    $request->session()->forget('produits');
+                    unset($save_session[$i]);
+                    foreach ($save_session as $prod) {
+                        $request->session()->push('produits', $prod);
+                    }
                 }
             }
 
@@ -93,8 +98,8 @@ class CatalogueController extends Controller
             }
         }
         //$request->session()->forget();
-        //$request->session()->regenerate();
         //$request->session()->flush();
+        //$request->session()->regenerate();
         if($request['Commander']) {
             // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
             return View('client/commande')->with('commande', '');
