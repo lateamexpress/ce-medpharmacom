@@ -79,7 +79,7 @@ class CatalogueController extends Controller
                     $unique = false;
                     $save_quantite = intval(session()->get('produits')[$i]['quantite']);
                     //$request->session()->forget(['produits'][$i]);
-                    //$request->session()->forget('produits')[$i];
+                    //$request->session()->forget('produits');
                 }
             }
 
