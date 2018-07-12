@@ -59,8 +59,9 @@ class CatalogueController extends Controller
             'catalogue' => $catalogue,
         ]);
     }
-    public function checkout(Request $request) {
-        if(isset(request()->all()['arrayProduits'])) {
+    public function checkout(Request $request)
+    {
+        if (isset(request()->all()['arrayProduits'])) {
             $arrayProduits = request()->all()['arrayProduits'];
 
             $uniqueArray = array_unique($arrayProduits, SORT_REGULAR);
@@ -69,76 +70,80 @@ class CatalogueController extends Controller
             $unique = true;
             $save_quantite = 0;
             $save_session = 0;
-            if(!isset(Session::all()['produits'])) {
-            if(!array_key_exists('produits', Session::all())) {
-                foreach ($arrayProduits as $prod) {
-                    $request->session()->push('produits', $prod);
-                }
-            }
-
-            for($i = 0; $i < count(Session::all()['produits']); $i++){
-                if($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]){
-                    $unique = false;
-                    $save_quantite = intval(session()->get('produits')[$i]['quantite']);
-                    $save_session = session()->get('produits');
-                    $request->session()->forget('produits');
-                    unset($save_session[$i]);
-                    foreach ($save_session as $prod) {
+            if (!isset(Session::all()['produits'])) {
+                if (!array_key_exists('produits', Session::all())) {
+                    foreach ($arrayProduits as $prod) {
                         $request->session()->push('produits', $prod);
                     }
-                    //$request->session()->forget(['produits'][$i]);
-                    //$request->session()->forget('produits');
+                }
+
+                for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+                    if ($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]) {
+                        $unique = false;
+                        $save_quantite = intval(session()->get('produits')[$i]['quantite']);
+                        $save_session = session()->get('produits');
+                        $request->session()->forget('produits');
+                        unset($save_session[$i]);
+                        foreach ($save_session as $prod) {
+                            $request->session()->push('produits', $prod);
+                        }
+                        //$request->session()->forget(['produits'][$i]);
+                        //$request->session()->forget('produits');
+                    }
+                }
+
+                if (!$unique) {
+                    $uniqueArray[0]["quantite"] += $save_quantite;
+                }
+                //var_dump(Session::all()['produits'][0]);
+                // TODO ON PUSH DANS LA SESSION SEULEMENT LES VALEURS UNE SEULE FOIS
+                foreach ($uniqueArray as $prodUnique) {
+                    $request->session()->push('produits', $prodUnique);
                 }
             }
+            //$request->session()->forget();
+            //$request->session()->flush();
+            //$request->session()->regenerate();
+            if ($request['Commander']) {
+                // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
+                return View('client/commande')->with('commande', '');
+            } elseif ($request['Rechercher']) {
+                $nom_produit = $request->all()['nom_produit'];
+                if (isset($request->all()['ref_id_marque']))
+                    $ref_id_marque = $request->all()['ref_id_marque'];
+                else
+                    $ref_id_marque = "";
+                if (isset($request->all()['ref_id_categorie']))
+                    $ref_id_categorie = $request->all()['ref_id_categorie'];
+                else
+                    $ref_id_categorie = "";
+                $cout = $request->all()['cout'];
+                $marque = Marque::all();
+                $categorie = Categorie::all();
+                $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
 
-            if(!$unique) {
-                $uniqueArray[0]["quantite"] += $save_quantite;
+                $total = 0;
+                for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+                    $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
+                }
+                $catalogue = Produit::where([
+                    ['nom_produit', 'like', '%' . $nom_produit . '%'],
+                    ['ref_id_marque', 'like', '%' . $ref_id_marque . '%'],
+                    ['ref_id_categorie', 'like', '%' . $ref_id_categorie . '%'],
+                    ['cout', 'like', '%' . $cout . '%'],
+                ])->paginate(15);
+
+                return view('client/catalogue', [
+                    'catalogue' => $catalogue,
+                    'produitLastFive' => $poduitLastFive,
+                    'marque' => $marque,
+                    'categorie' => $categorie,
+                    'total' => $total,
+                ]);
             }
-            //var_dump(Session::all()['produits'][0]);
-            // TODO ON PUSH DANS LA SESSION SEULEMENT LES VALEURS UNE SEULE FOIS
-            foreach ($uniqueArray as $prodUnique) {
-                $request->session()->push('produits', $prodUnique);
-            }
-        }
-        //$request->session()->forget();
-        //$request->session()->flush();
-        //$request->session()->regenerate();
-        if($request['Commander']) {
-            // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
-            return View('client/commande')->with('commande', '');
-        }
-        elseif ($request['Rechercher']) {
-            $nom_produit = $request->all()['nom_produit'];
-            if(isset($request->all()['ref_id_marque']))
-                $ref_id_marque = $request->all()['ref_id_marque'];
-            else
-                $ref_id_marque = "";
-            if(isset($request->all()['ref_id_categorie']))
-                $ref_id_categorie = $request->all()['ref_id_categorie'];
-            else
-                $ref_id_categorie = "";
-            $cout = $request->all()['cout'];
-            $marque = Marque::all();
-            $categorie = Categorie::all();
-            $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
-
-
-            $catalogue = Produit::where([
-                ['nom_produit', 'like', '%'. $nom_produit .'%'],
-                ['ref_id_marque', 'like', '%'. $ref_id_marque .'%'],
-                ['ref_id_categorie', 'like', '%'. $ref_id_categorie .'%'],
-                ['cout', 'like', '%'. $cout .'%'],
-            ])->paginate(15);
-
-            return view('client/catalogue',[
-                'catalogue' => $catalogue,
-                'produitLastFive' => $poduitLastFive,
-                'marque' => $marque,
-                'categorie' => $categorie,
-            ]);
-        }
 //        else {
 //            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
 //        }
+        }
     }
 }
