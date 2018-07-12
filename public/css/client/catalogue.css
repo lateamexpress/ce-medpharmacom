@@ -261,6 +261,13 @@ h1 {
   margin: 0;
 }
 
+#commanderBtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
 .produits-catalogue {
   max-width: 200px;
   max-height: 200px;
@@ -414,6 +421,12 @@ h3 {
   #checkout {
     position: fixed;
     top: 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #commanderBtn {
+    top: 85px;
   }
 }
 
