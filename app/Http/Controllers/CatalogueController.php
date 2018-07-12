@@ -70,6 +70,7 @@ class CatalogueController extends Controller
             $save_quantite = 0;
             $save_session = 0;
             if(!isset(Session::all()['produits'])) {
+            if(!array_key_exists('produits', Session::all())) {
                 foreach ($arrayProduits as $prod) {
                     $request->session()->push('produits', $prod);
                 }
@@ -85,6 +86,8 @@ class CatalogueController extends Controller
                     foreach ($save_session as $prod) {
                         $request->session()->push('produits', $prod);
                     }
+                    //$request->session()->forget(['produits'][$i]);
+                    //$request->session()->forget('produits');
                 }
             }
 
@@ -134,8 +137,8 @@ class CatalogueController extends Controller
                 'categorie' => $categorie,
             ]);
         }
-        else {
-            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
-        }
+//        else {
+//            return response()->json(['success'=>"Ce produit vient d'être ajouté"]);
+//        }
     }
 }
