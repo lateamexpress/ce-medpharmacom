@@ -41,11 +41,19 @@ class CommandeController extends Controller
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
-            $user->nbr_point -= intval(session()->get('produits')[$i]['cout']);
             session()->forget('produits');
         }
-        $user->save();
-        return redirect()->back()->with('flash_message', 'Commande ajouté');
+
+        if ($user->nbr_point >= $request->total) {
+            $user->nbr_point -= $request->total;
+            $user->save();
+            return redirect()->back()->with('flash_message', 'Commande ajouté');
+        }
+        else
+        {
+            return redirect()->back()->with('flash_message', 'Vous n\'avez pas les suffisamment de points');
+        }
+
     }
 
     public function updateCommande()
