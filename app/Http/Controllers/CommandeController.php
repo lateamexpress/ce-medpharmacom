@@ -9,6 +9,8 @@ use App\Models\Utilisateur;
 use App\Models\Commandeproduit;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Mail\OrderShipped;
+use Illuminate\Support\Facades\Mail;
 
 class CommandeController extends Controller
 {
@@ -41,12 +43,25 @@ class CommandeController extends Controller
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
             ]);
-            session()->forget('produits');
         }
 
         if ($user->nbr_point >= $request->total) {
             $user->nbr_point -= $request->total;
             $user->save();
+            $total = 0;
+            for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+                $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
+            }
+
+            Mail::send('emails.commande-message', [
+                'user' => $user,
+                'total' => $total
+            ], function($mail) use($request) {
+                $mail->from($request->email, $request->name);
+                $mail->to('contact@medpharmacom.fr')->subject('Validation commande');
+            });
+
+            session()->forget('produits');
             return redirect()->back()->with('flash_message', 'Commande ajouté');
         }
         else
