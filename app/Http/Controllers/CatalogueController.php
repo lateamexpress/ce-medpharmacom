@@ -69,37 +69,62 @@ class CatalogueController extends Controller
             //var_dump($uniqueArray);
             $unique = true;
             $save_quantite = 0;
-            $save_session = 0;
-            if (!isset(Session::all()['produits'])) {
-                if (!array_key_exists('produits', Session::all())) {
-                    foreach ($arrayProduits as $prod) {
-                        $request->session()->push('produits', $prod);
-                    }
-                }
 
-                for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-                    if ($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]) {
-                        $unique = false;
-                        $save_quantite = intval(session()->get('produits')[$i]['quantite']);
-                        $save_session = session()->get('produits');
-                        $request->session()->forget('produits');
-                        unset($save_session[$i]);
-                        foreach ($save_session as $prod) {
-                            $request->session()->push('produits', $prod);
+            if(isset(Session::all()['produits'])) {
+                foreach (Session::all()['produits'] as $k => $prod) {
+                    foreach ($uniqueArray as $kAjax => $prodAjax) {
+                        if(Session::all()['produits'][$k]['produit'] == $uniqueArray[$kAjax]['produit']) {
+                            unset(Session::all()['produits'][$k]);
                         }
-                        //$request->session()->forget(['produits'][$i]);
-                        //$request->session()->forget('produits');
+                        else {
+                            //var_dump($prodAjax);
+                            //var_dump($prod);
+                            //$request->session()->push('produits', $prodAjax);
+                           // var_dump(Session::all()['produits'][$k]['produit'],  $uniqueArray[$kAjax]['produit']);
+                        }
                     }
                 }
+                //$request->session()->push('produits', $prod);
+            }
+            else {
+                foreach ($uniqueArray as $prod) {
+                    $request->session()->push('produits', $prod);
+                }
+            }
 
-                if (!$unique) {
-                    $uniqueArray[0]["quantite"] += $save_quantite;
-                }
-                //var_dump(Session::all()['produits'][0]);
-                // TODO ON PUSH DANS LA SESSION SEULEMENT LES VALEURS UNE SEULE FOIS
-                foreach ($uniqueArray as $prodUnique) {
-                    $request->session()->push('produits', $prodUnique);
-                }
+            //var_dump(Session::all()['produits']);
+
+            if (!isset(Session::all()['produits'])) {
+//                if (!array_key_exists('produits', Session::all())) {
+//                    foreach ($arrayProduits as $prod) {
+//                        $request->session()->push('produits', $prod);
+//                    }
+//                }
+//
+//                for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+//                    if ($uniqueArray[0]["produit"] === Session::all()['produits'][$i]["produit"]) {
+//                        $unique = false;
+//                        $save_quantite = intval(session()->get('produits')[$i]['quantite']);
+//                        //$save_session = session()->get('produits');
+//                        $request->session()->forget('produits');
+//                        foreach ($uniqueArray as $prod) {
+//                            $request->session()->push('produits', $prod);
+//                        }
+//                        //$request->session()->forget(['produits'][$i]);
+//                        //$request->session()->forget('produits');
+//                    }
+//                }
+//
+//                if (!$unique) {
+//                    $uniqueArray[0]["quantite"] += $save_quantite;
+//                }
+//                //var_dump(Session::all()['produits'][0]);
+//                // TODO ON PUSH DANS LA SESSION SEULEMENT LES VALEURS UNE SEULE FOIS
+//                foreach ($uniqueArray as $prodUnique) {
+//                    $request->session()->push('produits', $prodUnique);
+//                }
+
+
             }
             //$request->session()->forget();
             //$request->session()->flush();
