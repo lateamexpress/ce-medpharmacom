@@ -147,10 +147,6 @@ class CatalogueController extends Controller
                 $categorie = Categorie::all();
                 $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
 
-                $total = 0;
-                for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-                    $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
-                }
                 $catalogue = Produit::where([
                     ['nom_produit', 'like', '%' . $nom_produit . '%'],
                     ['ref_id_marque', 'like', '%' . $ref_id_marque . '%'],
@@ -163,7 +159,6 @@ class CatalogueController extends Controller
                     'produitLastFive' => $poduitLastFive,
                     'marque' => $marque,
                     'categorie' => $categorie,
-                    'total' => $total,
                 ]);
             }
 //        else {
