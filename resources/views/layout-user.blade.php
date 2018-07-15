@@ -37,7 +37,6 @@
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier (Solde : {{ Auth::user()["nbr_point"] }} )</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
-                <li style="color: black; position:absolute; top: -50px; right: 150px;">{{ Auth::user()["nbr_point"] }} pts</li>
             </ul>
         </div>
     </nav>
@@ -48,12 +47,12 @@
                 <div class="background">
                     <img src="https://www.sciencedaily.com/images/2016/05/160504085309_1_900x600.jpg">
                 </div>
+              <span>Bonjour {{ Auth::user()['nom'] }} votre solde est de : {{ Auth::user()["nbr_point"] }}</span>
             </div>
         </li>
         <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
         <li><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
         <li><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
-        <li><a href="http://medpharmacom.ipmeo.com">Retourner sur medpharmacom</a></li>
         <li><a href="{{ url('logout') }}">Se déconnecter</a></li>
         <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier</a></li>
     </ul>
