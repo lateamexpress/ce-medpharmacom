@@ -17,21 +17,14 @@
 @section('contenu-container')
     <div style="min-height: 110vh;">
         <div class="row">
-            <div class="col s3">
+            <div class="col s6 l3">
                 <div class="panel-home">
                     <a href="{{ url('catalogue') }}">Catalogue</a>
                 </div>
             </div>
-            <div class="col s3">
+            <div class="col s6 l3">
                 <div class="panel-home">
                     <a href="{{ url('mes-commandes') }}">Mes sélections</a>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="card-right">
-                    <div id="header-card">
-                        Vos dernières sélections
-                    </div>
                 </div>
             </div>
         </div>

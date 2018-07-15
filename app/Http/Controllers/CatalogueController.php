@@ -67,14 +67,12 @@ class CatalogueController extends Controller
             unset($arrayProduits);
             $arrayProduits = [];
             // End clear
-
             // Get datas
             $cout= request()->all()['cout'];
             $idProduit = $request->all()['produit'];
             $quantite = $request->all()['quantite'];
             $nomProduit = $request->all()['nom'];
             // End get datas
-
             // Put values in an array
             $arrayProduits['idProduit'] = $idProduit;
             $arrayProduits['cout'] = $cout;
@@ -126,14 +124,12 @@ class CatalogueController extends Controller
                 $marque = Marque::all();
                 $categorie = Categorie::all();
                 $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
-
                 $catalogue = Produit::where([
                     ['nom_produit', 'like', '%' . $nom_produit . '%'],
                     ['ref_id_marque', 'like', '%' . $ref_id_marque . '%'],
                     ['ref_id_categorie', 'like', '%' . $ref_id_categorie . '%'],
                     ['cout', 'like', '%' . $cout . '%'],
                 ])->paginate(15);
-
                 return view('client/catalogue', [
                     'catalogue' => $catalogue,
                     'produitLastFive' => $poduitLastFive,

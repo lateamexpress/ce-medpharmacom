@@ -48,6 +48,7 @@ class GestionProduitController extends Controller
 
     public function produitModifier(Request $request, $id)
     {
+
         $produit = Produit::find($id);
         $produit->nom_produit = $request->nom_produit;
         $produit->ref_id_image = $request->ref_id_image;
