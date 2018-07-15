@@ -82,7 +82,7 @@ Route::group(["middleware" => "auth"],function(){
     });
 
     Route::group(["middleware" =>"users"],function(){
-        //Route::post('/test', 'testController@test');
+        //Route::get('/test', 'testController@test');
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/produit/{id]', 'ProduitController@index');
@@ -94,7 +94,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/produit/{id}', 'CatalogueController@produitById');
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
         Route::get('/mon-compte', 'UsersController@index');
-        Route::post('/mon-compte/ajout', 'UsersController@insertUsers');
+        Route::post('/mon-compte/modifier', 'UsersController@usersModifier');
 
         Route::get('/mes-commandes', 'MesCommandesController@commandeAll');
         Route::get('/mes-commandes/{id}', 'MesCommandesController@commandebyid');
@@ -118,9 +118,10 @@ Route::group(["middleware" => "auth"],function(){
 });
 
 Route::get('/image/{id}', 'ImageController@display');
-
+/*
 Route::get('/test',function(){
-});
+})
+*/
 
 
 
