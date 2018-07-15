@@ -20,18 +20,18 @@
                 <h1>Informations de livraison :</h1>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="nom" type="text" class="validate">
+                        <input id="nom" name="nom" type="text" class="validate">
                         <label for="nom" name="nom">Nom</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="rue" name="rue" type="text" class="validate">
-                        <label for="rue">Nom de rue</label>
+                        <input id="adresse" name="adresse" type="text" class="validate">
+                        <label for="adresse">Nom de rue</label>
                     </div>
                     <div class="input-field col s3">
-                        <input id="cp" name="cp" type="text" class="validate">
-                        <label for="cp">Code postal</label>
+                        <input id="code_postal" name="code_postal" type="text" class="validate">
+                        <label for="code_postal">Code postal</label>
                     </div>
                     <div class="input-field col s3">
                         <input id="ville" name="ville" type="text" class="validate">

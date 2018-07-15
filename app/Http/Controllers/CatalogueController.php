@@ -125,6 +125,7 @@ class CatalogueController extends Controller
                     foreach ($allProduit as $produit) {
                         $request->session()->push('produits', $produit);
                     }
+                    //$request->session()->flush();
                 }
                 //var_dump(Session::all()['produits']);
                 //$request->session()->forget('produits');
