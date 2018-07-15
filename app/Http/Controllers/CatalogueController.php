@@ -91,13 +91,18 @@ class CatalogueController extends Controller
                 foreach (Session::all()['produits'] as $kSession => $prodSession) {
                     //var_dump(Session::all()['produits'][$kSession]);
                     //var_dump($arrayProduits);
+
+                    // TODO comparer et si duplicate écraser le nouveau par l'ancien...
+
                     if(Session::all()['produits'][$kSession] == $arrayProduits) {
-                      //$request->session()->push('produits', $arrayProduits);
                         Session::all()['produits'][$kSession] == $arrayProduits;
+                    }
+                    else {
+                        $request->session()->push('produits', $arrayProduits);
                     }
                 }
             }
-            //var_dump(Session::all()['produits']);
+            var_dump(Session::all()['produits']);
             //$request->session()->forget('produits');
             //$request->session()->flush();
             //$request->session()->regenerate();
