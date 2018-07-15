@@ -82,6 +82,7 @@ Route::group(["middleware" => "auth"],function(){
     });
 
     Route::group(["middleware" =>"users"],function(){
+        //Route::post('/test', 'testController@test');
         /* Appli (toutes les routes appli (utilisateurs normal) ici)*/
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/produit/{id]', 'ProduitController@index');
