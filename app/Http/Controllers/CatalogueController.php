@@ -67,21 +67,18 @@ class CatalogueController extends Controller
             unset($arrayProduits);
             $arrayProduits = [];
             // End clear
-
             // Get datas
             $cout= request()->all()['cout'];
             $idProduit = $request->all()['produit'];
             $quantite = $request->all()['quantite'];
             $nomProduit = $request->all()['nom'];
             // End get datas
-
             // Put values in an array
             $arrayProduits['idProduit'] = $idProduit;
             $arrayProduits['cout'] = $cout;
             $arrayProduits['quantite'] = $quantite;
             $arrayProduits['nom'] = $nomProduit;
             // End put values in an array
-
             // If Session produits doesn't exist
             if(!isset(Session::all()['produits'])) {
                 $request->session()->push('produits', $arrayProduits);
@@ -91,18 +88,13 @@ class CatalogueController extends Controller
                 foreach (Session::all()['produits'] as $kSession => $prodSession) {
                     //var_dump(Session::all()['produits'][$kSession]);
                     //var_dump($arrayProduits);
-
-                    // TODO comparer et si duplicate écraser le nouveau par l'ancien...
-
                     if(Session::all()['produits'][$kSession] == $arrayProduits) {
+                        //$request->session()->push('produits', $arrayProduits);
                         Session::all()['produits'][$kSession] == $arrayProduits;
-                    }
-                    else {
-                        $request->session()->push('produits', $arrayProduits);
                     }
                 }
             }
-            var_dump(Session::all()['produits']);
+            //var_dump(Session::all()['produits']);
             //$request->session()->forget('produits');
             //$request->session()->flush();
             //$request->session()->regenerate();
@@ -122,14 +114,12 @@ class CatalogueController extends Controller
                 $marque = Marque::all();
                 $categorie = Categorie::all();
                 $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
-
                 $catalogue = Produit::where([
                     ['nom_produit', 'like', '%' . $nom_produit . '%'],
                     ['ref_id_marque', 'like', '%' . $ref_id_marque . '%'],
                     ['ref_id_categorie', 'like', '%' . $ref_id_categorie . '%'],
                     ['cout', 'like', '%' . $cout . '%'],
                 ])->paginate(15);
-
                 return view('client/catalogue', [
                     'catalogue' => $catalogue,
                     'produitLastFive' => $poduitLastFive,
