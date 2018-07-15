@@ -94,7 +94,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/produit/{id}', 'CatalogueController@produitById');
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
         Route::get('/mon-compte', 'UsersController@index');
-        Route::post('/mon-compte/modifier', 'UsersController@usersModifier');
+        Route::post('/mon-compte', 'UsersController@usersModifier');
 
         Route::get('/mes-commandes', 'MesCommandesController@commandeAll');
         Route::get('/mes-commandes/{id}', 'MesCommandesController@commandebyid');
