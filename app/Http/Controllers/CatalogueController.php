@@ -102,18 +102,28 @@ class CatalogueController extends Controller
             $arrayProduits['nom'] = $nomProduit;
             // End put values in an array
             // If Session produits doesn't exist
-            if(!isset(Session::all()['produits'])) {
+
+            if(empty(Session::get('produits'))) {
                 $request->session()->push('produits', $arrayProduits);
             }
             // Else check if duplicate, then push
             else {
-                foreach (Session::all()['produits'] as $kSession => $prodSession) {
-                    //var_dump(Session::all()['produits'][$kSession]);
-                    //var_dump($arrayProduits);
-                    if(Session::all()['produits'][$kSession] == $arrayProduits) {
-                        //$request->session()->push('produits', $arrayProduits);
-                        Session::all()['produits'][$kSession] == $arrayProduits;
+                $exist = false;
+                $allProduit = Session::all()['produits'];
+                foreach ($allProduit as $kSession => $prodSession) {
+                    if($prodSession['idProduit'] == $arrayProduits['idProduit']){
+                        $prodSession['quantite'] += $arrayProduits['quantite'];
+                        $allProduit[$kSession] = $prodSession;
+                        $exist = true;
                     }
+                }
+                if(!$exist){
+                    $allProduit[] = $arrayProduits;
+                }
+
+                $request->session()->forget('produits');
+                foreach ($allProduit as $produit){
+                    $request->session()->push('produits',$produit);
                 }
             }
             //var_dump(Session::all()['produits']);
