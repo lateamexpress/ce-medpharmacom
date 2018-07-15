@@ -87,9 +87,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::get('/', 'HomeController@returnSpecificHome');
         Route::get('/produit/{id]', 'ProduitController@index');
         Route::get('/catalogue', 'CatalogueController@produitAll');
-        Route::post('/catalogue', [
-            'uses' => 'CatalogueController@produitFiltre',
-        ]);
+        Route::post('/catalogue', 'CatalogueController@produitFiltre');
         Route::post('/catalogue', 'CatalogueController@checkout');
         Route::get('/produit/{id}', 'CatalogueController@produitById');
         Route::get('/catalogue/withfivelast/', 'CatalogueController@produitsAll_And_FiveLast');
