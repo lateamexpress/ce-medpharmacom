@@ -38,7 +38,15 @@
     <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
         $(function(){
-            $('#mes-commandes').DataTable();
+            $('#mes-commandes').DataTable({
+                "language": {
+                    "info": "Affiche de _START_ sur _END_ pages ( _TOTAL_ résultats )",
+                    "paginate": {
+                        "previous": "Précédent",
+                        "next": "Suivant"
+                    }
+                }
+            });
         });
     </script>
 @endsection

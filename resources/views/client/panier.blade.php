@@ -25,18 +25,24 @@
             </tr>
             </thead>
             <tbody>
-            @isset(Session::all()['produits'])
-                @foreach(Session::all()['produits'] as $prod)
-                    <tr>
-                        <td>{{ $prod['nom'] }}</td>
-                        <td>{{ $prod['cout'] }}</td>
-                        <td>{{ $prod['quantite'] }}</td>
-                        <td><input type="checkbox" name="produit" id="{{$prod['produit']}}" class="produit" value="{{ $prod['produit'] }}"/> <label for="{{$prod['produit']}}"></label></td>
-                    </tr>
-                @endforeach
-            @endisset
+            {{--@isset(Session::all()['produits'])--}}
+                {{--@foreach(Session::all()['produits'] as $prod)--}}
+                    {{--<tr>--}}
+                        {{--<td>{{ $prod['nom'] }}</td>--}}
+                        {{--<td>{{ $prod['cout'] }}</td>--}}
+                        {{--<td>{{ $prod['quantite'] }}</td>--}}
+                        {{--<td><input type="checkbox" name="produit" id="{{$prod['produit']}}" class="produit" value="{{ $prod['produit'] }}"/> <label for="{{$prod['produit']}}"></label></td>--}}
+                    {{--</tr>--}}
+                {{--@endforeach--}}
+            {{--@endisset--}}
             </tbody>
         </table>
+        <br>
+        <div class="divider-custom" style="margin-left: 0;"></div>
+        <br>
+        <span>Total du panier: </span>
+        <br>
+        <input type="submit" class="btn btn-waves mt50" value="Passer la commande" name="Commander">
     </form>
 @endsection
 

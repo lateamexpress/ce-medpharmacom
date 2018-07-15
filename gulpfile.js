@@ -40,6 +40,9 @@ elixir((mix) => {
             'client/panier.scss'
         ], 'public/css/client/panier.css')
         .sass([
+            'client/finaliser-commande.scss'
+        ], 'public/css/client/finaliser-commande.css')
+        .sass([
             'client/home.scss'
         ], 'public/css/client/home.css');
 });

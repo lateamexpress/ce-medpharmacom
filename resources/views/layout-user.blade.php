@@ -35,7 +35,6 @@
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
-                <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier (Solde : {{ Auth::user()["nbr_point"] }} )</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
         </div>
@@ -43,18 +42,21 @@
     <!-- START SIDE NAV -->
     <ul id="slide-out" class="side-nav">
         <li>
-            <div class="user-view">
+            <div class="user-view" style="min-height: 100px;">
                 <div class="background">
                     <img src="https://www.sciencedaily.com/images/2016/05/160504085309_1_900x600.jpg">
                 </div>
-              <span>Bonjour {{ Auth::user()['nom'] }} votre solde est de : {{ Auth::user()["nbr_point"] }}</span>
             </div>
+        </li>
+        <li>
+            <span style="padding-left: 32px;">Bonjour {{ Auth::user()['nom'] }},</span>
+            <br>
+            <span style="padding-left: 32px;">votre solde est de : {{ Auth::user()["nbr_point"] }}</span>
         </li>
         <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
         <li><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
         <li><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
         <li><a href="{{ url('logout') }}">Se déconnecter</a></li>
-        <li class="li-menu"><a href="{{ url('/mon-panier') }}">Mon panier</a></li>
     </ul>
     <!-- END SIDE NAV -->
     @yield('contenu')

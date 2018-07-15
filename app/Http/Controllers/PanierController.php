@@ -64,9 +64,15 @@ class PanierController extends Controller
         ]);
     }
 
-    public function clearPanier() {
-        if(isset(request()->all()['test'])) {
-            exit();
+    public function enregistrerCmd(Request $request) {
+
+        // template livraison
+        if($request['Commander']) {
+            return view('client/enregistrer-commande')->with('prod', 'fouTesProduitsici');
+        }
+        // template commande effectuee
+        else {
+            return view('client/fin-commande');
         }
     }
 

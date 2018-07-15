@@ -112,7 +112,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/commande', 'CommandeController@ajoutCommande');
         Route::get('/commande/{id}', 'CommandeController@commandeParId');
         Route::get('/mon-panier', 'PanierController@getTemplatePanier');
-        Route::post('/mon-panier', 'PanierController@clearPanier');
+        Route::post('/mon-panier', 'PanierController@enregistrerCmd');
     });
     
 });

@@ -102,7 +102,7 @@
     </div>
     <form  method="post" action="{{url('catalogue')}}">
         @csrf
-        <input type="submit" name="Commander" value="Commander" id="commanderBtn" class="btn btn-waves">
+        <a href="{{ url('mon-panier') }}"  name="Commander"  id="commanderBtn" class="btn btn-waves">Mon panier Solde : {{ Auth::user()["nbr_point"] }}</a>
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
             <div>
                 <div id="block-tendances-header">

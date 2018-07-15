@@ -9,7 +9,7 @@
 @endsection
 
 @section('contenu-container')
-    <div class="row" style="height: 80vh; margin-top: 100px;">
+    <div class="row" style="min-height: 80vh; margin-top: 100px;">
         <form class="col s12 m12 offset-l3 l6" id="form-info" method="POST" action="{{ url('mon-compte') }}">
             @csrf
             <h1 class="center-align">Gérer ses informations personnelles</h1>

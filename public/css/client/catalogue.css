@@ -264,7 +264,7 @@ h1 {
 #commanderBtn {
   position: fixed;
   top: 10px;
-  right: 10px;
+  right: 350px;
   z-index: 2;
 }
 
