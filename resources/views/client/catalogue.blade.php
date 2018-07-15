@@ -102,7 +102,7 @@
     </div>
     <form  method="post" action="{{url('catalogue')}}">
         @csrf
-        <input type="submit" name="Commander" value="Commander" class="btn btn-waves" style="position: fixed; top: 10px; right: 10px; z-index: 2;">
+        <input type="submit" name="Commander" value="Commander" id="commanderBtn" class="btn btn-waves">
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
             <div>
                 <div id="block-tendances-header">
@@ -185,17 +185,20 @@
                     let quantite = $(this).siblings('.quantity').val();
                     let nom = $(this).siblings('a').find('.produit-block').children('.marque-produit').text();
                     let cout = $(this).siblings('a').find('.produit-block').children('.nom-produit').text();
-                    arrayProduits.push({
-                        produit, quantite, cout, nom
-                    });
+                    // arrayProduits.push({
+                    //     produit, quantite, cout, nom
+                    // });
                     $.ajax({
                         type:'POST',
                         url:'{{ url('catalogue')}}',
                         data:{
-                            arrayProduits: arrayProduits
+                            produit: produit,
+                            quantite: quantite,
+                            nom: nom,
+                            cout:cout
                         },
                         success:function(data){
-                            alert(data.success);
+                           // alert(data.success);
                         }
                     });
                 });
