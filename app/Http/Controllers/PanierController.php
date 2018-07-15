@@ -81,6 +81,7 @@ class PanierController extends Controller
             $utilisateur->adresse = $request->adresse;
             $utilisateur->code_postal = $request->code_postal;
             $utilisateur->ville = $request->ville;
+            $utilisateur->save();
             return view('client/fin-commande');
         }
     }
