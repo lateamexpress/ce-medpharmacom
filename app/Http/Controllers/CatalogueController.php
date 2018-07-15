@@ -36,29 +36,51 @@ class CatalogueController extends Controller
 
     public function produitFiltre(Request $request)
     {
+        /*
         $this->validate($request, [
             'nom_produit' => 'required',
             'ref_id_marque' => 'required',
             'ref_id_categorie' => 'required',
             'cout' => 'required',
         ]);
+        */
 
-        $nom_produit = $request->all()['nom_produit'];
-        $ref_id_marque = $request->all()['ref_id_marque'];
-        $ref_id_categorie = $request->all()['ref_id_categorie'];
-        $cout = $request->all()['cout'];
+        if (isset($request->all()['nom_produit']))
+            $nom_produit = $request->all()['nom_produit'];
+        else
+            $nom_produit = "";
+        if (isset($request->all()['ref_id_marque']))
+            $ref_id_marque = $request->all()['ref_id_marque'];
+        else
+            $ref_id_marque = "";
+        if (isset($request->all()['ref_id_categorie']))
+            $ref_id_categorie = $request->all()['ref_id_categorie'];
+        else
+            $ref_id_categorie = "";
+        if (isset($request->all()['cout']))
+            $cout = $request->all()['cout'];
+        else
+            $cout = "";
 
         $catalogue = Produit::where([
             ['nom_produit', 'like', '%'. $nom_produit .'%'],
             ['ref_id_marque', 'like', '%'. $ref_id_marque .'%'],
             ['ref_id_categorie', 'like', '%'. $ref_id_categorie .'%'],
             ['cout', 'like', '%'. $cout .'%'],
-         ])->get();
+         ])->paginate(15);
+
+        $marque = Marque::all();
+        $categorie = Categorie::all();
+        $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
 
         return view('client/catalogue',[
             'catalogue' => $catalogue,
+            'produitLastFive' => $poduitLastFive,
+            'marque' => $marque,
+            'categorie' => $categorie,
         ]);
     }
+
     public function checkout(Request $request)
     {
         if (isset(request()->all()['produit'])) {
