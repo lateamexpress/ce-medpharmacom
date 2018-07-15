@@ -62,35 +62,46 @@ class CatalogueController extends Controller
     public function checkout(Request $request)
     {
         if (isset(request()->all()['produit'])) {
-
+            // Clear array
             $arrayProduits = [];
+            unset($arrayProduits);
+            $arrayProduits = [];
+            // End clear
+
+            // Get datas
             $cout= request()->all()['cout'];
             $idProduit = $request->all()['produit'];
             $quantite = $request->all()['quantite'];
             $nomProduit = $request->all()['nom'];
-            array_push($arrayProduits, array('idProduit' => $idProduit, 'cout' => $cout, 'quantite' => $quantite, 'nom' => $nomProduit));
+            // End get datas
 
+            // Put values in an array
+            $arrayProduits['idProduit'] = $idProduit;
+            $arrayProduits['cout'] = $cout;
+            $arrayProduits['quantite'] = $quantite;
+            $arrayProduits['nom'] = $nomProduit;
+            // End put values in an array
+
+            // If Session produits doesn't exist
             if(!isset(Session::all()['produits'])) {
-                foreach ($arrayProduits as $prod) {
-                    $request->session()->push('produits', $prod);
+                $request->session()->push('produits', $arrayProduits);
+            }
+            // Else check if duplicate, then push
+            else {
+                foreach (Session::all()['produits'] as $kSession => $prodSession) {
+                    //var_dump(Session::all()['produits'][$kSession]);
+                    //var_dump($arrayProduits);
+                    if(Session::all()['produits'][$kSession] == $arrayProduits) {
+                      //$request->session()->push('produits', $arrayProduits);
+                        Session::all()['produits'][$kSession] == $arrayProduits;
+                    }
                 }
             }
-            else {
-               foreach (Session::all()['produits'] as $k => $prod) {
-//                   var_dump(Session::all()['produits'][$k]['idProduit']);
-//                   var_dump($arrayProduits[$k]['idProduit']);
-//                   if($prod['idProduit'] != $arrayProduits[0]['idProduit']) {
-//                       $request->session()->push('produits', $arrayProduits);
-//                   }
-               }
-            }
-
-            var_dump(Session::all()['produits']);
-            //$request->session()->forget();
+            //var_dump(Session::all()['produits']);
+            //$request->session()->forget('produits');
             //$request->session()->flush();
             //$request->session()->regenerate();
             if ($request['Commander']) {
-                // TODO il faut recup les values de $arrayProduit mais ça me donne un truc bizarre, ça n'affiche pas les produits...
                 return View('client/commande')->with('commande', '');
             } elseif ($request['Rechercher']) {
                 $nom_produit = $request->all()['nom_produit'];
