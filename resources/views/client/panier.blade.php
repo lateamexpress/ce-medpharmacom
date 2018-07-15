@@ -31,7 +31,7 @@
                         <td>{{ $prod['nom'] }}</td>
                         <td>{{ $prod['cout'] }}</td>
                         <td>{{ $prod['quantite'] }}</td>
-                        <td><input type="checkbox" name="produit" id="{{$prod['produit']}}" class="produit" value="{{ $prod['produit'] }}"/> <label for="{{$prod['produit']}}"></label></td>
+                        <td><input type="checkbox" name="produit" id="{{$prod['idProduit']}}" class="produit" value="{{ $prod['idProduit'] }}"/> <label for="{{$prod['nom']}}"></label></td>
                     </tr>
                 @endforeach
             @endisset
