@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Panier;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Utilisateur;
 
 class PanierController extends Controller
 {
@@ -72,6 +74,14 @@ class PanierController extends Controller
         }
         // template commande effectuee
         else {
+            $utilisateur = Utilisateur::find(Auth::user()["id_utilisateur"]);
+            $utilisateur->email = $request->email;
+            $utilisateur->nom = $request->nom;
+            $utilisateur->tel = $request->tel;
+            $utilisateur->adresse = $request->adresse;
+            $utilisateur->code_postal = $request->code_postal;
+            $utilisateur->ville = $request->ville;
+            $utilisateur->save();
             return view('client/fin-commande');
         }
     }

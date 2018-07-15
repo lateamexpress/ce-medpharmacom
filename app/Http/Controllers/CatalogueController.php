@@ -162,42 +162,42 @@ class CatalogueController extends Controller
                 }
             }
         }
-            else if(is_string($request['Rechercher']))
-            {
-                if (isset($request->all()['nom_produit']))
-                    $nom_produit = $request->all()['nom_produit'];
-                else
-                    $nom_produit = "";
-                if (isset($request->all()['ref_id_marque']))
-                    $ref_id_marque = $request->all()['ref_id_marque'];
-                else
-                    $ref_id_marque = "";
-                if (isset($request->all()['ref_id_categorie']))
-                    $ref_id_categorie = $request->all()['ref_id_categorie'];
-                else
-                    $ref_id_categorie = "";
-                if (isset($request->all()['cout']))
-                    $cout = $request->all()['cout'];
-                else
-                    $cout = "";
+        else if(is_string($request['Rechercher']))
+        {
+            if (isset($request->all()['nom_produit']))
+                $nom_produit = $request->all()['nom_produit'];
+            else
+                $nom_produit = "";
+            if (isset($request->all()['ref_id_marque']))
+                $ref_id_marque = $request->all()['ref_id_marque'];
+            else
+                $ref_id_marque = "";
+            if (isset($request->all()['ref_id_categorie']))
+                $ref_id_categorie = $request->all()['ref_id_categorie'];
+            else
+                $ref_id_categorie = "";
+            if (isset($request->all()['cout']))
+                $cout = $request->all()['cout'];
+            else
+                $cout = "";
 
-                $catalogue = Produit::where([
-                    ['nom_produit', 'like', '%'. $nom_produit .'%'],
-                    ['ref_id_marque', 'like', '%'. $ref_id_marque .'%'],
-                    ['ref_id_categorie', 'like', '%'. $ref_id_categorie .'%'],
-                    ['cout', 'like', '%'. $cout .'%'],
-                ])->paginate(15);
+            $catalogue = Produit::where([
+                ['nom_produit', 'like', '%'. $nom_produit .'%'],
+                ['ref_id_marque', 'like', '%'. $ref_id_marque .'%'],
+                ['ref_id_categorie', 'like', '%'. $ref_id_categorie .'%'],
+                ['cout', 'like', '%'. $cout .'%'],
+            ])->paginate(15);
 
-                $marque = Marque::all();
-                $categorie = Categorie::all();
-                $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
+            $marque = Marque::all();
+            $categorie = Categorie::all();
+            $poduitLastFive = Produit::all()->sortByDesc('id_produit')->take(6);
 
-                return view('client/catalogue',[
-                    'catalogue' => $catalogue,
-                    'produitLastFive' => $poduitLastFive,
-                    'marque' => $marque,
-                    'categorie' => $categorie,
-                ]);
-            }
+            return view('client/catalogue',[
+                'catalogue' => $catalogue,
+                'produitLastFive' => $poduitLastFive,
+                'marque' => $marque,
+                'categorie' => $categorie,
+            ]);
+        }
     }
 }
