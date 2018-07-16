@@ -104,28 +104,28 @@ class GestionProduitController extends Controller
                     continue;
                 }
 
-                $image = Image::where(['nom' => $data[3]])->first();
+                $image = Image::where(['nom' => utf8_encode($data[3])])->first();
 
 
                 if($image=== NULL) {
                     $image = Image::create([
-                        'nom' => $data[3],
-                        'lien' => $data[3]
+                        'nom' => utf8_encode($data[3]),
+                        'lien' => utf8_encode($data[3])
                     ]);
                 }
                 $refIdImage = $image->id_image;
 
 
-                $marque = Marque::firstOrCreate(['nom_marque' => $data[4]]);
+                $marque = Marque::firstOrCreate(['nom_marque' => utf8_encode($data[4])]);
                 $refIdMarque = $marque->id_marque;
 
-                $categorie = Categorie::firstOrCreate(['nom_categorie' => $data[5]]);
+                $categorie = Categorie::firstOrCreate(['nom_categorie' => utf8_encode($data[5])]);
                 $refIdCategorie = $categorie->id_categorie;
 
                 Produit::create([
-                    'nom_produit' => $data[0],
+                    'nom_produit' => utf8_encode($data[0]),
                     'cout' => $data[1],
-                    'description' => $data[2],
+                    'description' => utf8_encode($data[2]),
                     'ref_id_image' => $refIdImage,
                     'ref_id_marque' => $refIdMarque,
                     'ref_id_categorie' => $refIdCategorie
