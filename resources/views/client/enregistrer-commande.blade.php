@@ -20,37 +20,37 @@
                 <h1>Informations de livraison :</h1>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="nom" name="nom" type="text" class="validate">
+                        <input id="nom" name="nom" type="text" class="validate" required>
                         <label for="nom" name="nom">Nom</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="adresse" name="adresse" type="text" class="validate">
+                        <input id="adresse" name="adresse" type="text" class="validate" required>
                         <label for="adresse">Nom de rue</label>
                     </div>
                     <div class="input-field col s3">
-                        <input id="code_postal" name="code_postal" type="text" class="validate">
+                        <input id="code_postal" name="code_postal" type="text" class="validate" required>
                         <label for="code_postal">Code postal</label>
                     </div>
                     <div class="input-field col s3">
-                        <input id="ville" name="ville" type="text" class="validate">
+                        <input id="ville" name="ville" type="text" class="validate" required>
                         <label for="ville">Ville</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="tel" name="tel" type="tel" class="validate">
+                        <input id="tel" name="tel" type="tel" class="validate" required>
                         <label for="tel">Tel</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="societe" name="societe" type="text" class="validate">
+                        <input id="societe" name="societe" type="text" class="validate" required>
                         <label for="societe">Société</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" name="email" type="email" class="validate">
+                        <input id="email" name="email" type="email" class="validate" required>
                         <label for="email">Email</label>
                     </div>
                 </div>

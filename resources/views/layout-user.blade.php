@@ -34,6 +34,7 @@
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
+                <li class="li-menu"><a href="{{ url('mon-panier') }}" name="Commander"  id="commanderBtn">Mon panier (Solde : {{ Auth::user()["nbr_point"] }})</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
