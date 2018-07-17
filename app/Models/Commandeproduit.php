@@ -15,6 +15,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id_commandeproduit
  * @property int $ref_id_commande
  * @property int $ref_id_produit
+ * @property int $quantite
  *
  * @property \App\Models\Commande $commande
  * @property \App\Models\Produit $produit
@@ -32,10 +33,10 @@ class Commandeproduit extends Eloquent
 		'ref_id_produit' => 'int'
 	];
 
-
 	protected $fillable = [
 		'ref_id_commande',
-		'ref_id_produit'
+		'ref_id_produit',
+        'quantite'
 	];
 
 	public function commande()
