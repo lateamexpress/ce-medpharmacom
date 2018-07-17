@@ -93,7 +93,7 @@ class GestionProduitController extends Controller
             $save = explode("/", $file);
             //dump($file);
             //dump(getcwd());exit;
-            rename($file, $newpath. end($save));
+            rename($file, $newpath. utf8_encode(end($save)));
         }
 
         $i = 0;
