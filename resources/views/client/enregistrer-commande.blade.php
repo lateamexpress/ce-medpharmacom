@@ -13,7 +13,7 @@
 @endsection
 
 @section('contenu-container')
-    <form method="POST" style="margin-top: 120px; min-height: 70vh;" action="{{ url('mon-panier') }}">
+    <form method="POST" style="margin-top: 120px; min-height: 70vh;" action="{{ url('enregistrer-commande') }}">
         @csrf
         <div class="row" id="commande-recap">
             <div class="col s12">
