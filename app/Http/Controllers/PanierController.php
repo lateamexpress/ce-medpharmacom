@@ -72,7 +72,6 @@ class PanierController extends Controller
         if($request['Commander']) {
             // TODO insert dans la database
             // var_dump(Session::all()['produits']);
-
             return view('client/enregistrer-commande');
         }
         // template commande effectuee

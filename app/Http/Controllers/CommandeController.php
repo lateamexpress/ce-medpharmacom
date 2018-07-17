@@ -26,6 +26,9 @@ class CommandeController extends Controller
             'commande' => $commande,
         ]);
     }
+    public function getTemplateLivraison() {
+        return view('client/enregistrer-commande');
+    }
 
     public function ajoutCommande(Request $request)
     {

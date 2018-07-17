@@ -42,7 +42,7 @@
         <br>
         <span>Total du panier : {{ $total }}</span>
         <br>
-        <input type="submit" class="btn btn-waves mt50" value="Passer la commande" name="Commander">
+        <a class="btn btn-waves mt50" name="Commander" href="{{ url('enregistrer-commande') }}">Passer la commande</a>
     </form>
 @endsection
 
