@@ -12,7 +12,7 @@
 
 @section('contenu')
     <div class="row mt50">
-        <form method="post" action="{{ url('catalogue') }}">
+        <form method="post" action="{{ url('catalogue/filtre') }}">
             @csrf
             <ul id="block-filter-products-mobile" class="collapsible show-on-medium hide-on-large-only" data-collapsible="accordion">
                 <li>
@@ -58,7 +58,7 @@
                 </li>
             </ul>
         </form>
-        <form method="post" action="{{url('catalogue')}}">
+        <form method="post" action="{{url('catalogue/filtre')}}">
             @csrf
             <div class="block-filter-products show-on-large hide-on-med-and-down" style="margin-top: 5%; padding-right: 10%; padding-left: 10%;">
                 <div id="header-filter-products">
@@ -100,7 +100,7 @@
             </div>
         </form>
     </div>
-    <form  method="post" action="{{url('catalogue')}}">
+    <form  method="post" action="{{url('catalogue/filtre')}}">
         @csrf
         <a href="{{ url('mon-panier') }}"  name="Commander"  id="commanderBtn" class="btn btn-waves">Mon panier Solde : {{ Auth::user()["nbr_point"] }}</a>
         <div class="blockProduits" style="min-height: 80vh; padding-right: 10%; padding-left: 10%;">
