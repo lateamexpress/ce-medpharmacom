@@ -70,7 +70,10 @@ class PanierController extends Controller
 
         // template livraison
         if($request['Commander']) {
-            return view('client/enregistrer-commande')->with('prod', 'fouTesProduitsici');
+            // TODO insert dans la database
+            // var_dump(Session::all()['produits']);
+
+            return view('client/enregistrer-commande');
         }
         // template commande effectuee
         else {

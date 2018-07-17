@@ -112,7 +112,7 @@ class CatalogueController extends Controller
                 $allProduit = Session::all()['produits'];
                 foreach ($allProduit as $kSession => $prodSession) {
                     if ($prodSession['idProduit'] == $arrayProduits['idProduit']) {
-                        $prodSession['quantite'] += $arrayProduits['quantite'];
+                        $prodSession['quantite'] = $arrayProduits['quantite'];
                         $allProduit[$kSession] = $prodSession;
                         $exist = true;
                     }
@@ -125,7 +125,7 @@ class CatalogueController extends Controller
                 foreach ($allProduit as $produit) {
                     $request->session()->push('produits', $produit);
                 }
-                //$request->session()->flush();
+
             }
             //var_dump(Session::all()['produits']);
             //$request->session()->forget('produits');

@@ -31,6 +31,7 @@
                         <td>{{ $prod['nom'] }}</td>
                         <td>{{ $prod['cout'] }}</td>
                         <td>{{ $prod['quantite'] }}</td>
+                        <td><input type="checkbox" id="{{ $prod['idProduit'] }}" /><label for="{{ $prod['idProduit'] }}"></label></td>
                     </tr>
                 @endforeach
             @endisset
@@ -39,7 +40,7 @@
         <br>
         <div class="divider-custom" style="margin-left: 0;"></div>
         <br>
-        <span>Total du panier: </span>
+        <span>Total du panier : {{ $total }}</span>
         <br>
         <input type="submit" class="btn btn-waves mt50" value="Passer la commande" name="Commander">
     </form>
@@ -50,7 +51,6 @@
         $(function () {
             $('.produit').each(function () {
                $(this).on('click', function () {
-                  alert('bro');
                    $.ajax({
                        type:'POST',
                        url:'{{ url('mon-panier')}}',
@@ -61,8 +61,6 @@
                            alert(data.success);
                        }
                    });
-
-
                });
             });
         });
