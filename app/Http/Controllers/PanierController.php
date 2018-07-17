@@ -58,7 +58,7 @@ class PanierController extends Controller
         }
         $total = 0;
         for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-            $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
+            $total += intval(session()->get('produits')[$i]['cout']) * intval(session()->get('produits')[$i]['quantite']);
         }
         return view('client/panier', [
             'cout' => $cout,
