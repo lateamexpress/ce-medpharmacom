@@ -67,15 +67,6 @@ class PanierController extends Controller
     }
 
     public function enregistrerCmd(Request $request) {
-
-        // template livraison
-        if($request['Commander']) {
-            // TODO insert dans la database
-            // var_dump(Session::all()['produits']);
-            return view('client/enregistrer-commande');
-        }
-        // template commande effectuee
-        else {
             $utilisateur = Utilisateur::find(Auth::user()["id_utilisateur"]);
             $utilisateur->email = $request->email;
             $utilisateur->nom = $request->nom;
@@ -85,7 +76,5 @@ class PanierController extends Controller
             $utilisateur->ville = $request->ville;
             $utilisateur->save();
             return view('client/fin-commande');
-        }
     }
-
 }
