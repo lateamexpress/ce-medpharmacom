@@ -42,6 +42,7 @@ class CommandeController extends Controller
             Commandeproduit::create([
                 'ref_id_commande' => $refIdCommande,
                 'ref_id_produit' => session()->get('produits')[$i]['produit'],
+                'quantite' => session()->get('produits')[$i]['quantite'],
             ]);
         }
 
