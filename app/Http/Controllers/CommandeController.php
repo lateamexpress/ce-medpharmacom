@@ -33,12 +33,18 @@ class CommandeController extends Controller
     public function ajoutCommande(Request $request)
     {
         $user = Utilisateur::find(Auth::user()["id_utilisateur"]);
-        $user->email = $request->email;
-        $user->nom = $request->nom;
-        $user->tel = $request->tel;
-        $user->adresse = $request->adresse;
-        $user->code_postal = $request->code_postal;
-        $user->ville = $request->ville;
+        if (!empty($request->email))
+            $user->email = $request->email;
+        if (!empty($request->nom))
+            $user->nom = $request->nom;
+        if (!empty($request->tel))
+            $user->tel = $request->tel;
+        if (!empty($request->adresse))
+            $user->adresse = $request->adresse;
+        if (!empty($request->code_postal))
+            $user->code_postal = $request->code_postal;
+        if (!empty($request->ville))
+            $user->ville = $request->ville;
         $user->save();
 
         if ($user->nbr_point >= $request->total) {
@@ -52,7 +58,7 @@ class CommandeController extends Controller
             for($i=0;$i<count(session()->get('produits'));$i++){
                 Commandeproduit::create([
                     'ref_id_commande' => $refIdCommande,
-                    'ref_id_produit' => session()->get('produits')[$i]['produit'],
+                    'ref_id_produit' => session()->get('produits')[$i]['idProduit'],
                     'quantite' => session()->get('produits')[$i]['quantite'],
                 ]);
             }
