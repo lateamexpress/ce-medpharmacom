@@ -53,6 +53,7 @@
             <span style="padding-left: 32px;">Bonjour {{ Auth::user()['nom'] }},</span>
             <br>
             <span style="padding-left: 32px;">votre solde est de : {{ Auth::user()["nbr_point"] }}</span>
+            <div style="margin-left: 0; margin-left: 32px;" class="divider-custom"></div>
         </li>
         <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
         <li><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
