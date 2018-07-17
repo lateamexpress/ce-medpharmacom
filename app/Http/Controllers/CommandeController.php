@@ -34,22 +34,22 @@ class CommandeController extends Controller
     {
         $user = Auth::user();
 
-        $commande = Commande::create([
+        if ($user->nbr_point >= $request->total) {
+            $commande = Commande::create([
             'ref_id_utilisateur' => $user->id_utilisateur,
             'date' => date("Y-m-d"),
             'statut' => "En cours",
-        ]);
-
-        $refIdCommande = $commande->id_commande;
-        for($i=0;$i<count(session()->get('produits'));$i++){
-            Commandeproduit::create([
-                'ref_id_commande' => $refIdCommande,
-                'ref_id_produit' => session()->get('produits')[$i]['produit'],
-                'quantite' => session()->get('produits')[$i]['quantite'],
             ]);
-        }
 
-        if ($user->nbr_point >= $request->total) {
+            $refIdCommande = $commande->id_commande;
+            for($i=0;$i<count(session()->get('produits'));$i++){
+                Commandeproduit::create([
+                    'ref_id_commande' => $refIdCommande,
+                    'ref_id_produit' => session()->get('produits')[$i]['produit'],
+                    'quantite' => session()->get('produits')[$i]['quantite'],
+                ]);
+            }
+
             $user->nbr_point -= $request->total;
             $user->save();
             $total = 0;
