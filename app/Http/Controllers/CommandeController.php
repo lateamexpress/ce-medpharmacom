@@ -32,7 +32,14 @@ class CommandeController extends Controller
 
     public function ajoutCommande(Request $request)
     {
-        $user = Auth::user();
+        $user = Utilisateur::find(Auth::user()["id_utilisateur"]);
+        $user->email = $request->email;
+        $user->nom = $request->nom;
+        $user->tel = $request->tel;
+        $user->adresse = $request->adresse;
+        $user->code_postal = $request->code_postal;
+        $user->ville = $request->ville;
+        $user->save();
 
         if ($user->nbr_point >= $request->total) {
             $commande = Commande::create([
@@ -57,6 +64,7 @@ class CommandeController extends Controller
                 $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
             }
 
+            /*
             Mail::send('emails.commande-message', [
                 'user' => $user,
                 'total' => $total
@@ -64,9 +72,9 @@ class CommandeController extends Controller
                 $mail->from($request->email, $request->name);
                 $mail->to('contact@medpharmacom.fr')->subject('Validation commande');
             });
-
+            */
             session()->forget('produits');
-            return redirect()->back()->with('flash_message', 'Commande ajouté');
+            return view('client/fin-commande');
         }
         else
         {
