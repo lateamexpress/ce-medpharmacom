@@ -6,6 +6,7 @@
 
 @section('specific-css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/client/panier.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 @section('contenu')
@@ -27,11 +28,11 @@
             <tbody>
             @isset(Session::all()['produits'])
                 @foreach(Session::all()['produits'] as $prod)
-                    <tr>
+                    <tr class="rowProduit">
                         <td>{{ $prod['nom'] }}</td>
                         <td>{{ $prod['cout'] }}</td>
                         <td>{{ $prod['quantite'] }}</td>
-                        <td><input type="checkbox" id="{{ $prod['idProduit'] }}" /><label for="{{ $prod['idProduit'] }}"></label></td>
+                        <td><input class="deleteProduit" value="{{ $prod['idProduit'] }}" type="checkbox" id="{{ $prod['idProduit'] }}" /><label for="{{ $prod['idProduit'] }}"></label></td>
                     </tr>
                 @endforeach
             @endisset
@@ -49,16 +50,23 @@
 @section('specific-js')
     <script>
         $(function () {
-            $('.produit').each(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.deleteProduit').each(function () {
                $(this).on('click', function () {
+                   let currentRow = $(this);
+                   let produit = $(this).val();
                    $.ajax({
                        type:'POST',
                        url:'{{ url('mon-panier')}}',
                        data:{
-                           test: 'chalachiasse'
+                           produit: produit
                        },
                        success:function(data){
-                           alert(data.success);
+                           currentRow.parent().parent('.rowProduit').fadeOut();
                        }
                    });
                });

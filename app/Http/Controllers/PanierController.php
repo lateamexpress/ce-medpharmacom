@@ -45,6 +45,22 @@ class PanierController extends Controller
         return redirect()->back()->with('flash_message', 'Panier supprimé');
     }
 
+    public function deleteProduit(Request $request)
+    {
+        if (isset(request()->all()['produit'])) {
+            if(isset(Session::all()['produits'])) {
+                foreach (Session::all()['produits'] as $k => $prod) {
+                    // si ajax vaut un idProduit de la session
+                    if($prod['idProduit'] == $request['produit']) {
+                        // unset(Session::all()['produits'][$k];
+                        $request->session()->forget(Session::all()['produits'][$k]);
+                    }
+                }
+            }
+            var_dump(Session::all()['produits']);
+        }
+    }
+
     public function getTemplatePanier(Request $request)
     {
         $cout = 0;
