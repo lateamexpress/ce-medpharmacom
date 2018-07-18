@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Commande;
-use App\Models\Utilisateur;
 use App\Models\Commandeproduit;
+use App\Models\Utilisateur;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Mail\OrderShipped;
@@ -22,10 +22,14 @@ class CommandeController extends Controller
     public function commandeParId($id)
     {
         $commande = Commande::find($id);
+        $commandeProduit = Commandeproduit::where('ref_id_commande', $commande->id_commande);
+
         return view('client/commande',[
             'commande' => $commande,
+            'commandeProduit' => $commandeProduit,
         ]);
     }
+
     public function getTemplateLivraison() {
         return view('client/enregistrer-commande');
     }

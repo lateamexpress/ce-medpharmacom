@@ -107,7 +107,7 @@ Route::group(["middleware" => "auth"],function(){
         Route::post('/panier/supprimer/{id}', 'PanierController@panierSupprimer');
 
 //        Route::get('/commande', 'CommandeController@index');
-//        Route::get('/commande/{id}', 'CommandeController@commandeParId');
+        Route::get('/commande/{id}', 'CommandeController@commandeParId');
         Route::get('/mon-panier', 'PanierController@getTemplatePanier');
         Route::get('/enregistrer-commande', 'CommandeController@getTemplateLivraison');
         Route::post('/enregistrer-commande', 'CommandeController@ajoutCommande');
