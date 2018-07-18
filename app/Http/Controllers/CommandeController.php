@@ -50,7 +50,7 @@ class CommandeController extends Controller
         if ($user->nbr_point >= $request->total) {
             $commande = Commande::create([
             'ref_id_utilisateur' => $user->id_utilisateur,
-            'date' => date("Y-m-d"),
+            'date' => date("Y-m-d H:i:s"),
             'statut' => "En cours",
             ]);
 
