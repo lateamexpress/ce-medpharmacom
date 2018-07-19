@@ -22,7 +22,7 @@ class CommandeController extends Controller
     public function commandeParId($id)
     {
         $commande = Commande::find($id);
-        $commandeProduit = Commandeproduit::where('ref_id_commande', $commande->id_commande);
+        $commandeProduit = Commandeproduit::where('ref_id_commande', 'like', $commande->id_commande)->get();
 
         return view('client/detail-commande',[
             'commande' => $commande,
