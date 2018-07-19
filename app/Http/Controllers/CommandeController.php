@@ -24,7 +24,7 @@ class CommandeController extends Controller
         $commande = Commande::find($id);
         $commandeProduit = Commandeproduit::where('ref_id_commande', 'like', $commande->id_commande)->get();
 
-        return view('client/commande',[
+        return view('client/detail-commande',[
             'commande' => $commande,
             'commandeProduit' => $commandeProduit,
         ]);
