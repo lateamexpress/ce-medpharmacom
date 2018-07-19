@@ -48,12 +48,6 @@
                         <label for="societe">Société</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" name="email" type="email" class="validate" required>
-                        <label for="email">Email</label>
-                    </div>
-                </div>
                 <div id="infos-cmd">
                     <input type="submit" name="Confirmer" class="waves-effect waves-light btn" value="Confirmer ma demande">
                 </div>

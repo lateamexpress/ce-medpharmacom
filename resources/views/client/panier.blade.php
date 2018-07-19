@@ -30,7 +30,7 @@
                 @foreach(Session::all()['produits'] as $prod)
                     <tr class="rowProduit">
                         <td>{{ $prod['nom'] }}</td>
-                        <td>{{ $prod['cout'] }}</td>
+                        <td>{{ $prod['cout'] }} pts</td>
                         <td>{{ $prod['quantite'] }}</td>
                         <td><input class="deleteProduit" value="{{ $prod['idProduit'] }}" type="checkbox" id="{{ $prod['idProduit'] }}" /><label for="{{ $prod['idProduit'] }}"></label></td>
                     </tr>

@@ -84,7 +84,6 @@ class PanierController extends Controller
 
     public function enregistrerCmd(Request $request) {
             $utilisateur = Utilisateur::find(Auth::user()["id_utilisateur"]);
-            $utilisateur->email = $request->email;
             $utilisateur->nom = $request->nom;
             $utilisateur->tel = $request->tel;
             $utilisateur->adresse = $request->adresse;

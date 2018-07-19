@@ -23,7 +23,7 @@
                 <tbody>
                 @foreach($commande as $cmd)
                 <tr>
-                    <td>{{ $cmd['id_commande'] }}</td>
+                    <td><a href="{{ url('commande/'.$cmd['id_commande']) }}">{{ $cmd['id_commande'] }}</a></td>
                     <td>{{ $cmd['date'] }}</td>
                     <td>{{ $cmd['statut'] }}</td>
                 </tr>
