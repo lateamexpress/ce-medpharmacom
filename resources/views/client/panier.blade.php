@@ -41,7 +41,7 @@
         <br>
         <div class="divider-custom" style="margin-left: 0;"></div>
         <br>
-        <span>Total du panier : {{ $total }}</span>
+        <span>Total du panier : {{ $total }} pts</span>
         <br>
         <a class="btn btn-waves mt50" name="Commander" href="{{ url('enregistrer-commande') }}">Passer la commande</a>
     </form>
