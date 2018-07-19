@@ -165,6 +165,9 @@ class CatalogueController extends Controller
                     ]);
                 }
             }
+            else {
+                return json_encode('Votre solde est insuffisant');
+            }
         }
     }
 }

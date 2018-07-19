@@ -197,7 +197,7 @@
                             cout:cout
                         },
                         success:function(data){
-                           // alert(data.success);
+                            alert(data);
                         }
                     });
                 });
