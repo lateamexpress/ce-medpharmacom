@@ -51,6 +51,7 @@ class CommandeController extends Controller
             $user->ville = $request->ville;
         $user->save();
 
+        date_default_timezone_set('Europe/Paris');
         if ($user->nbr_point >= $request->total) {
             $commande = Commande::create([
             'ref_id_utilisateur' => $user->id_utilisateur,
