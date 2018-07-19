@@ -53,7 +53,7 @@ class PanierController extends Controller
                     // si ajax vaut un idProduit de la session
                     if($prod['idProduit'] == $request['produit']) {
                         // unset(Session::all()['produits'][$k];
-                        $request->session()->forget(Session::all()['produits'][$k]);
+                        $request->session()->forget('produits.' . $k);
                     }
                 }
             }
