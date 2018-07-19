@@ -57,16 +57,16 @@ class PanierController extends Controller
                     }
                 }
             }
-            var_dump(Session::all()['produits']);
         }
     }
 
     public function getTemplatePanier(Request $request)
     {
         $total = 0;
-
-        for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-            $total += intval(session()->get('produits.'.$i)['cout']) * intval(session()->get('produits.'.$i)['quantite']);
+        if(isset(Session::all()['produits'])) {
+            for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+                $total += intval(session()->get('produits.'.$i)['cout']) * intval(session()->get('produits.'.$i)['quantite']);
+            }
         }
         return view('client/panier', [
             'total' => isset($total) ? $total : '' ,
