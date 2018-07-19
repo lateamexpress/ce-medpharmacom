@@ -58,6 +58,7 @@
         <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
         <li><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
         <li><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
+        <li><a href="{{ url('mon-panier') }}" name="Commander"  id="commanderBtn">Mon panier</a></li>
         <li><a href="{{ url('logout') }}">Se déconnecter</a></li>
     </ul>
     <!-- END SIDE NAV -->
