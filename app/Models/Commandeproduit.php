@@ -46,6 +46,6 @@ class Commandeproduit extends Eloquent
 
 	public function produit()
 	{
-		return $this->belongsTo(\App\Models\Commande::class, 'ref_id_produit');
+		return $this->belongsTo(\App\Models\Produit::class, 'ref_id_produit');
 	}
 }
