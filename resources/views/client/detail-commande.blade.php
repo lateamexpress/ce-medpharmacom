@@ -15,7 +15,7 @@
 @section('contenu-container')
     <form method="POST" action="{{ url('commande') }}">
         @csrf
-        <div class="row" id="commande-recap">
+        <div class="row" id="commande-recap" style="min-height: 70vh;">
             <div class="col s12">
                 <h1 class="center-align">Voici un récapitulatif de la commande effectuée pour ce produit </h1>
                 <div class="divider-custom"></div>

@@ -34,7 +34,7 @@
                 <li class="li-menu"><a href="{{ url('/catalogue') }}">Catalogue</a></li>
                 <li class="li-menu"><a href="{{ url('/mes-commandes') }}">Mes commandes</a></li>
                 <li class="li-menu"><a href="{{ url('/mon-compte') }}">Mon compte</a></li>
-                <li class="li-menu"><a href="{{ url('mon-panier') }}" name="Commander"  id="commanderBtn">Mon panier (Solde : {{ Auth::user()["nbr_point"] }})</a></li>
+                <li class="li-menu"><a href="{{ url('mon-panier') }}" name="Commander"  id="commanderBtn">Mon panier (Solde : {{ Auth::user()["nbr_point"] }}  pts)</a></li>
                 <li class="li-menu"><a href="{{ url('logout') }}">Se déconnecter</a></li>
                 <li class="li-menu" id="burger-menu"><a href="#" data-activates="slide-out" class="button-collapse-side right"><i class="material-icons">menu</i></a></li>
             </ul>
@@ -52,7 +52,7 @@
         <li>
             <span style="padding-left: 32px;">Bonjour {{ Auth::user()['nom'] }},</span>
             <br>
-            <span style="padding-left: 32px;">votre solde est de : {{ Auth::user()["nbr_point"] }}</span>
+            <span style="padding-left: 32px;">votre solde est de : {{ Auth::user()["nbr_point"] }} pts</span>
             <div style="margin-left: 0; margin-left: 32px;" class="divider-custom"></div>
         </li>
         <li><a href="{{ url('/catalogue') }}">Catalogue</a></li>
