@@ -9,6 +9,7 @@ use App\Models\Marque;
 use App\Models\Categorie;
 use App\Models\Utilisateur;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class CatalogueController extends Controller
 {
@@ -85,7 +86,6 @@ class CatalogueController extends Controller
     public function checkout(Request $request)
     {
         $user = Utilisateur::find(Auth::user()["id_utilisateur"]);
-        var_dump((intval(request()->all()['cout']) * intval($request->all()['quantite'])));
 
         if (isset(request()->all()['produit'])) {
             if ($user->nbr_point >= (intval(request()->all()['cout']) * intval($request->all()['quantite']))) {
