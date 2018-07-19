@@ -23,13 +23,15 @@ Route::group(["middleware" => "auth"],function(){
 
         Route::get('/gestion-partenaires', 'GestionController@partenaires');
         Route::get('/gestion-commandes', 'GestionCommandeController@commandeAll');
-        Route::get('/gestion-commandes/{id}', 'GestionCommandeController@commandebyid');
+        //Route::get('/gestion-commandes/{id}', 'GestionCommandeController@commandebyid');
         Route::post('/gestion-commandes/ajout', 'GestionCommandeController@commandeAjouter');
         Route::post('/gestion-commandes/modifier/{id}', 'GestionCommandeController@commandeChangeStatut');
         Route::post('/gestion-commandes/supprimer/{id}', 'GestionCommandeController@commandeSupprimer');
         Route::post('/gestion-commandes', [
             'uses' => 'GestionCommandeController@commandeFiltre',
         ]);
+        Route::get('/gestion-commandes/{id}', 'GestionCommandeController@commandeParId');
+
 
         Route::get('/gestion-equivalences', 'GestionEquivalenceController@generiqueAll');
         Route::get('/gestion-equivalences/{id}', 'GestionEquivalenceController@generiqueById');

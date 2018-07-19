@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Commande;
+use App\Models\Commandeproduit;
 
 class GestionCommandeController extends Controller
 {
@@ -81,4 +82,16 @@ class GestionCommandeController extends Controller
             'commande' => $commande,
          ]);
     }
+
+    public function commandeParId($id)
+    {
+        $commande = Commande::find($id);
+        $commandeProduit = Commandeproduit::where('ref_id_commande', 'like', $commande->id_commande)->get();
+
+        return view('client/detail-commande',[
+            'commande' => $commande,
+            'commandeProduit' => $commandeProduit,
+        ]);
+    }
+
 }
