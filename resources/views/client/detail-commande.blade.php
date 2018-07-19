@@ -30,12 +30,11 @@
                     <tbody>
                     @foreach($commandeProduit as $k => $prod)
                         <tr>
-                            {{  $prod->ref_id_produit->nom_produit }}
+                            {{  $prod->produit->nom_produit }}
                         </tr>
                     @endforeach
                     </tbody>
 
-                    {{ var_dump($commandeProduit) }}
                 </table>
             </div>
         </div>

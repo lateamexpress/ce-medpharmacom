@@ -24,6 +24,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \App\Models\Categorie $marque
  * @property \App\Models\Categorie $categorie
  * @property \Illuminate\Database\Eloquent\Collection $commandes
+ * @property \Illuminate\Database\Eloquent\Collection $commandeproduit
  *
  * @package App\Models
  */
@@ -62,5 +63,10 @@ class Produit extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\Categorie::class, 'ref_id_categorie');
 	}
+
+    public function commandeproduit()
+    {
+        return $this->hasMany(\App\Models\Commandeproduit::class, 'ref_id_produit');
+    }
 
 }

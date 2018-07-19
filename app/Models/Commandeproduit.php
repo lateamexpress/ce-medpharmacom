@@ -44,8 +44,8 @@ class Commandeproduit extends Eloquent
 		return $this->belongsTo(\App\Models\Commande::class, 'ref_id_commande');
 	}
 
-    public function produit()
-    {
-        return $this->belongsToMany(Produit::class,'commandeproduit','ref_id_commande','ref_id_produit');
-    }
+	public function produit()
+	{
+		return $this->belongsTo(\App\Models\Produit::class, 'ref_id_produit');
+	}
 }
