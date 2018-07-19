@@ -178,7 +178,6 @@
             });
             $('.add-product').each(function () {
                 $(this).click(function(e){
-                    Materialize.toast('Produit ajouté à ce panier', 3000);
                     e.preventDefault();
                     let produit = $(this).siblings('a').attr('id');
                     let quantite = $(this).siblings('.quantity').val();
@@ -199,6 +198,9 @@
                         success:function(data){
                             if(data){
                                 alert(data);
+                            }
+                            else {
+                                Materialize.toast('Produit ajouté à ce panier', 3000);
                             }
                         }
                     });
