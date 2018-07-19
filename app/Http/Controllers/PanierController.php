@@ -63,21 +63,12 @@ class PanierController extends Controller
 
     public function getTemplatePanier(Request $request)
     {
-        $cout = 0;
-        if(isset(request()->all()['arrayProduits'])) {
-            $i=0;
-            $arrayProduits = request()->all()['arrayProduits'];
-            foreach ($arrayProduits as $prod) {
-                $cout += intval(session()->get('produits')[$i]['cout']);
-                $i++;
-            }
-            $total = 0;
-            for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-                $total += intval(session()->get('produits')[$i]['cout']) * intval(session()->get('produits')[$i]['quantite']);
-            }
+        $total = 0;
+
+        for ($i = 0; $i < count(Session::all()['produits']); $i++) {
+            $total += intval(session()->get('produits.'.$i)['cout']) * intval(session()->get('produits.'.$i)['quantite']);
         }
         return view('client/panier', [
-            'cout' => $cout,
             'total' => isset($total) ? $total : '' ,
         ]);
     }
