@@ -92,8 +92,15 @@
         </div>
         <div class="footer-copyright grey darken-4">
             <div class="container">
-                © 2018 Copyright Medpharmacom.fr
-                <a class="waves-effect waves-light btn btn-network" style="position:absolute; right: 37.5%" href="https://fr.linkedin.com/company/medpharmacom"><i class="fa fa-linkedin"></i></a>
+                <div class="row">
+                    <div class="col l4">
+                        © 2018 Copyright Medpharmacom.fr
+                    </div>
+                    <div class="col l4"></div>
+                    <div class="col l4">
+                        <a class="waves-effect waves-light btn btn-network" href="https://fr.linkedin.com/company/medpharmacom"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Authors :
