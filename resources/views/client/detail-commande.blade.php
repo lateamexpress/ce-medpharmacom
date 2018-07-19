@@ -30,7 +30,15 @@
                     <tbody>
                     @foreach($commandeProduit as $k => $prod)
                         <tr>
-                            {{  $prod->produit->nom_produit }}
+                            <td>
+                                {{  $prod->produit->nom_produit }}
+                            </td>
+                            <td>
+                                {{ $prod->produit->cout }} pts
+                            </td>
+                            <td>
+                                {{ $prod['quantite'] }}
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
