@@ -68,12 +68,13 @@ class CommandeController extends Controller
                 ]);
             }
 
-            $user->nbr_point -= $request->total;
-            $user->save();
             $total = 0;
             for ($i = 0; $i < count(Session::all()['produits']); $i++) {
-                $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['quantite']);
+                $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['cout']);
             }
+
+            $user->nbr_point -= $total;
+            $user->save();
 
             /*
             Mail::send('emails.commande-message', [
