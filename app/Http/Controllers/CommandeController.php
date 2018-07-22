@@ -36,25 +36,24 @@ class CommandeController extends Controller
 
     public function ajoutCommande(Request $request)
     {
-        $user = Utilisateur::find(Auth::user()["id_utilisateur"]);
         if (!empty($request->email))
-            $user->email = $request->email;
+            Auth::user()->email = $request->email;
         if (!empty($request->nom))
-            $user->nom = $request->nom;
+            Auth::user()->nom = $request->nom;
         if (!empty($request->tel))
-            $user->tel = $request->tel;
+            Auth::user()->tel = $request->tel;
         if (!empty($request->adresse))
-            $user->adresse = $request->adresse;
+            Auth::user()->adresse = $request->adresse;
         if (!empty($request->code_postal))
-            $user->code_postal = $request->code_postal;
+            Auth::user()->code_postal = $request->code_postal;
         if (!empty($request->ville))
-            $user->ville = $request->ville;
-        $user->save();
+            Auth::user()->ville = $request->ville;
+        Auth::user()->save();
 
         date_default_timezone_set('Europe/Paris');
-        if ($user->nbr_point >= $request->total) {
+        if (Auth::user()->nbr_point >= $request->total) {
             $commande = Commande::create([
-            'ref_id_utilisateur' => $user->id_utilisateur,
+            'ref_id_utilisateur' => Auth::user()->id_utilisateur,
             'date' => date("Y-m-d H:i:s"),
             'statut' => "En cours",
             ]);
@@ -73,8 +72,8 @@ class CommandeController extends Controller
                 $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['cout']);
             }
 
-            $user->nbr_point -= $total;
-            $user->save();
+            Auth::user()->nbr_point -= $total;
+            Auth::user()->save();
 
             /*
             Mail::send('emails.commande-message', [
