@@ -71,12 +71,9 @@ class CommandeController extends Controller
             for ($i = 0; $i < count(Session::all()['produits']); $i++) {
                 $total += intval(session()->get('produits')[$i]['quantite']) * intval(session()->get('produits')[$i]['cout']);
             }
-            dump(Auth::user()->nbr_point);
+
             Auth::user()->nbr_point -= $total;
-            dump(Auth::user()->nbr_point);
-            dump($total);
             Auth::user()->save();
-            dump(Auth::user());exit;
 
             /*
             Mail::send('emails.commande-message', [
