@@ -58,16 +58,6 @@
             <div class="nav-wrapper">
                 <ul id="slide-out" class="side-nav">
                     <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img src="https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?cs=srgb&dl=abstract-art-background-370799.jpg&fm=jpg">
-                            </div>
-                            <a href="#!user"><img class="circle" src="https://n6-img-fp.akamaized.net/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg"></a>
-                            <a href="#!name"><span class="white-text name">John Doe</span></a>
-                            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                        </div>
-                    </li>
-                    <li>
                         <a href="{{ url('admin/gestion-commandes') }}"><i class="material-icons">shopping_cart</i> Commandes</a>
                     </li>
                     <li>
