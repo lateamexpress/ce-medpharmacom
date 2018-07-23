@@ -38,22 +38,9 @@
                         @endif
                     </div>
                 </div>
-                <small id="forgotten-password" class="right"><a href="{{ route('password.request') }}">Mot de passe oublié ?</a></small>
             </div>
             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left"></i>Se connecter</button>
         </form>
-    </div>
-    <div class="fixed-action-btn horizontal">
-        <a href="{{ url('/') }}" class="btn-floating btn-large">
-            <i class="large material-icons">home</i>
-        </a>
-        <ul>
-            <li><a href="{{ url('formation') }}" class="btn-floating red"><i class="material-icons">school</i></a></li>
-            <li><a href="{{ url('laboratoire') }}" class="btn-floating yellow darken-1"><i class="material-icons">local_pharmacy</i></a></li>
-            <li><a href="{{ url('news') }}" class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a href="{{ url('equivalence-generique') }}" class="btn-floating blue"><i class="material-icons">search</i></a></li>
-            <li><a href="{{ url('contact') }}" class="btn-floating red"><i class="material-icons">contact_mail</i></a></li>
-        </ul>
     </div>
 </div>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
