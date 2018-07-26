@@ -82,39 +82,39 @@
         <div class="row" style="margin-top: 120px;">
             <div class="col s12">
                 <div class="owl-carousel owl-theme">
+                    {{--<div class="col l4">--}}
+                        {{--<img src="{{ asset('img/test/1.png') }}">--}}
+                    {{--</div>--}}
+                    {{--<div class="col l4">--}}
+                        {{--<img src="{{ asset('img/test/2.png') }}">--}}
+                    {{--</div>--}}
+                    {{--<div class="col l4">--}}
+                        {{--<img src="{{ asset('img/test/3.png') }}">--}}
+                    {{--</div>--}}
+                    {{--<div class="col l4">--}}
+                        {{--<img src="{{ asset('img/test/4.png') }}">--}}
+                    {{--</div>--}}
                     <div class="col l4">
-                        <img src="{{ asset('img/test/1.png') }}">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/at.JPG') }}">
                     </div>
                     <div class="col l4">
-                        <img src="{{ asset('img/test/2.png') }}">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/hairspring.png') }}">
                     </div>
                     <div class="col l4">
-                        <img src="{{ asset('img/test/3.png') }}">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/Konjac-HiRes.jpg') }}">
                     </div>
                     <div class="col l4">
-                        <img src="{{ asset('img/test/4.png') }}">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/Samsonite.png') }}">
                     </div>
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/at.JPG') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/hairspring.png') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/Konjac-HiRes.jpg') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/Samsonite.png') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l8">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/theoriginalbb.png') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/Tumi.png') }}">--}}
-                    {{--</div>--}}
-                    {{--<div class="col l4">--}}
-                        {{--<img class="partnersNoBorder" src="{{ asset('img/partenaires/wetbrush.png') }}">--}}
-                    {{--</div>--}}
+                    <div class="col l8">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/theoriginalbb.png') }}">
+                    </div>
+                    <div class="col l4">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/Tumi.png') }}">
+                    </div>
+                    <div class="col l4">
+                        <img class="partnersNoBorder" src="{{ asset('img/partenaires/wetbrush.png') }}">
+                    </div>
                     <!--
                     <div class="col l4"><img src="{{ asset('img/vertbaudet.png') }}" class="test-img" alt="vertbaudet" title="vertbaudet"/></div>
                     <div class="col l4"><img src="{{ asset('img/Le_Creuset_Logo.png') }}" class="test-img" alt="Le_Creuset_Logo" title="Le_Creuset_Logo"/></div>
